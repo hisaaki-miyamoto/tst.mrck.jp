@@ -365,6 +365,13 @@
     .toolbar{flex-direction:column;align-items:flex-start;gap:1rem}
   }
   @media (max-width:420px){ .cat-grid{grid-template-columns:1fr 1fr;gap:.8rem} }
+
+  /* ============ ヘッダー配置（2026-07-13 宮元さんフィードバック反映：基準として固定） ============ */
+  /* ロゴ＋「丸近」とグローバルナビを左寄せでまとめ、カートだけ右端へ */
+  header .wrap{justify-content:flex-start;gap:clamp(1.2rem,3vw,2.6rem)}
+  header .wrap > div:last-child{margin-left:auto}   /* カート＋メニューボタン群を右端に */
+  /* 最上段ユーティリティバーも左寄せに揃える（左：案内文 → 右へリンク群が左詰めで続く） */
+  .util .wrap{justify-content:flex-start;gap:clamp(1rem,3vw,2rem)}
 </style>
 
 
