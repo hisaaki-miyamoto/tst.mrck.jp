@@ -299,7 +299,8 @@
 <style>
   /* ============ 商品カテゴリーページ 固有スタイル ============ */
   /* コンパクトなカテゴリバナー（TOPの全画面ヒーローの代わり） */
-  .cat-hero{position:relative;min-height:clamp(240px,38vh,360px);background:var(--sumi);color:var(--sumi-ink);overflow:hidden;display:flex;align-items:flex-end}
+  /* バナー高さ：2026-07-13 宮元さん確定＝上限300px（デスクトップは300px、短い画面では少し縮む） */
+  .cat-hero{position:relative;min-height:clamp(240px,44vh,300px);background:var(--sumi);color:var(--sumi-ink);overflow:hidden;display:flex;align-items:flex-end}
   .cat-hero .bg{position:absolute;inset:0;background-image:var(--slide-a);background-size:cover;background-position:center;transform:scale(1.04)}
   .cat-hero .scrim{position:absolute;inset:0;background:
       linear-gradient(0deg,rgba(12,8,5,.82),rgba(12,8,5,.25) 60%,rgba(12,8,5,.5)),
@@ -317,8 +318,8 @@
   .crumb .sep{margin:0 .5em;color:var(--line-strong)}
   .crumb .cur{color:var(--beni)}
 
-  /* カテゴリ説明 */
-  .cat-intro{max-width:70ch;margin:0 auto;text-align:center;padding:clamp(1.6rem,4vw,2.6rem) 0 0}
+  /* カテゴリ説明（1行キャッチ）：デスクトップで1行に収まる幅を確保。狭い画面では自然に折り返す */
+  .cat-intro{max-width:54em;margin:0 auto;text-align:center;padding:clamp(1.6rem,4vw,2.6rem) 0 0}
   .cat-intro p{font-family:var(--gothic);font-size:.94rem;color:var(--ink-soft);line-height:1.95}
 
   /* 絞り込み（子カテゴリ）＋並び替えバー */
@@ -449,7 +450,7 @@
 <section class="block" style="padding-top:clamp(1.4rem,3vw,2rem)">
   <div class="wrap">
     <div class="cat-intro reveal">
-      <p>甘みと繊細な身質が自慢の「香住ガニ（紅ズワイガニ）」、冬の味覚「松葉がに」を、水揚げ当日に浜茹でしてお届け。ご家庭用からご贈答まで、産地ならではの鮮度をそのままに。</p>
+      <p>香住ガニ・松葉がにを、水揚げ当日の浜茹でで。ご家庭にもご贈答にも、産地直送の高鮮度を！</p>
     </div>
 
     <div class="toolbar reveal">
