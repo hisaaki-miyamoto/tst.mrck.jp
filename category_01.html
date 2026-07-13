@@ -367,6 +367,9 @@
   @media (max-width:420px){ .cat-grid{grid-template-columns:1fr 1fr;gap:.8rem} }
 
   /* ============ ヘッダー配置（2026-07-13 宮元さんフィードバック反映：基準として固定） ============ */
+  /* ★ヘッダーとユーティリティバーは中央寄せカラム（max-width:1180）をやめて“ほぼ全幅”に。
+     これでロゴ＝画面左端近く／カート＝画面右端近く になる（本文の商品グリッドは中央寄せのまま）。 */
+  header .wrap, .util .wrap{max-width:none;padding:0 clamp(20px,3.2vw,44px)}
   /* ロゴ＋「丸近」とグローバルナビを左寄せでまとめ、カートだけ右端へ */
   header .wrap{justify-content:flex-start;gap:clamp(1.2rem,3vw,2.6rem)}
   header .wrap > div:last-child{margin-left:auto}   /* カート＋メニューボタン群を右端に */
