@@ -1,2 +1,6 @@
 Thumbs.db
 .DS_Store
+
+# build helper (local only)
+_build_category.py
+_skeleton_*.html
