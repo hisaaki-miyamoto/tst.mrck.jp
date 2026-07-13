@@ -299,8 +299,8 @@
 <style>
   /* ============ 商品カテゴリーページ 固有スタイル ============ */
   /* コンパクトなカテゴリバナー（TOPの全画面ヒーローの代わり） */
-  /* バナー高さ：2026-07-13 宮元さん確定＝上限300px（デスクトップは300px、短い画面では少し縮む） */
-  .cat-hero{position:relative;min-height:clamp(240px,44vh,300px);background:var(--sumi);color:var(--sumi-ink);overflow:hidden;display:flex;align-items:flex-end}
+  /* バナー高さ：2026-07-13 宮元さん確定＝上限340px（本番でダミー帯38px分が浮く相殺・収支ゼロ点）。デスクトップは340px、短い画面では少し縮む */
+  .cat-hero{position:relative;min-height:clamp(240px,48vh,340px);background:var(--sumi);color:var(--sumi-ink);overflow:hidden;display:flex;align-items:flex-end}
   .cat-hero .bg{position:absolute;inset:0;background-image:var(--slide-a);background-size:cover;background-position:center;transform:scale(1.04)}
   .cat-hero .scrim{position:absolute;inset:0;background:
       linear-gradient(0deg,rgba(12,8,5,.82),rgba(12,8,5,.25) 60%,rgba(12,8,5,.5)),
