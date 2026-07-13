@@ -318,13 +318,14 @@
   .crumb .sep{margin:0 .5em;color:var(--line-strong)}
   .crumb .cur{color:var(--beni)}
 
-  /* カテゴリ説明（1行キャッチ）：デスクトップで1行に収まる幅を確保。狭い画面では自然に折り返す */
-  .cat-intro{max-width:54em;margin:0 auto;text-align:center;padding:clamp(1.6rem,4vw,2.6rem) 0 0}
+  /* カテゴリ説明（1行キャッチ）：デスクトップで1行に収まる幅を確保。狭い画面では自然に折り返す。
+     2026-07-13：上余白を圧縮し、説明文と下の選択ボタンを引き上げてボタンを見えやすく */
+  .cat-intro{max-width:54em;margin:0 auto;text-align:center;padding:clamp(.5rem,1.4vw,.9rem) 0 0}
   .cat-intro p{font-family:var(--gothic);font-size:.94rem;color:var(--ink-soft);line-height:1.95}
 
   /* 絞り込み（子カテゴリ）＋並び替えバー */
   .toolbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
-    margin:clamp(1.6rem,4vw,2.4rem) 0 clamp(1.2rem,3vw,2rem);padding-bottom:1.1rem;border-bottom:1px solid var(--line)}
+    margin:clamp(.8rem,1.8vw,1.2rem) 0 clamp(1.2rem,3vw,2rem);padding-bottom:1.1rem;border-bottom:1px solid var(--line)}
   .subcat{display:flex;gap:.5rem;flex-wrap:wrap}
   .subcat a{font-family:var(--gothic);font-size:.82rem;letter-spacing:.04em;color:var(--ink-soft);
     border:1px solid var(--line-strong);border-radius:999px;padding:.42rem 1.05rem;transition:all .2s;background:rgba(255,255,255,.5)}
@@ -452,7 +453,7 @@
   </nav>
 </div>
 
-<section class="block" style="padding-top:clamp(1.4rem,3vw,2rem)">
+<section class="block" style="padding-top:clamp(.4rem,1.2vw,.7rem)">
   <div class="wrap">
     <div class="cat-intro reveal">
       <p>香住ガニ・松葉がにを、水揚げ当日の浜茹でで。ご家庭にもご贈答にも、産地直送の高鮮度を！</p>
