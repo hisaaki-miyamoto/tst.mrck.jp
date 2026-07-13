@@ -371,10 +371,11 @@
   /* ★ヘッダーとユーティリティバーは中央寄せカラム（max-width:1180）をやめて“ほぼ全幅”に。
      これでロゴ＝画面左端近く／カート＝画面右端近く になる（本文の商品グリッドは中央寄せのまま）。 */
   header .wrap, .util .wrap{max-width:none;padding:0 clamp(20px,3.2vw,44px)}
-  /* ロゴを一回り大きく（2026-07-13 宮元さんフィードバック）。ヘッダーも少し高くして余裕を持たせる */
-  header .wrap{min-height:86px}
-  .brand-logo{height:56px;width:56px}
-  .brand .kanji{font-size:2rem}
+  /* ロゴをヘッダー高さいっぱいに近づける（2026-07-13 宮元さん：上下の余白が勿体ない）。
+     ヘッダー84pxに対しロゴ68px＝上下の余白は約8pxまで圧縮 */
+  header .wrap{min-height:84px}
+  .brand-logo{height:68px;width:68px}
+  .brand .kanji{font-size:2.1rem}
   /* ロゴ＋「丸近」とグローバルナビを左寄せでまとめ、カートだけ右端へ */
   header .wrap{justify-content:flex-start;gap:clamp(1.2rem,3vw,2.6rem)}
   header .wrap > div:last-child{margin-left:auto}   /* カート＋メニューボタン群を右端に */
