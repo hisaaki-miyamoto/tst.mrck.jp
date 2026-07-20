@@ -569,7 +569,54 @@
   .faq-item summary::after{content:"＋";color:var(--beni);font-weight:400;font-size:1.2rem}
   .faq-item[open] summary::after{content:"−"}
   .faq-item .ans{padding:0 .2rem 1.25rem;font-family:var(--gothic);font-size:.9rem;color:var(--ink-soft);line-height:1.95}
+  .awards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+  @media(max-width:860px){.awards-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.awards-grid{grid-template-columns:1fr}}
+  .award{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.7rem 1.2rem;text-align:center}
+  .award .rank{display:inline-block;font-family:var(--latin);font-size:1.3rem;font-weight:700;color:var(--beni);letter-spacing:.04em;margin-bottom:.55rem}
+  .award h3{font-size:1rem;margin-bottom:.45rem;letter-spacing:.03em;line-height:1.55}
+  .award .media{font-family:var(--gothic);font-size:.82rem;color:var(--ink-soft)}
+  .award .term{font-family:var(--gothic);font-size:.76rem;color:var(--ink-faint);margin-top:.25rem}
+  .award-note{margin-top:1.5rem;text-align:center;font-family:var(--gothic);font-size:.78rem;color:var(--ink-faint);line-height:1.85}
 </style>
+
+<section class="block alt" id="awards">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Awards</span>
+      <h2>数字が語る、丸近の実績</h2>
+      <span class="jp-label">ふるさと納税ランキング 全国1位</span>
+      <span class="rule"></span>
+    </div>
+    <div class="awards-grid reveal">
+      <div class="award">
+        <span class="rank">全国 1位</span>
+        <h3>浜茹で 香住ガニ</h3>
+        <p class="media">ふるさとチョイス</p>
+        <p class="term">2019～2022年度</p>
+      </div>
+      <div class="award">
+        <span class="rank">全国 1位</span>
+        <h3>甲羅盛り 香箱造り</h3>
+        <p class="media">ふるさとチョイス</p>
+        <p class="term">2019～2024年度</p>
+      </div>
+      <div class="award">
+        <span class="rank">全国 2位</span>
+        <h3>香住ガニ かに身セット 600g</h3>
+        <p class="media">楽天ふるさと納税</p>
+        <p class="term">2025年度</p>
+      </div>
+      <div class="award">
+        <span class="rank">創業 70年</span>
+        <h3>香住港とともに</h3>
+        <p class="media">買付け・加工・販売まで自社一貫</p>
+        <p class="term">産地だからできる目利き</p>
+      </div>
+    </div>
+    <p class="award-note">※ ランキング実績は各ふるさと納税サイトの公開情報に基づく記載です。本番公開時は、受賞ページへの出典リンクを付記します。</p>
+  </div>
+</section>
 
 <section class="block" id="gift">
   <div class="wrap">
@@ -793,6 +840,11 @@
   "url":"https://www.kani-mrck.com/",
   "logo":"https://www.kani-mrck.com/assets/logo.png",
   "description":"兵庫・香住港のブランド蟹「香住ガニ」を、買付けから加工・販売まで一貫してお届けする創業70年の水産会社。",
+  "award":[
+    "ふるさとチョイス 全国1位（浜茹で香住ガニ／2019～2022年度）",
+    "ふるさとチョイス 全国1位（甲羅盛り 香箱造り／2019～2024年度）",
+    "楽天ふるさと納税 全国2位（香住ガニ かに身セット600g／2025年度）"
+  ],
   "telephone":"+81-796-36-1339",
   "address":{"@type":"PostalAddress","postalCode":"669-6544","addressRegion":"兵庫県","addressLocality":"美方郡香美町香住区","streetAddress":"香住3番地","addressCountry":"JP"}
 }
@@ -825,6 +877,71 @@
     {"@type":"Question","name":"ギフトはいつ注文すれば間に合いますか？","acceptedAnswer":{"@type":"Answer","text":"ご入用日の2～3日前までのご注文をおすすめします。天候による遅延に備え、余裕をもってお届け日をご指定ください。"}},
     {"@type":"Question","name":"解凍が間に合わない・失敗したかもしれません。","acceptedAnswer":{"@type":"Answer","text":"お急ぎの場合はポリ袋に入れて流水解凍を。ご不安な点はLINE・お電話でお気軽にご相談ください。"}}
   ]
+}
+</script>
+<!-- ▼ Product / Offer 構造化データ（雛形）
+     ※ name・description・price・availability・url・image は、本番では MakeShop の
+       商品データから動的出力してください（下記の価格はダミーです）。
+     ※ AggregateRating / Review は、実際のレビューデータが入った時点で追加してください
+       （実データのない評価値は掲載しないこと）。 -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Product",
+  "name":"浜茹で 香住ガニ 約1kg",
+  "description":"水揚げ当日に茹で上げ。甘みと繊細な身質が自慢の一杯。",
+  "category":"カニ > 茹でがに",
+  "brand":{"@type":"Brand","name":"丸近"},
+  "countryOfOrigin":{"@type":"Country","name":"JP"},
+  "offers":{
+    "@type":"Offer",
+    "priceCurrency":"JPY",
+    "price":"8800",
+    "availability":"https://schema.org/InStock",
+    "itemCondition":"https://schema.org/NewCondition",
+    "url":"https://www.kani-mrck.com/",
+    "seller":{"@type":"Organization","name":"株式会社丸近"}
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Product",
+  "name":"甲羅盛り 香箱造り",
+  "description":"内子・外子・かに身を甲羅に美しく詰めた贅沢な逸品。",
+  "category":"カニ > 甲羅盛り",
+  "brand":{"@type":"Brand","name":"丸近"},
+  "countryOfOrigin":{"@type":"Country","name":"JP"},
+  "offers":{
+    "@type":"Offer",
+    "priceCurrency":"JPY",
+    "price":"6480",
+    "availability":"https://schema.org/InStock",
+    "itemCondition":"https://schema.org/NewCondition",
+    "url":"https://www.kani-mrck.com/",
+    "seller":{"@type":"Organization","name":"株式会社丸近"}
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Product",
+  "name":"香住ガニ かに身セット 600g",
+  "description":"むき身だから手軽。かに鍋にも、そのままでも美味しく。",
+  "category":"カニ > かに身",
+  "brand":{"@type":"Brand","name":"丸近"},
+  "countryOfOrigin":{"@type":"Country","name":"JP"},
+  "offers":{
+    "@type":"Offer",
+    "priceCurrency":"JPY",
+    "price":"5200",
+    "availability":"https://schema.org/InStock",
+    "itemCondition":"https://schema.org/NewCondition",
+    "url":"https://www.kani-mrck.com/",
+    "seller":{"@type":"Organization","name":"株式会社丸近"}
+  }
 }
 </script>
 <!-- ▲ 構造化データ ここまで（※価格・在庫つき Product 情報は本番の実データで自動出力を推奨） -->
