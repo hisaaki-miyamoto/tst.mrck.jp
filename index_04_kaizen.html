@@ -308,6 +308,23 @@
 
 <div class="mock">◎ <b>案04：Garden系（写真主役・没入型）</b> — テンプレート比較用の試作。写真枠・価格・レビューはダミーです。</div>
 
+<style id="header-sync-category01">
+  /* ===== ヘッダー統一：category_01 を基準に同期（2026-07-13 確定仕様） ===== */
+  header .wrap, .util .wrap{max-width:none;padding:0 clamp(20px,3.2vw,44px)}
+  header .wrap{min-height:84px}
+  .brand-logo{height:68px;width:68px}
+  .brand .kanji{font-size:2.1rem}
+  header .wrap{justify-content:flex-start;gap:clamp(1.2rem,3vw,2.6rem)}
+  header .wrap > div:last-child{margin-left:auto}
+  .util .wrap{justify-content:flex-start;gap:clamp(1rem,3vw,2rem)}
+  @media (min-width:861px){
+    header .wrap{gap:32px}
+    .util .wrap{gap:32px}
+    .brand{min-width:280px}
+    .util .wrap > span:first-child{min-width:280px}
+  }
+</style>
+
 <div class="util">
   <div class="wrap">
     <span>香住港より、朝茹で直送｜全国配送承ります</span>
