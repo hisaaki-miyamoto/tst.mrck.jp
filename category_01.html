@@ -7,6 +7,16 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="株式会社丸近 公式サイト デザイン検討用テスト環境（仮）。商品カテゴリーページの試作。写真・価格・レビューはダミーです。">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦀</text></svg>">
+<!-- ▼ リニューアル改善反映：OGP / Twitter（本番URL・画像に差替えて有効化） -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="株式会社丸近">
+<meta property="og:title" content="茹でがに｜香住港から産地直送｜株式会社丸近">
+<meta property="og:description" content="水揚げ当日に茹で上げた香住の朝茹でがに。香住ガニ・松葉がに・セコガニを産地直送でお届けします。">
+<meta property="og:url" content="https://www.kani-mrck.com/">
+<meta property="og:image" content="https://www.kani-mrck.com/assets/ogp.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<!-- ▲ 改善反映ここまで -->
 </head>
 <body>
 <style>
@@ -596,6 +606,56 @@
   </div>
 </section>
 
+<style id="kaizen-styles-cat">
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+  @media(max-width:860px){.trust-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.trust-grid{grid-template-columns:1fr}}
+  .trust{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.6rem 1.3rem;text-align:center}
+  .trust h3{font-size:1rem;margin-bottom:.5rem;letter-spacing:.03em}
+  .trust p{font-family:var(--gothic);font-size:.84rem;color:var(--ink-soft);line-height:1.85}
+  .faq-list{max-width:840px;margin:0 auto}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-item summary{cursor:pointer;padding:1.15rem .2rem;font-family:var(--gothic);font-weight:600;font-size:.98rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:"＋";color:var(--beni);font-weight:400;font-size:1.2rem}
+  .faq-item[open] summary::after{content:"−"}
+  .faq-item .ans{padding:0 .2rem 1.25rem;font-family:var(--gothic);font-size:.9rem;color:var(--ink-soft);line-height:1.95}
+</style>
+
+<section class="block alt" id="assurance">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Assurance</span>
+      <h2>安心してお選びいただくために</h2>
+      <span class="jp-label">産地直送・ギフト対応・品質保証</span>
+      <span class="rule"></span>
+    </div>
+    <div class="trust-grid reveal">
+      <div class="trust"><h3>産地直送・朝茹で</h3><p>香住港の目の前で買付け、水揚げ当日に茹で上げてお届けします。</p></div>
+      <div class="trust"><h3>のし・ギフト対応</h3><p>のし・表書き・メッセージカードを無料で承ります。</p></div>
+      <div class="trust"><h3>品質保証・返品交換</h3><p>破損・品違い・品質不良は、到着後2日以内のご連絡で交換または返金いたします。</p></div>
+      <div class="trust"><h3>解凍・調理ガイド</h3><p>冷蔵庫で半日～一晩のゆっくり解凍がおすすめ。部位別の調理法もご案内します。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>茹でがに よくあるご質問</h2>
+      <span class="jp-label">生成AIにも引用されやすい一問一答</span>
+      <span class="rule"></span>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item"><summary>茹でがには届いてすぐ食べられますか？</summary><div class="ans">浜茹では茹で上げ済みですので、そのままお召し上がりいただけます。冷凍便の場合は冷蔵庫で半日～一晩かけてゆっくり解凍してからどうぞ。</div></details>
+      <details class="faq-item"><summary>どのくらい日持ちしますか？</summary><div class="ans">冷凍品は要冷凍（-18℃以下）で保存し、賞味期限は商品ごとに明記しています。解凍後はお早めにお召し上がりください。</div></details>
+      <details class="faq-item"><summary>香住ガニ・松葉がに・セコガニの違いは？</summary><div class="ans">香住ガニは香住港で水揚げされる紅ズワイガニで、みずみずしい甘さが特長。松葉がにはズワイガニで身の締まりと濃厚な旨みが魅力。セコガニは松葉がにの雌で、内子・外子の濃厚な味わいが楽しめます。</div></details>
+      <details class="faq-item"><summary>何人前を選べばよいですか？</summary><div class="ans">1kgクラスの茹でがに1杯で2～3名様が目安です。お鍋など他の食材と合わせる場合は、より多くの人数でお楽しみいただけます。ご不明な点はお気軽にお問い合わせください。</div></details>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div class="foot-grid">
@@ -682,6 +742,293 @@
   })();
 </script>
 
+
+<!-- ▼ リニューアル改善反映：構造化データ（本番公開時に有効。価格・在庫は実データで動的出力を推奨） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://www.kani-mrck.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "商品カテゴリー",
+      "item": "https://www.kani-mrck.com/view/category/all_items"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "茹でがに"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "茹でがに",
+  "numberOfItems": 11,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Product",
+        "name": "浜茹で 香住ガニ 約1kg",
+        "brand": {
+          "@type": "Brand",
+          "name": "丸近"
+        },
+        "category": "カニ > 茹でがに",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "JPY",
+          "price": "8800",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Product",
+        "name": "浜茹で 松葉がに 特撰 1.2kg",
+        "brand": {
+          "@type": "Brand",
+          "name": "丸近"
+        },
+        "category": "カニ > 茹でがに",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "JPY",
+          "price": "19800",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Product",
+        "name": "浜茹で 松葉がに 訳あり 2杯 1kg以上",
+        "brand": {
+          "@type": "Brand",
+          "name": "丸近"
+        },
+        "category": "カニ > 茹でがに",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "JPY",
+          "price": "12800",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Product",
+        "name": "浜茹で 香住ガニ 2杯セット",
+        "brand": {
+          "@type": "Brand",
+          "name": "丸近"
+        },
+        "category": "カニ > 茹でがに",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "JPY",
+          "price": "9800",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "Product",
+        "name": "浜茹で セコガニ 5杯",
+        "brand": {
+          "@type": "Brand",
+          "name": "丸近"
+        },
+        "category": "カニ > 茹でがに",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "JPY",
+          "price": "6800",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "Product",
+        "name": "冷凍 浜茹で 松葉がに 1杯",
+        "brand": {
+          "@type": "Brand",
+          "name": "丸近"
+        },
+        "category": "カニ > 茹でがに",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "JPY",
+          "price": "9200",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "Product",
+        "name": "浜茹で 香住ガニ 大サイズ 約1.3kg",
+        "brand": {
+          "@type": "Brand",
+          "name": "丸近"
+        },
+        "category": "カニ > 茹でがに",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "JPY",
+          "price": "11000",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "Product",
+        "name": "浜茹で 松葉がに 訳あり 3杯",
+        "brand": {
+          "@type": "Brand",
+          "name": "丸近"
+        },
+        "category": "カニ > 茹でがに",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "JPY",
+          "price": "14800",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "item": {
+        "@type": "Product",
+        "name": "浜茹で 香住ガニ 特大 約1.5kg",
+        "brand": {
+          "@type": "Brand",
+          "name": "丸近"
+        },
+        "category": "カニ > 茹でがに",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "JPY",
+          "price": "13200",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "item": {
+        "@type": "Product",
+        "name": "冷凍 浜茹で 香住ガニ 2杯",
+        "brand": {
+          "@type": "Brand",
+          "name": "丸近"
+        },
+        "category": "カニ > 茹でがに",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "JPY",
+          "price": "8400",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "item": {
+        "@type": "Product",
+        "name": "浜茹で セコガニ 10杯 ご自宅用",
+        "brand": {
+          "@type": "Brand",
+          "name": "丸近"
+        },
+        "category": "カニ > 茹でがに",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "JPY",
+          "price": "9800",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "茹でがには届いてすぐ食べられますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "浜茹では茹で上げ済みのため、そのままお召し上がりいただけます。冷凍便の場合は冷蔵庫で半日～一晩かけて解凍してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "どのくらい日持ちしますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "冷凍品は要冷凍（-18℃以下）で保存し、賞味期限は商品ごとに明記しています。解凍後はお早めにお召し上がりください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "香住ガニ・松葉がに・セコガニの違いは？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "香住ガニは紅ズワイガニでみずみずしい甘さ、松葉がにはズワイガニで濃厚な旨み、セコガニは松葉がにの雌で内子・外子が特長です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "何人前を選べばよいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1kgクラスの茹でがに1杯で2～3名様が目安です。お鍋など他の食材と合わせる場合はより多くの人数でお楽しみいただけます。"
+      }
+    }
+  ]
+}
+</script>
+<!-- ▲ 構造化データ ここまで -->
 </body>
 </html>
 
