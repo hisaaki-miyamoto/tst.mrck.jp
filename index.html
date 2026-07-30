@@ -171,6 +171,74 @@
       line-height: 1.8;
     }
 
+    /* カテゴリーページ（8ページ）はまとめて1ブロックで案内する */
+    .group {
+      padding: 24px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      backdrop-filter: blur(2px);
+    }
+
+    .group-title {
+      margin: 0 0 10px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .group-meta {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .catlist {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .catlist a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.6);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
+    }
+
+    .catlist a:hover,
+    .catlist a:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(159, 47, 35, 0.42);
+      background: #fff;
+      outline: none;
+    }
+
+    .catlist .fn {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .catlist {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 420px) {
+      .catlist {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 720px) {
       body {
         background-image:
@@ -260,17 +328,31 @@
         <span class="open">開く</span>
       </a>
 
-      <a class="item" href="category_01.html">
-        <div>
-          <p class="item-title">category_01.html</p>
-          <p class="item-meta">作成：20260713 Claude｜<b>商品カテゴリーページ案</b>（Gardenベース）「茹でがに」カテゴリの試作。MakeShop移行時は動的タグで実データ化。</p>
-        </div>
-        <span class="open">開く</span>
-      </a>
+      <div class="group">
+        <p class="group-title">category_01〜08.html｜商品カテゴリーページ（全8ページ）</p>
+        <p class="group-meta">
+          作成：20260713 Claude（茹でがに）／20260730 Claude（他7カテゴリへ展開）｜<b>Gardenベース</b><br>
+          現行サイト <b>kani-mrck.com</b> のカテゴリ構成をそのまま踏襲。各ページは全カテゴリへの切替ナビ付きで、相互に行き来できます。<br>
+          写真枠・価格・レビュー・在庫はダミー。MakeShop移行時は動的タグで実データ化します。
+        </p>
+        <nav class="catlist" aria-label="商品カテゴリーページ一覧">
+          <a href="category_02.html">特別限定商品<span class="fn">_02</span></a>
+          <a href="category_03.html">全ての商品<span class="fn">_03</span></a>
+          <a href="category_04.html">かに身<span class="fn">_04</span></a>
+          <a href="category_05.html">甲羅盛り<span class="fn">_05</span></a>
+          <a href="category_01.html">茹でがに<span class="fn">_01</span></a>
+          <a href="category_06.html">活けがに<span class="fn">_06</span></a>
+          <a href="category_07.html">かにすき<span class="fn">_07</span></a>
+          <a href="category_08.html">その他<span class="fn">_08</span></a>
+        </nav>
+      </div>
 
     </section>
 
-    <p class="note">トップページ案は index_05.html… の形式で、各ページ種別（商品カテゴリー・商品詳細・カート・会社概要など）は category_01.html のように種別名_xx.html の形式で増やし、この目次ページにリンクを追加して管理します。</p>
+    <p class="note">
+      トップページ案は index_05.html… の形式で、各ページ種別（商品カテゴリー・商品詳細・カート・会社概要など）は category_01.html のように種別名_xx.html の形式で増やし、この目次ページにリンクを追加して管理します。<br>
+      ※ カテゴリー番号は現行サイトの表示順ではなく作成順です（_01＝茹でがに が最初の試作）。各ページの中身は <b>_build_category.py</b>、共通スタイル・画像は <b>_extract_assets.py</b> で生成しています（どちらもローカル専用）。
+    </p>
   </main>
 </body>
 </html>
