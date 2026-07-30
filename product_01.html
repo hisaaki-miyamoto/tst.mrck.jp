@@ -3,22 +3,41 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>茹でがに｜商品カテゴリー｜株式会社丸近（テスト環境）</title>
+<title>浜茹で 香住ガニ 約1kg｜商品詳細｜株式会社丸近（テスト環境）</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="株式会社丸近 公式サイト デザイン検討用テスト環境（仮）。商品カテゴリーページの試作。写真・価格・レビューはダミーです。">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦀</text></svg>">
-<!-- ▼ リニューアル改善反映：OGP / Twitter（本番URL・画像に差替えて有効化） -->
-<meta property="og:type" content="website">
+<meta name="description" content="株式会社丸近 公式サイト デザイン検討用テスト環境（仮）。商品詳細ページの雛形。写真・価格・レビューはダミーです。">
+<meta property="og:type" content="product">
 <meta property="og:site_name" content="株式会社丸近">
-<meta property="og:title" content="茹でがに｜香住港から産地直送｜株式会社丸近">
-<meta property="og:description" content="水揚げ当日に茹で上げた香住の朝茹でがに。香住ガニ・松葉がに・セコガニを産地直送でお届けします。">
-<meta property="og:url" content="https://www.kani-mrck.com/">
+<meta property="og:title" content="浜茹で 香住ガニ 約1kg｜株式会社丸近">
+<meta property="og:description" content="香住港から産地直送。水揚げ当日に茹で上げた紅ズワイガニ。2〜3名様目安。">
 <meta property="og:image" content="https://www.kani-mrck.com/assets/ogp.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<!-- ▲ 改善反映ここまで -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%80%3C/text%3E%3C/svg%3E">
 </head>
 <body>
+<!--
+============================================================
+  商品詳細ページ 雛形テンプレート（Gardenデザイン）
+  ※ 表示中の写真・価格・レビュー・在庫はダミーです。
+  ※ MakeShop クリエイターモード移行時は、下記のダミー箇所を
+     対応する動的タグに置き換えてください。
+------------------------------------------------------------
+  商品名           <{$item.name}>
+  商品コード       <{$item.original_code}>（GA4 item_id 用）
+  カテゴリ名       <{$item.base_category.name}>  URL <{$item.base_category.url}>
+  価格(税込)       <{$item.price}>（数値／GA4用）  表示 <{$item.price|number_format}>
+  税               <{$item.tax}>
+  メイン画像       <{$item.image_L}>  サムネ <{$item.multi_image}>
+  商品説明         <{$item.description}> / description2..4
+  レビュー平均     <{$item.review.average}>  件数 <{$item.review.total_count}>
+  在庫             <{$item.stock_quantity}>（<{if $item.is_soldout}> でSOLD OUT分岐）
+  原産国/産地      <{$item.origin_country}>
+  カート投入URL    <{$item.cart_entry_url}>
+  お気に入り       <{$item.favorite_entry_url}>
+  数量min/max      <{$item.order_quantity_min}> / <{$item.order_quantity_max}>
+============================================================
+-->
 <style>
   :root{
     /* --- light (bright white × sumi ink × beni)：参考3サイトに合わせ白基調 --- */
@@ -305,107 +324,49 @@
   .to-top .label{font-family:var(--latin);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;line-height:1}
   @media (prefers-reduced-motion:reduce){.to-top{transition:opacity .2s ease}}
 </style>
-
-<style>
-  /* ============ 商品カテゴリーページ 固有スタイル ============ */
-  /* コンパクトなカテゴリバナー（TOPの全画面ヒーローの代わり） */
-  /* バナー高さ：2026-07-13 宮元さん確定＝上限360px（説明文〜ボタン間の余白圧縮で見えやすさを確保した上で、迫力を最大に）。デスクトップは360px、短い画面では少し縮む */
-  .cat-hero{position:relative;min-height:clamp(240px,50vh,360px);background:var(--sumi);color:var(--sumi-ink);overflow:hidden;display:flex;align-items:flex-end}
-  .cat-hero .bg{position:absolute;inset:0;background-image:var(--slide-a);background-size:cover;background-position:center;transform:scale(1.04)}
-  .cat-hero .scrim{position:absolute;inset:0;background:
-      linear-gradient(0deg,rgba(12,8,5,.82),rgba(12,8,5,.25) 60%,rgba(12,8,5,.5)),
-      linear-gradient(90deg,rgba(12,8,5,.5),rgba(12,8,5,0) 45%)}
-  .cat-hero::after{content:"";position:absolute;inset:0;opacity:.38;background-image:var(--seigaiha);background-size:88px 44px;mix-blend-mode:overlay;pointer-events:none}
-  .cat-hero .in{position:relative;z-index:2;width:100%;padding-bottom:clamp(1.6rem,4vw,2.6rem)}
-  .cat-hero .en{font-family:var(--latin);font-style:italic;letter-spacing:.24em;color:#EBB9A0;font-size:.8rem;margin-bottom:.5rem}
-  .cat-hero h1{font-size:clamp(1.9rem,5vw,3rem);font-weight:600;letter-spacing:.1em;line-height:1.3;text-shadow:0 2px 24px rgba(0,0,0,.5)}
-  .cat-hero .count{font-family:var(--gothic);font-size:.82rem;letter-spacing:.06em;color:rgba(244,239,230,.78);margin-top:.7rem}
-
-  /* パンくず */
-  .crumb{font-family:var(--gothic);font-size:.76rem;letter-spacing:.05em;color:var(--ink-faint);padding:1rem 0 .2rem}
-  .crumb a{color:var(--ink-soft);transition:color .2s}
-  .crumb a:hover{color:var(--beni)}
-  .crumb .sep{margin:0 .5em;color:var(--line-strong)}
-  .crumb .cur{color:var(--beni)}
-
-  /* カテゴリ説明（1行キャッチ）：デスクトップで1行に収まる幅を確保。狭い画面では自然に折り返す。
-     2026-07-13：上余白を圧縮し、説明文と下の選択ボタンを引き上げてボタンを見えやすく */
-  .cat-intro{max-width:54em;margin:0 auto;text-align:center;padding:clamp(.5rem,1.4vw,.9rem) 0 0}
-  .cat-intro p{font-family:var(--gothic);font-size:1.08rem;color:var(--ink-soft);line-height:1.9}
-
-  /* 絞り込み（子カテゴリ）＋並び替えバー */
-  .toolbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
-    margin:clamp(.8rem,1.8vw,1.2rem) 0 clamp(1.2rem,3vw,2rem);padding-bottom:1.1rem;border-bottom:1px solid var(--line)}
-  .subcat{display:flex;gap:.5rem;flex-wrap:wrap}
-  .subcat a{font-family:var(--gothic);font-size:.82rem;letter-spacing:.04em;color:var(--ink-soft);
-    border:1px solid var(--line-strong);border-radius:999px;padding:.42rem 1.05rem;transition:all .2s;background:rgba(255,255,255,.5)}
-  .subcat a:hover{border-color:var(--beni);color:var(--beni)}
-  .subcat a.on{background:var(--ink);color:var(--ground);border-color:var(--ink)}
-  .sortbar{display:flex;align-items:center;gap:.2rem;font-family:var(--gothic);font-size:.8rem;color:var(--ink-faint)}
-  .sortbar .lb{margin-right:.4rem;letter-spacing:.08em}
-  .sortbar a{color:var(--ink-soft);padding:.3rem .7rem;transition:color .2s;position:relative}
-  .sortbar a:hover{color:var(--beni)}
-  .sortbar a.on{color:var(--beni);font-weight:600}
-  .sortbar a:not(:last-child)::after{content:"｜";position:absolute;right:-.15em;color:var(--line-strong)}
-
-  /* カテゴリ用カードは4カラム基調（TOPは3カラム） */
-  .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,2.4vw,1.7rem)}
-  .cat-grid .card .ph{aspect-ratio:1/1}
-  .cat-grid .card .body{padding:1.05rem 1.1rem 1.25rem;gap:.45rem}
-  .cat-grid .card h3{font-size:.98rem;line-height:1.5}
-  .cat-grid .card .rev{display:flex;align-items:center;gap:.4rem;font-family:var(--gothic)}
-  .cat-grid .card .rev .stars{color:var(--beni);letter-spacing:.1em;font-size:.82rem}
-  .cat-grid .card .rev .n{font-size:.72rem;color:var(--ink-faint)}
-  .cat-grid .card .price .yen{font-size:1.2rem}
-  .cat-grid .card .buy{margin-top:.5rem;padding:.6rem}
-  .soldout .buy{border-color:var(--line-strong);color:var(--ink-faint);pointer-events:none}
-  .soldout .ph{filter:grayscale(.7);opacity:.75}
-  .card .ph .soldlabel{position:absolute;inset:auto 12px 12px auto;background:rgba(20,16,12,.78);color:#fff;font-family:var(--gothic);font-size:.66rem;letter-spacing:.08em;padding:.24rem .55rem}
-
-  /* ページャ */
-  .pager{display:flex;justify-content:center;align-items:center;gap:.4rem;margin-top:clamp(2.6rem,6vw,4rem);font-family:var(--gothic)}
-  .pager a,.pager span{min-width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;
-    font-size:.9rem;border:1px solid var(--line-strong);color:var(--ink-soft);transition:all .2s;background:rgba(255,255,255,.5)}
-  .pager a:hover{border-color:var(--beni);color:var(--beni)}
-  .pager .cur{background:var(--ink);color:var(--ground);border-color:var(--ink)}
-  .pager .nav{letter-spacing:.05em;padding:0 1rem}
-  .pager .dots{border:none;background:none;min-width:auto}
-
-  @media (max-width:980px){ .cat-grid{grid-template-columns:repeat(3,1fr)} }
-  @media (max-width:860px){
-    .cat-grid{grid-template-columns:repeat(2,1fr)}
-    .toolbar{flex-direction:column;align-items:flex-start;gap:1rem}
-  }
-  @media (max-width:420px){ .cat-grid{grid-template-columns:1fr 1fr;gap:.8rem} }
-
-  /* ============ ヘッダー配置（2026-07-13 宮元さんフィードバック反映：基準として固定） ============ */
-  /* ★ヘッダーとユーティリティバーは中央寄せカラム（max-width:1180）をやめて“ほぼ全幅”に。
-     これでロゴ＝画面左端近く／カート＝画面右端近く になる（本文の商品グリッドは中央寄せのまま）。 */
-  header .wrap, .util .wrap{max-width:none;padding:0 clamp(20px,3.2vw,44px)}
-  /* ロゴをヘッダー高さいっぱいに近づける（2026-07-13 宮元さん：上下の余白が勿体ない）。
-     ヘッダー84pxに対しロゴ68px＝上下の余白は約8pxまで圧縮 */
-  header .wrap{min-height:84px}
-  .brand-logo{height:68px;width:68px}
-  .brand .kanji{font-size:2.1rem}
-  /* ロゴ＋「丸近」とグローバルナビを左寄せでまとめ、カートだけ右端へ */
-  header .wrap{justify-content:flex-start;gap:clamp(1.2rem,3vw,2.6rem)}
-  header .wrap > div:last-child{margin-left:auto}   /* カート＋メニューボタン群を右端に */
-  /* 最上段ユーティリティバーも左寄せに揃える（左：案内文 → 右へリンク群が左詰めで続く） */
-  .util .wrap{justify-content:flex-start;gap:clamp(1rem,3vw,2rem)}
-  /* ★2行分の“2列目”の左ツラを縦に揃える：1列目（ロゴ／案内文）に共通の固定幅＋同一gapを与え、
-     ナビ（商品を探す…）とリンク群（楽天市場…）が同じX座標から始まるようにする。
-     デスクトップ（ナビ表示時）のみ適用し、モバイルには影響させない。 */
-  @media (min-width:861px){
-    header .wrap{gap:32px}
-    .util .wrap{gap:32px}
-    .brand{min-width:280px}
-    .util .wrap > span:first-child{min-width:280px}
-  }
+<style id="product-styles">
+  .crumbs{font-family:var(--gothic);font-size:.78rem;color:var(--ink-faint);padding:clamp(1rem,2.5vw,1.4rem) 0 0}
+  .crumbs a{color:var(--ink-soft)} .crumbs span{color:var(--beni)}
+  .pd{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(1.6rem,4vw,3rem);align-items:start;padding-top:clamp(1rem,2.5vw,1.6rem)}
+  @media(max-width:860px){.pd{grid-template-columns:1fr}}
+  .pd-gallery .main{aspect-ratio:4/3;border-radius:16px;background:var(--surface-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--ink-faint);font-family:var(--gothic);font-size:.9rem;position:relative;overflow:hidden}
+  .pd-gallery .main .tag{position:absolute;top:1rem;left:1rem;background:var(--beni);color:#fff;font-family:var(--gothic);font-size:.72rem;padding:.35rem .8rem;border-radius:999px;letter-spacing:.05em}
+  .pd-gallery .thumbs{display:flex;gap:.6rem;margin-top:.7rem}
+  .pd-gallery .thumbs span{width:64px;height:64px;border-radius:8px;background:var(--surface-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--ink-faint);font-size:.6rem}
+  .pd-info .eyebrow{margin-bottom:.4rem}
+  .pd-info h1{font-size:clamp(1.5rem,3.4vw,2.05rem);font-weight:600;letter-spacing:.04em;line-height:1.45;margin-bottom:.6rem}
+  .pd-rev{display:flex;align-items:center;gap:.5rem;font-family:var(--gothic);font-size:.84rem;color:var(--ink-soft);margin-bottom:.9rem}
+  .pd-rev .stars{color:#D4A017;letter-spacing:.05em}
+  .pd-price{display:flex;align-items:baseline;gap:.6rem;padding:.9rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .pd-price .yen{font-size:1.9rem;font-weight:700;color:var(--ink)}
+  .pd-price .tax{font-family:var(--gothic);font-size:.8rem;color:var(--ink-soft)}
+  .pd-benefits{list-style:none;margin:1.1rem 0;font-family:var(--gothic)}
+  .pd-benefits li{position:relative;padding-left:1.5rem;margin-bottom:.55rem;font-size:.9rem;color:var(--ink-soft);line-height:1.7}
+  .pd-benefits li::before{content:"";position:absolute;left:0;top:.5em;width:.5rem;height:.5rem;border-radius:50%;background:var(--beni)}
+  .pd-buy{display:flex;gap:.8rem;align-items:center;margin:1.2rem 0 .8rem;flex-wrap:wrap}
+  .pd-buy .qty{display:flex;align-items:center;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden}
+  .pd-buy .qty button{width:38px;height:46px;border:none;background:var(--surface);font-size:1.1rem;color:var(--ink);cursor:pointer}
+  .pd-buy .qty input{width:46px;height:46px;border:none;text-align:center;font-size:1rem;font-family:var(--gothic)}
+  .buy-lg{flex:1;min-width:220px;background:var(--beni);color:#fff;border:none;border-radius:12px;padding:0 1.6rem;height:52px;font-family:var(--gothic);font-size:1rem;font-weight:600;letter-spacing:.05em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:.5rem}
+  .buy-lg:hover{background:var(--beni-deep)}
+  .pd-assure{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:1rem;font-family:var(--gothic);font-size:.78rem;color:var(--ink-soft)}
+  .pd-assure span{display:inline-flex;align-items:center;gap:.35rem}
+  .pd-assure svg{width:16px;height:16px;color:var(--beni)}
+  .spec-table{width:100%;border-collapse:collapse;font-family:var(--gothic);font-size:.88rem;max-width:860px}
+  .spec-table th,.spec-table td{border-bottom:1px solid var(--line);padding:.85rem 1rem;text-align:left;vertical-align:top}
+  .spec-table th{width:28%;background:var(--surface-2);color:var(--ink-soft);font-weight:600;white-space:nowrap}
+  .rel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+  @media(max-width:860px){.rel-grid{grid-template-columns:repeat(2,1fr)}}
+  .rel{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .rel .ph{aspect-ratio:1/1;background:var(--surface-2);display:flex;align-items:center;justify-content:center;color:var(--ink-faint);font-size:.7rem;font-family:var(--gothic)}
+  .rel .b{padding:.8rem .9rem} .rel h3{font-size:.86rem;margin-bottom:.3rem;line-height:1.4} .rel .yen{font-weight:700;color:var(--ink);font-size:.95rem}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-item summary{cursor:pointer;padding:1.1rem .2rem;font-family:var(--gothic);font-weight:600;font-size:.96rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:"＋";color:var(--beni)} .faq-item[open] summary::after{content:"−"}
+  .faq-item .ans{padding:0 .2rem 1.1rem;font-family:var(--gothic);font-size:.88rem;color:var(--ink-soft);line-height:1.9}
 </style>
-
-
-<div class="mock">◎ <b>商品カテゴリーページ案（Garden系）</b> — 「茹でがに」カテゴリの試作。写真枠・価格・レビュー・在庫はすべてダミーです。本番はMakeShopの動的タグで実データが入ります。</div>
-
+<div class="mock">◎ <b>商品詳細ページ雛形（Garden系）</b> — 「浜茹で 香住ガニ」を例にした試作。写真枠・価格・レビュー・在庫はすべてダミー／MakeShop動的タグ対応。</div>
 <div class="util">
   <div class="wrap">
     <span>香住港より、朝茹で直送｜全国配送承ります</span>
@@ -443,215 +404,128 @@
   </div>
 </header>
 
-<section class="cat-hero">
-  <div class="bg"></div>
-  <div class="scrim"></div>
-  <div class="in">
-    <div class="wrap">
-      <p class="en">Boiled Crab</p>
-      <h1>茹でがに</h1>
-      <p class="count">水揚げ当日に茹で上げた、香住の朝茹でがに</p>
-    </div>
-  </div>
-</section>
-
 <div class="wrap">
-  <nav class="crumb" aria-label="現在位置">
-    <a href="index.html">ホーム</a><span class="sep">›</span>
-    <a href="#">商品一覧</a><span class="sep">›</span>
-    <span class="cur">茹でがに</span>
+  <nav class="crumbs" aria-label="パンくず">
+    <a href="index_04_kaizen.html">ホーム</a> ＞ <a href="category_01.html">茹でがに</a> ＞ <span><!-- <{$item.name}> -->浜茹で 香住ガニ 約1kg</span>
   </nav>
 </div>
 
 <section class="block" style="padding-top:clamp(.4rem,1.2vw,.7rem)">
   <div class="wrap">
-    <div class="cat-intro reveal">
-      <p>香住ガニ・松葉がにを、水揚げ当日の浜茹でで。ご家庭にもご贈答にも、産地直送の高鮮度を！</p>
-    </div>
-
-    <div class="toolbar reveal">
-      <div class="subcat">
-        <a href="#" class="on">すべて</a>
-        <a href="#">冷蔵ガニ</a>
-        <a href="#">冷凍ガニ</a>
-        <a href="#">訳あり</a>
+    <div class="pd">
+      <!-- 画像ギャラリー：本番は <{$item.image_L}> / <{$item.multi_image}> -->
+      <div class="pd-gallery reveal">
+        <div class="main"><span class="tag">人気No.1</span>［ 商品メイン写真 ］</div>
+        <div class="thumbs"><span>写真2</span><span>写真3</span><span>調理例</span><span>梱包</span></div>
       </div>
-      <div class="sortbar">
-        <span class="lb">並び替え</span>
-        <a href="#" class="on">おすすめ順</a>
-        <a href="#">新着順</a>
-        <a href="#">価格が安い順</a>
-        <a href="#">価格が高い順</a>
+
+      <div class="pd-info reveal">
+        <span class="eyebrow">Boiled Crab</span>
+        <!-- 商品名：<{$item.name}> -->
+        <h1>浜茹で 香住ガニ 約1kg</h1>
+        <div class="pd-rev">
+          <span class="stars">★★★★★</span>
+          <!-- <{$item.review.average}>（<{$item.review.total_count}>件） -->
+          <span>4.82（160件）</span>
+        </div>
+        <div class="pd-price">
+          <!-- <{$item.price|number_format}> -->
+          <span class="yen">¥ 8,800</span>
+          <span class="tax">税込・送料無料</span>
+        </div>
+
+        <!-- ▼ ベネフィット中心の要点（誰に・どのシーンで・何が嬉しいか） -->
+        <ul class="pd-benefits">
+          <li><b>水揚げ当日に茹で上げ</b>。産地・香住港のすぐそばだからできる鮮度をそのままお届けします。</li>
+          <li>甘みと繊細な身質で、<b>2〜3名様のごちそう</b>に。届いてすぐ、解凍してそのまま召し上がれます。</li>
+          <li><b>贈り物にも安心</b>。のし・メッセージカード無料、着日指定にも対応します。</li>
+        </ul>
+
+        <div class="pd-buy">
+          <!-- 数量：min <{$item.order_quantity_min}> / max <{$item.order_quantity_max}> -->
+          <div class="qty"><button type="button" aria-label="減らす">−</button><input name="quantity" value="1" inputmode="numeric" aria-label="数量"><button type="button" aria-label="増やす">＋</button></div>
+          <!-- カート投入：href="<{$item.cart_entry_url}>" -->
+          <a class="buy-lg" href="#" data-ga4="add_to_cart">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.2a1.5 1.5 0 0 0 1.5-1.2L21 7H6"/></svg>
+            カートに入れる
+          </a>
+        </div>
+        <div class="pd-assure">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>品質保証・返品交換対応</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7"/></svg>産地直送・クール便</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v4H4zM6 8v12h12V8"/></svg>のし・ギフト対応</span>
+        </div>
       </div>
-    </div>
-
-    <p class="jp-label" style="margin-bottom:1.4rem">全 <b style="color:var(--beni)">21</b> 件中 1–12 件を表示</p>
-
-    <div class="cat-grid reveal">
-      <article class="card">
-        <div class="ph"><span class="tag">人気No.1</span><span>［商品写真］</span></div>
-        <div class="body">
-          <h3>浜茹で 香住ガニ 約1kg</h3>
-          <div class="rev"><span class="stars">★★★★★</span><span class="n">4.9 (128)</span></div>
-          <div class="price"><span class="yen">¥ 8,800</span><span class="tax">税込・送料無料</span></div>
-          <a class="buy" href="#">カートに入れる</a>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><span class="tag">ギフト向け</span><span>［商品写真］</span></div>
-        <div class="body">
-          <h3>浜茹で 松葉がに 特撰 1.2kg</h3>
-          <div class="rev"><span class="stars">★★★★★</span><span class="n">4.8 (86)</span></div>
-          <div class="price"><span class="yen">¥ 19,800</span><span class="tax">税込・送料無料</span></div>
-          <a class="buy" href="#">カートに入れる</a>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><span class="tag">訳あり</span><span>［商品写真］</span></div>
-        <div class="body">
-          <h3>浜茹で 松葉がに 訳あり 2杯 1kg以上</h3>
-          <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.5 (203)</span></div>
-          <div class="price"><span class="yen">¥ 12,800</span><span class="tax">税込・送料無料</span></div>
-          <a class="buy" href="#">カートに入れる</a>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
-        <div class="body">
-          <h3>浜茹で 香住ガニ 2杯セット</h3>
-          <div class="rev"><span class="stars">★★★★★</span><span class="n">4.7 (94)</span></div>
-          <div class="price"><span class="yen">¥ 9,800</span><span class="tax">税込・送料無料</span></div>
-          <a class="buy" href="#">カートに入れる</a>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><span class="tag">季節限定</span><span>［商品写真］</span></div>
-        <div class="body">
-          <h3>浜茹で セコガニ 5杯</h3>
-          <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.4 (57)</span></div>
-          <div class="price"><span class="yen">¥ 6,800</span><span class="tax">税込・送料無料</span></div>
-          <a class="buy" href="#">カートに入れる</a>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
-        <div class="body">
-          <h3>冷凍 浜茹で 松葉がに 1杯</h3>
-          <div class="rev"><span class="stars">★★★★★</span><span class="n">4.6 (41)</span></div>
-          <div class="price"><span class="yen">¥ 9,200</span><span class="tax">税込・送料無料</span></div>
-          <a class="buy" href="#">カートに入れる</a>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
-        <div class="body">
-          <h3>浜茹で 香住ガニ 大サイズ 約1.3kg</h3>
-          <div class="rev"><span class="stars">★★★★★</span><span class="n">4.8 (63)</span></div>
-          <div class="price"><span class="yen">¥ 11,000</span><span class="tax">税込・送料無料</span></div>
-          <a class="buy" href="#">カートに入れる</a>
-        </div>
-      </article>
-      <article class="card soldout">
-        <div class="ph"><span class="soldlabel">SOLD OUT</span><span>［商品写真］</span></div>
-        <div class="body">
-          <h3>浜茹で 紅ズワイガニ 3杯</h3>
-          <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.3 (72)</span></div>
-          <div class="price"><span class="yen">¥ 7,480</span><span class="tax">税込・送料無料</span></div>
-          <a class="buy" href="#">売り切れ</a>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
-        <div class="body">
-          <h3>浜茹で 松葉がに 訳あり 3杯</h3>
-          <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.5 (118)</span></div>
-          <div class="price"><span class="yen">¥ 14,800</span><span class="tax">税込・送料無料</span></div>
-          <a class="buy" href="#">カートに入れる</a>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
-        <div class="body">
-          <h3>浜茹で 香住ガニ 特大 約1.5kg</h3>
-          <div class="rev"><span class="stars">★★★★★</span><span class="n">4.9 (38)</span></div>
-          <div class="price"><span class="yen">¥ 13,200</span><span class="tax">税込・送料無料</span></div>
-          <a class="buy" href="#">カートに入れる</a>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
-        <div class="body">
-          <h3>冷凍 浜茹で 香住ガニ 2杯</h3>
-          <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.4 (29)</span></div>
-          <div class="price"><span class="yen">¥ 8,400</span><span class="tax">税込・送料無料</span></div>
-          <a class="buy" href="#">カートに入れる</a>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
-        <div class="body">
-          <h3>浜茹で セコガニ 10杯 ご自宅用</h3>
-          <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.2 (64)</span></div>
-          <div class="price"><span class="yen">¥ 9,800</span><span class="tax">税込・送料無料</span></div>
-          <a class="buy" href="#">カートに入れる</a>
-        </div>
-      </article>
-    </div>
-
-    <nav class="pager" aria-label="ページ送り">
-      <span class="cur">1</span>
-      <a href="#">2</a>
-      <a href="#" class="nav">次へ ›</a>
-    </nav>
-  </div>
-</section>
-
-<style id="kaizen-styles-cat">
-  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
-  @media(max-width:860px){.trust-grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:520px){.trust-grid{grid-template-columns:1fr}}
-  .trust{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.6rem 1.3rem;text-align:center}
-  .trust h3{font-size:1rem;margin-bottom:.5rem;letter-spacing:.03em}
-  .trust p{font-family:var(--gothic);font-size:.84rem;color:var(--ink-soft);line-height:1.85}
-  .faq-list{max-width:840px;margin:0 auto}
-  .faq-item{border-bottom:1px solid var(--line)}
-  .faq-item summary{cursor:pointer;padding:1.15rem .2rem;font-family:var(--gothic);font-weight:600;font-size:.98rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center}
-  .faq-item summary::-webkit-details-marker{display:none}
-  .faq-item summary::after{content:"＋";color:var(--beni);font-weight:400;font-size:1.2rem}
-  .faq-item[open] summary::after{content:"−"}
-  .faq-item .ans{padding:0 .2rem 1.25rem;font-family:var(--gothic);font-size:.9rem;color:var(--ink-soft);line-height:1.95}
-</style>
-
-<section class="block alt" id="assurance">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Assurance</span>
-      <h2>安心してお選びいただくために</h2>
-      <span class="jp-label">産地直送・ギフト対応・品質保証</span>
-      <span class="rule"></span>
-    </div>
-    <div class="trust-grid reveal">
-      <div class="trust"><h3>産地直送・朝茹で</h3><p>香住港の目の前で買付け、水揚げ当日に茹で上げてお届けします。</p></div>
-      <div class="trust"><h3>のし・ギフト対応</h3><p>のし・表書き・メッセージカードを無料で承ります。</p></div>
-      <div class="trust"><h3>品質保証・返品交換</h3><p>破損・品違い・品質不良は、到着後2日以内のご連絡で交換または返金いたします。</p></div>
-      <div class="trust"><h3>解凍・調理ガイド</h3><p>冷蔵庫で半日～一晩のゆっくり解凍がおすすめ。部位別の調理法もご案内します。</p></div>
     </div>
   </div>
 </section>
 
-<section class="block" id="faq">
+<!-- ベネフィット詳細（本番は <{$item.description}> 等を活用） -->
+<section class="block alt">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">FAQ</span>
-      <h2>茹でがに よくあるご質問</h2>
-      <span class="jp-label">生成AIにも引用されやすい一問一答</span>
-      <span class="rule"></span>
+    <div class="sec-head reveal"><span class="eyebrow">About this item</span><h2>この商品について</h2><span class="rule"></span></div>
+    <div class="story reveal">
+      <div class="visual"><span>［ 写真：茹で上げ／盛り付け ］</span></div>
+      <div class="txt">
+        <p>香住港の目の前で買付け、水揚げ当日に丁寧に茹で上げた紅ズワイガニです。みずみずしい甘さと、口の中でとろけるような繊細な身質が持ち味。冷凍便でお届けし、冷蔵庫でゆっくり解凍すれば、獲れたての風味をそのままお楽しみいただけます。</p>
+        <p>そのままはもちろん、かにすき・かに鍋・雑炊まで。ご家族のごちそうにも、大切な方への贈り物にも寄り添う一杯です。</p>
+      </div>
     </div>
-    <div class="faq-list reveal">
-      <details class="faq-item"><summary>茹でがには届いてすぐ食べられますか？</summary><div class="ans">浜茹では茹で上げ済みですので、そのままお召し上がりいただけます。冷凍便の場合は冷蔵庫で半日～一晩かけてゆっくり解凍してからどうぞ。</div></details>
-      <details class="faq-item"><summary>どのくらい日持ちしますか？</summary><div class="ans">冷凍品は要冷凍（-18℃以下）で保存し、賞味期限は商品ごとに明記しています。解凍後はお早めにお召し上がりください。</div></details>
-      <details class="faq-item"><summary>香住ガニ・松葉がに・セコガニの違いは？</summary><div class="ans">香住ガニは香住港で水揚げされる紅ズワイガニで、みずみずしい甘さが特長。松葉がにはズワイガニで身の締まりと濃厚な旨みが魅力。セコガニは松葉がにの雌で、内子・外子の濃厚な味わいが楽しめます。</div></details>
-      <details class="faq-item"><summary>何人前を選べばよいですか？</summary><div class="ans">1kgクラスの茹でがに1杯で2～3名様が目安です。お鍋など他の食材と合わせる場合は、より多くの人数でお楽しみいただけます。ご不明な点はお気軽にお問い合わせください。</div></details>
+  </div>
+</section>
+
+<!-- 商品仕様（信頼・食品表示） -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Specification</span><h2>商品仕様・お召し上がり</h2><span class="rule"></span></div>
+    <table class="spec-table reveal" style="margin:0 auto">
+      <tr><th>商品名</th><td><!-- <{$item.name}> -->浜茹で 香住ガニ 約1kg</td></tr>
+      <tr><th>原産地</th><td>兵庫県・香住港（紅ズワイガニ）<!-- <{$item.origin_country}> --></td></tr>
+      <tr><th>内容量・目安</th><td>約1kg（1杯）／2〜3名様目安</td></tr>
+      <tr><th>加工・製造者</th><td>株式会社丸近（香住港すぐの自社加工場で一貫）</td></tr>
+      <tr><th>保存方法</th><td>要冷凍（-18℃以下）／解凍後はお早めにお召し上がりください</td></tr>
+      <tr><th>賞味期限</th><td>製造日から約30日（冷凍）</td></tr>
+      <tr><th>アレルゲン</th><td>かに（特定原材料）。同一施設でえび等も取り扱います。</td></tr>
+      <tr><th>お召し上がり方</th><td>冷蔵庫で半日〜一晩かけて解凍 → そのまま／鍋／雑炊で。詳しくは調理ガイドへ。</td></tr>
+      <tr><th>お届け</th><td>産地直送・クール便。着日指定可（中2〜3日目安・繁忙期を除く）</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- レビュー -->
+<section class="block alt">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Reviews</span><h2>お客様の声</h2><span class="jp-label">※ 掲載内容はイメージ（ダミー）です</span><span class="rule"></span></div>
+    <div class="reviews reveal">
+      <div class="review"><span class="stars">★★★★★</span><p>身がぎっしりで甘みが濃い。毎年こちらで注文しています。</p><span class="who">兵庫県・60代</span></div>
+      <div class="review"><span class="stars">★★★★★</span><p>両親への贈り物に。届いてすぐ食べられる手軽さと鮮度に大満足でした。</p><span class="who">東京都・40代</span></div>
+      <div class="review"><span class="stars">★★★★☆</span><p>解凍方法の説明が丁寧で、初めてでも失敗なく美味しくいただけました。</p><span class="who">大阪府・30代</span></div>
+    </div>
+    <div class="more reveal"><a class="btn-line" href="#">お写真付きレビューを投稿する</a></div>
+  </div>
+</section>
+
+<!-- 関連商品（本番は <{$category.recommend_item.list}> をループ） -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Related</span><h2>こちらもおすすめ</h2><span class="rule"></span></div>
+    <div class="rel-grid reveal">
+      <a class="rel" href="#"><div class="ph">［商品写真］</div><div class="b"><h3>甲羅盛り 香箱造り</h3><span class="yen">¥ 6,480</span></div></a>
+      <a class="rel" href="#"><div class="ph">［商品写真］</div><div class="b"><h3>香住ガニ かに身セット 600g</h3><span class="yen">¥ 5,200</span></div></a>
+      <a class="rel" href="#"><div class="ph">［商品写真］</div><div class="b"><h3>浜茹で 松葉がに 特撰 1.2kg</h3><span class="yen">¥ 19,800</span></div></a>
+      <a class="rel" href="#"><div class="ph">［商品写真］</div><div class="b"><h3>浜茹で セコガニ 5杯</h3><span class="yen">¥ 4,980</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- 商品FAQ -->
+<section class="block alt">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">FAQ</span><h2>この商品のよくあるご質問</h2><span class="rule"></span></div>
+    <div style="max-width:840px;margin:0 auto">
+      <details class="faq-item"><summary>届いてすぐ食べられますか？</summary><div class="ans">浜茹では茹で上げ済みです。冷凍便のため、冷蔵庫で半日〜一晩かけて解凍してからお召し上がりください。</div></details>
+      <details class="faq-item"><summary>何人前ですか？</summary><div class="ans">約1kg・1杯で2〜3名様が目安です。お鍋など他の食材と合わせると、より多くの人数でお楽しみいただけます。</div></details>
+      <details class="faq-item"><summary>のし・ギフト対応はできますか？</summary><div class="ans">のし・表書き・メッセージカードを無料で承ります。ご注文時にご指定ください。</div></details>
     </div>
   </div>
 </section>
@@ -693,31 +567,34 @@
     <div class="copy">© Maruchika Co., Ltd. ｜ 本ページはデザイン検討用の仮モックアップです（写真・価格・レビューはダミー）</div>
   </div>
 </footer>
-
 <button class="to-top" id="toTop" aria-label="ページ上部へ戻る">
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
   <span class="label">Top</span>
 </button>
-
+<div id="ga4-item" style="display:none"
+     data-id="000000000007"
+     data-name="浜茹で 香住ガニ 約1kg"
+     data-price="8800"
+     data-category="茹でがに"></div>
 <script>
-  (function(){
-    var btn=document.getElementById('toTop');
-    var hdr=document.querySelector('header');
-    var onScroll=function(){
-      var y=window.pageYOffset;
-      if(btn){ if(y>400){btn.classList.add('show');}else{btn.classList.remove('show');} }
-      if(hdr){ if(y>40){hdr.classList.add('scrolled');}else{hdr.classList.remove('scrolled');} }
-    };
-    window.addEventListener('scroll',onScroll,{passive:true});
-    onScroll();
-    if(!btn)return;
-    btn.addEventListener('click',function(){
-      var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-      window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
-    });
-  })();
+/* 本番: data-* を <{$item.original_code}> / <{$item.name}> / <{$item.price} / <{$item.base_category.name}> に置換 */
+(function(){var el=document.getElementById('ga4-item');if(!el)return;var d=el.dataset;
+ var base={item_id:d.id,item_name:d.name,item_brand:'丸近',item_category:d.category,price:Number(d.price)||0,quantity:1};
+ window.dataLayer=window.dataLayer||[];
+ dataLayer.push({ecommerce:null});
+ dataLayer.push({event:'view_item',ecommerce:{currency:'JPY',value:base.price,items:[base]}});
+ document.addEventListener('click',function(e){var b=e.target.closest('[data-ga4="add_to_cart"]');if(!b)return;
+   var q=document.querySelector('input[name="quantity"]');var qty=(q&&Number(q.value)>0)?Number(q.value):1;
+   var it=Object.assign({},base,{quantity:qty});
+   dataLayer.push({ecommerce:null});
+   dataLayer.push({event:'add_to_cart',ecommerce:{currency:'JPY',value:it.price*qty,items:[it]}});});
+})();
 </script>
-
+<script>
+document.querySelectorAll('.qty').forEach(function(g){var i=g.querySelector('input');var b=g.querySelectorAll('button');
+ b[0].addEventListener('click',function(){i.value=Math.max(1,(Number(i.value)||1)-1);});
+ b[1].addEventListener('click',function(){i.value=(Number(i.value)||1)+1;});});
+</script>
 <script>
   (function(){
     var els=document.querySelectorAll('.reveal');
@@ -728,307 +605,22 @@
     els.forEach(function(e){io.observe(e);});
   })();
 </script>
-
-<script>
-  (function(){
-    var slides=document.querySelectorAll('#heroSlides .slide');
-    if(slides.length<2)return;
-    var i=0;
-    setInterval(function(){
-      slides[i].classList.remove('active');
-      i=(i+1)%slides.length;
-      slides[i].classList.add('active');
-    },5000);
-  })();
-</script>
-
-
-<!-- ▼ リニューアル改善反映：構造化データ（本番公開時に有効。価格・在庫は実データで動的出力を推奨） -->
+<!-- 構造化データ（本番は実データで動的出力／AggregateRatingは実レビュー投入後） -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "ホーム",
-      "item": "https://www.kani-mrck.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "商品カテゴリー",
-      "item": "https://www.kani-mrck.com/view/category/all_items"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "茹でがに"
-    }
-  ]
+  "@context":"https://schema.org","@type":"Product",
+  "name":"浜茹で 香住ガニ 約1kg",
+  "description":"香住港で水揚げした紅ズワイガニを、水揚げ当日に茹で上げて産地直送。2〜3名様目安。",
+  "brand":{"@type":"Brand","name":"丸近"},
+  "category":"カニ > 茹でがに","countryOfOrigin":{"@type":"Country","name":"JP"},
+  "offers":{"@type":"Offer","priceCurrency":"JPY","price":"8800","availability":"https://schema.org/InStock","itemCondition":"https://schema.org/NewCondition","url":"https://www.kani-mrck.com/"}
 }
 </script>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "茹でがに",
-  "numberOfItems": 11,
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "item": {
-        "@type": "Product",
-        "name": "浜茹で 香住ガニ 約1kg",
-        "brand": {
-          "@type": "Brand",
-          "name": "丸近"
-        },
-        "category": "カニ > 茹でがに",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "JPY",
-          "price": "8800",
-          "availability": "https://schema.org/InStock"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "item": {
-        "@type": "Product",
-        "name": "浜茹で 松葉がに 特撰 1.2kg",
-        "brand": {
-          "@type": "Brand",
-          "name": "丸近"
-        },
-        "category": "カニ > 茹でがに",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "JPY",
-          "price": "19800",
-          "availability": "https://schema.org/InStock"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "item": {
-        "@type": "Product",
-        "name": "浜茹で 松葉がに 訳あり 2杯 1kg以上",
-        "brand": {
-          "@type": "Brand",
-          "name": "丸近"
-        },
-        "category": "カニ > 茹でがに",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "JPY",
-          "price": "12800",
-          "availability": "https://schema.org/InStock"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "item": {
-        "@type": "Product",
-        "name": "浜茹で 香住ガニ 2杯セット",
-        "brand": {
-          "@type": "Brand",
-          "name": "丸近"
-        },
-        "category": "カニ > 茹でがに",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "JPY",
-          "price": "9800",
-          "availability": "https://schema.org/InStock"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 5,
-      "item": {
-        "@type": "Product",
-        "name": "浜茹で セコガニ 5杯",
-        "brand": {
-          "@type": "Brand",
-          "name": "丸近"
-        },
-        "category": "カニ > 茹でがに",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "JPY",
-          "price": "6800",
-          "availability": "https://schema.org/InStock"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 6,
-      "item": {
-        "@type": "Product",
-        "name": "冷凍 浜茹で 松葉がに 1杯",
-        "brand": {
-          "@type": "Brand",
-          "name": "丸近"
-        },
-        "category": "カニ > 茹でがに",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "JPY",
-          "price": "9200",
-          "availability": "https://schema.org/InStock"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 7,
-      "item": {
-        "@type": "Product",
-        "name": "浜茹で 香住ガニ 大サイズ 約1.3kg",
-        "brand": {
-          "@type": "Brand",
-          "name": "丸近"
-        },
-        "category": "カニ > 茹でがに",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "JPY",
-          "price": "11000",
-          "availability": "https://schema.org/InStock"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 8,
-      "item": {
-        "@type": "Product",
-        "name": "浜茹で 松葉がに 訳あり 3杯",
-        "brand": {
-          "@type": "Brand",
-          "name": "丸近"
-        },
-        "category": "カニ > 茹でがに",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "JPY",
-          "price": "14800",
-          "availability": "https://schema.org/InStock"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 9,
-      "item": {
-        "@type": "Product",
-        "name": "浜茹で 香住ガニ 特大 約1.5kg",
-        "brand": {
-          "@type": "Brand",
-          "name": "丸近"
-        },
-        "category": "カニ > 茹でがに",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "JPY",
-          "price": "13200",
-          "availability": "https://schema.org/InStock"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 10,
-      "item": {
-        "@type": "Product",
-        "name": "冷凍 浜茹で 香住ガニ 2杯",
-        "brand": {
-          "@type": "Brand",
-          "name": "丸近"
-        },
-        "category": "カニ > 茹でがに",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "JPY",
-          "price": "8400",
-          "availability": "https://schema.org/InStock"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 11,
-      "item": {
-        "@type": "Product",
-        "name": "浜茹で セコガニ 10杯 ご自宅用",
-        "brand": {
-          "@type": "Brand",
-          "name": "丸近"
-        },
-        "category": "カニ > 茹でがに",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "JPY",
-          "price": "9800",
-          "availability": "https://schema.org/InStock"
-        }
-      }
-    }
-  ]
-}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+ {"@type":"ListItem","position":1,"name":"ホーム","item":"https://www.kani-mrck.com/"},
+ {"@type":"ListItem","position":2,"name":"茹でがに","item":"https://www.kani-mrck.com/view/category/all_items"},
+ {"@type":"ListItem","position":3,"name":"浜茹で 香住ガニ 約1kg"}]}
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "茹でがには届いてすぐ食べられますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "浜茹では茹で上げ済みのため、そのままお召し上がりいただけます。冷凍便の場合は冷蔵庫で半日～一晩かけて解凍してください。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "どのくらい日持ちしますか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "冷凍品は要冷凍（-18℃以下）で保存し、賞味期限は商品ごとに明記しています。解凍後はお早めにお召し上がりください。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "香住ガニ・松葉がに・セコガニの違いは？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "香住ガニは紅ズワイガニでみずみずしい甘さ、松葉がにはズワイガニで濃厚な旨み、セコガニは松葉がにの雌で内子・外子が特長です。"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "何人前を選べばよいですか？",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "1kgクラスの茹でがに1杯で2～3名様が目安です。お鍋など他の食材と合わせる場合はより多くの人数でお楽しみいただけます。"
-      }
-    }
-  ]
-}
-</script>
-<!-- ▲ 構造化データ ここまで -->
 </body>
 </html>
-
