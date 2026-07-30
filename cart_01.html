@@ -163,6 +163,65 @@
     margin:2.2rem 0 .3rem;padding-bottom:.4rem;border-bottom:1px solid var(--line-strong)}
   .faq-group:first-child{margin-top:0}
 
+  /* お知らせ一覧 */
+  .news-list{border-top:1px solid var(--line)}
+  .news-list a{display:grid;grid-template-columns:auto auto 1fr;align-items:center;gap:1rem;
+    padding:1.05rem .3rem;border-bottom:1px solid var(--line);font-family:var(--gothic);
+    transition:background .2s,color .2s}
+  .news-list a:hover{background:rgba(255,255,255,.62)}
+  .news-list .date{font-size:.78rem;letter-spacing:.06em;color:var(--ink-faint);white-space:nowrap}
+  .news-list .tag{font-size:.66rem;letter-spacing:.08em;padding:.2rem .6rem;white-space:nowrap;
+    border:1px solid var(--line-strong);color:var(--ink-soft)}
+  .news-list .tag.imp{background:var(--beni);border-color:var(--beni);color:#fff}
+  .news-list .ttl{font-size:.92rem;color:var(--ink-soft);line-height:1.7}
+  .news-list a:hover .ttl{color:var(--beni)}
+  @media (max-width:640px){
+    .news-list a{grid-template-columns:auto auto;gap:.5rem .8rem}
+    .news-list .ttl{grid-column:1 / -1}
+  }
+
+  /* お客様の声 */
+  .rate-sum{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(1rem,3vw,2.4rem);
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:clamp(1.2rem,2.6vw,1.8rem);margin-bottom:clamp(1.6rem,3vw,2.4rem)}
+  .rate-sum .big{font-family:var(--latin);font-size:2.8rem;line-height:1;color:var(--beni)}
+  .rate-sum .of{font-family:var(--gothic);font-size:.74rem;color:var(--ink-faint);margin-top:.3rem}
+  .rate-sum .stars{color:#C9962E;font-size:1rem;letter-spacing:.1em}
+  .rate-sum .bars{flex:1;min-width:230px;display:grid;gap:.28rem}
+  .rate-sum .bar{display:grid;grid-template-columns:2.6rem 1fr 2.4rem;align-items:center;gap:.6rem;
+    font-family:var(--gothic);font-size:.72rem;color:var(--ink-faint)}
+  .rate-sum .bar .track{height:6px;background:rgba(92,62,42,.13)}
+  .rate-sum .bar .fill{height:6px;background:#C9962E}
+  .rev-list{display:grid;gap:clamp(.8rem,1.8vw,1.2rem)}
+  .rev-card{background:rgba(255,255,255,.6);border:1px solid var(--line);border-radius:12px;
+    padding:clamp(1.1rem,2.2vw,1.5rem)}
+  .rev-card .head{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem;margin-bottom:.5rem}
+  .rev-card .stars{color:#C9962E;font-size:.86rem;letter-spacing:.08em}
+  .rev-card .who{font-family:var(--gothic);font-size:.76rem;color:var(--ink-faint)}
+  .rev-card .item{font-family:var(--gothic);font-size:.74rem;color:var(--beni);
+    border:1px solid rgba(159,47,35,.3);padding:.16rem .55rem}
+  .rev-card p{font-family:var(--gothic);font-size:.9rem;color:var(--ink-soft);line-height:1.95;margin:0}
+  .rev-card .ph{display:flex;gap:.5rem;margin-top:.8rem}
+  .rev-card .ph span{width:58px;height:44px;background:linear-gradient(135deg,#EDE4D6,#DCCDB8);
+    display:flex;align-items:center;justify-content:center;font-family:var(--gothic);
+    font-size:.54rem;color:var(--ink-faint)}
+
+  /* 会員登録・ログイン */
+  .auth{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,2.6vw,2rem);align-items:start}
+  @media (max-width:780px){.auth{grid-template-columns:1fr}}
+  .auth .panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:clamp(1.4rem,2.6vw,1.9rem)}
+  .auth .panel h2{font-family:var(--mincho);font-size:1.2rem;letter-spacing:.06em;color:var(--ink);
+    margin-bottom:.3rem}
+  .auth .panel .sub{font-family:var(--gothic);font-size:.78rem;color:var(--ink-faint);
+    margin-bottom:1.2rem;line-height:1.8}
+  .auth .benefits{font-family:var(--gothic);font-size:.86rem;color:var(--ink-soft);
+    line-height:2;margin:0 0 1.3rem 1.1rem}
+  .auth .benefits li{margin-bottom:.2rem}
+  .auth .mini{font-family:var(--gothic);font-size:.74rem;color:var(--ink-faint);
+    text-align:center;margin-top:.9rem;line-height:1.8}
+  .auth .mini a{color:var(--beni);text-decoration:underline}
+
   .mock{background:#2B1D14;color:#F0E4D4;font-family:var(--gothic);font-size:.74rem;letter-spacing:.04em;
     text-align:center;padding:.55rem 1rem;line-height:1.6}
   .mock b{color:#EBB9A0}
@@ -209,7 +268,7 @@
       <a href="index_04_kaizen.html#products">商品を探す</a>
       <a href="index_04_kaizen.html#crab">香住ガニとは</a>
       <a href="index_04_kaizen.html#strength">丸近の強み</a>
-      <a href="index_04_kaizen.html#voice">お客様の声</a>
+      <a href="voice_01.html">お客様の声</a>
       <a href="company_01.html">会社案内</a>
     </nav>
     <div style="display:flex;align-items:center;gap:.8rem">
@@ -315,13 +374,15 @@
         <a href="index_04_kaizen.html#ranking">月間ランキング</a>
         <a href="index_04_kaizen.html#gift">ギフト・のし対応</a>
         <a href="cart_01.html">カート</a>
+        <a href="member_01.html">会員登録・ログイン</a>
       </div>
       <div class="foot-col">
         <h4>About</h4>
         <a href="index_04_kaizen.html#crab">香住ガニとは</a>
         <a href="index_04_kaizen.html#strength">丸近の強み</a>
         <a href="company_01.html">会社案内</a>
-        <a href="index_04_kaizen.html#voice">お客様の声</a>
+        <a href="news_01.html">お知らせ</a>
+        <a href="voice_01.html">お客様の声</a>
       </div>
       <div class="foot-col">
         <h4>Support</h4>

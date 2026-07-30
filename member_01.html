@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>送料・お届けについて｜株式会社丸近（テスト環境）</title>
+<title>会員登録・ログイン｜株式会社丸近（テスト環境）</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="株式会社丸近 公式サイト デザイン検討用テスト環境（仮）。送料・配送方法・お届け日・お支払い方法についてご案内します。">
+<meta name="description" content="株式会社丸近 公式サイト デザイン検討用テスト環境（仮）。会員ログイン・新規会員登録のご案内です。">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦀</text></svg>">
 <link rel="stylesheet" href="assets/shared.css">
 </head>
@@ -244,7 +244,7 @@
 </style>
 
 
-<div class="mock">◎ <b>送料・お届けについてページ案（Garden系）</b> — デザイン検討用の試作です。内容の一部はダミーで、本番はMakeShopの機能・実データに置き換わります。</div>
+<div class="mock">◎ <b>会員登録・ログインページ案（Garden系）</b> — デザイン検討用の試作です。内容の一部はダミーで、本番はMakeShopの機能・実データに置き換わります。</div>
 
 <div class="util">
   <div class="wrap">
@@ -283,14 +283,14 @@
   </div>
 </header>
 
-<section class="page-hero" style="--hero:url('assets/img/slide-a.jpg')">
+<section class="page-hero" style="--hero:url('assets/img/slide-b.jpg')">
   <div class="bg"></div>
   <div class="scrim"></div>
   <div class="in">
     <div class="wrap">
-      <p class="en">Delivery</p>
-      <h1>送料・お届けについて</h1>
-      <p class="lead">送料・配送方法・お支払い方法のご案内</p>
+      <p class="en">Member</p>
+      <h1>会員登録・ログイン</h1>
+      <p class="lead">会員登録で、お買い物がもっと便利に</p>
     </div>
   </div>
 </section>
@@ -298,54 +298,55 @@
 <div class="wrap">
   <nav class="crumb" aria-label="現在位置">
     <a href="index_04_kaizen.html">ホーム</a><span class="sep">›</span>
-    <span class="cur">送料・お届けについて</span>
+    <span class="cur">会員登録・ログイン</span>
   </nav>
 </div>
 
 <section class="block" style="padding-top:clamp(1rem,2.4vw,1.6rem)">
   <div class="wrap narrow">
-    <div class="doc">
-      <h2>送料について</h2>
-      <p>当店の商品は、表示価格に送料を含んだ<b>「税込・送料無料」</b>でご案内しております（一部地域・一部商品を除く）。<br>
-      北海道・沖縄・離島へのお届けは、下記の追加送料を申し受けます。</p>
-      <table class="spec">
-        <tr><th>本州・四国・九州</th><td>無料（商品代金に含まれます）</td></tr>
-        <tr><th>北海道</th><td>追加 660円（税込）</td></tr>
-        <tr><th>沖縄・離島</th><td>追加 1,320円（税込）</td></tr>
-        <tr><th>クール便</th><td>無料（すべての商品をクール便でお届けします）</td></tr>
-      </table>
+    <div class="auth">
+      <div class="panel">
+        <h2>会員ログイン</h2>
+        <p class="sub">すでに会員登録がお済みの方は、こちらからログインしてください。</p>
+        <form class="form" onsubmit="return false">
+          <div class="fld">
+            <label for="m-id">メールアドレス</label>
+            <input id="m-id" type="email" placeholder="example@example.com" autocomplete="off">
+          </div>
+          <div class="fld">
+            <label for="m-pw">パスワード</label>
+            <input id="m-pw" type="password" placeholder="••••••••" autocomplete="off">
+          </div>
+          <div style="text-align:center;margin-top:.4rem">
+            <a class="buy" href="#" style="min-width:100%;text-align:center;display:inline-block">ログイン</a>
+          </div>
+        </form>
+        <p class="mini">パスワードをお忘れの方は <a href="#">こちら</a><br>
+        ご不明な点は <a href="contact_01.html">お問い合わせ</a> よりご連絡ください</p>
+      </div>
 
-      <h2>配送方法・お届け日</h2>
-      <p>ヤマト運輸のクール便（冷蔵／冷凍）でお届けします。商品ごとに温度帯が異なるため、冷蔵品と冷凍品を同時にご注文いただいた場合は、別々の便でのお届けとなります。</p>
-      <table class="spec">
-        <tr><th>発送までの日数</th><td>ご注文受付後、5日以内に発送いたします。</td></tr>
-        <tr><th>お届け日のご指定</th><td>ご注文日の4日後以降で承ります。<br>※かに漁の状況により、ご希望に添えない場合がございます。</td></tr>
-        <tr><th>お届け時間帯のご指定</th><td>午前中／14〜16時／16〜18時／18〜20時／19〜21時 からお選びいただけます。</td></tr>
-        <tr><th>年末年始のお届け</th><td>12月は最も混み合う時期です。12/25以降のお届けをご希望の場合は、お早めのご注文をおすすめします。</td></tr>
-      </table>
+      <div class="panel">
+        <h2>新規会員登録</h2>
+        <p class="sub">登録は無料です。次回以降のお買い物がぐっと便利になります。</p>
+        <ul class="benefits">
+          <li>お届け先の入力が不要になります</li>
+          <li>ご注文履歴・配送状況を確認できます</li>
+          <li>お買い物でポイントが貯まります</li>
+          <li>会員限定のご案内をお届けします</li>
+        </ul>
+        <div style="text-align:center">
+          <a class="buy" href="#" style="min-width:100%;text-align:center;display:inline-block">新規会員登録に進む</a>
+        </div>
+        <p class="mini">登録には <a href="privacy_01.html">プライバシーポリシー</a> への同意が必要です</p>
+      </div>
+    </div>
 
-      <h2>のし・ギフト対応</h2>
-      <p>ご贈答用に、のし・表書き・メッセージカードを<b>無料</b>で承ります。ご注文時の備考欄に、下記をお書き添えください。</p>
-      <ul>
-        <li>のしの種類（御歳暮／御中元／御祝／内祝 など）</li>
-        <li>表書き・お名前</li>
-        <li>メッセージカードをご希望の場合は、その文面</li>
-      </ul>
-      <p>贈り先様へ直接お届けする場合、金額のわかる明細書は同梱いたしませんのでご安心ください。</p>
-
-      <h2>お支払い方法</h2>
-      <table class="spec">
-        <tr><th>クレジットカード</th><td>VISA／Mastercard／JCB／AMEX／Diners がご利用いただけます。</td></tr>
-        <tr><th>代金引換</th><td>商品お届け時に、配達員へ代金をお支払いください。別途代引き手数料を申し受けます。</td></tr>
-        <tr><th>銀行振込（前払い）</th><td>ご注文日より3日以内にお振込みください。振込手数料はお客様負担となります。</td></tr>
-        <tr><th>Amazon Pay</th><td>Amazonアカウントの登録情報でお支払いいただけます。</td></tr>
-      </table>
-
-      <h2>保存方法・解凍について</h2>
-      <p>冷凍品は要冷凍（-18℃以下）、冷蔵品は要冷蔵（10℃以下）で保存してください。冷凍品を解凍される際は、<b>冷蔵庫で半日〜一晩かけてゆっくり解凍</b>していただくと、旨みを逃さず美味しくお召し上がりいただけます。</p>
-      <p>解凍後はお早めにお召し上がりください。一度解凍したものを再冷凍しますと、品質が大きく低下します。</p>
-
-      <p class="note">※このページはデザイン検討用の試作です。送料・手数料の金額はダミーです。本番公開前に実際の条件へ差し替えます。</p>
+    <div class="doc" style="margin-top:2.6rem">
+      <h2>ゲスト購入もできます</h2>
+      <p>会員登録をしなくても、そのままご購入いただけます。お急ぎの場合はカートからゲストとしてお進みください。</p>
+      <p class="note"><b>※ このページはデザイン検討用の試作です。</b>
+      入力欄は見た目のみで、ログイン・会員登録はできません。入力された内容が送信・保存されることは一切ありません。<br>
+      本番ではMakeShopの会員機能に置き換わります。</p>
     </div>
   </div>
 </section>
@@ -397,7 +398,7 @@
   "@type": "BreadcrumbList",
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.kani-mrck.com/"},
-    {"@type": "ListItem", "position": 2, "name": "送料・お届けについて"}
+    {"@type": "ListItem", "position": 2, "name": "会員登録・ログイン"}
   ]
 }
 </script>
