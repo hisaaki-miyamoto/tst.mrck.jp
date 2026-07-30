@@ -3,5 +3,6 @@ Thumbs.db
 
 # build helper (local only)
 _build_category.py
+_build_pages.py
 _extract_assets.py
 _skeleton_*.html

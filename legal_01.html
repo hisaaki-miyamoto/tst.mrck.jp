@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>特定商取引法に基づく表記｜株式会社丸近（テスト環境）</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="株式会社丸近 公式サイト デザイン検討用テスト環境（仮）。特定商取引法に基づく表記です。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦀</text></svg>">
+<link rel="stylesheet" href="assets/shared.css">
+</head>
+<body>
+
+<style>
+  /* ============ 汎用ページ（会社概要・規約・カート等）共通スタイル ============ */
+  /* ページ見出し帯。商品カテゴリの .cat-hero より低くして、本文を早く見せる */
+  .page-hero{position:relative;min-height:clamp(170px,26vh,230px);background:var(--sumi);color:var(--sumi-ink);
+    overflow:hidden;display:flex;align-items:flex-end}
+  .page-hero .bg{position:absolute;inset:0;background-image:var(--hero,var(--slide-a));background-size:cover;
+    background-position:center;transform:scale(1.04)}
+  .page-hero .scrim{position:absolute;inset:0;background:
+      linear-gradient(0deg,rgba(12,8,5,.86),rgba(12,8,5,.35) 60%,rgba(12,8,5,.55)),
+      linear-gradient(90deg,rgba(12,8,5,.5),rgba(12,8,5,0) 45%)}
+  .page-hero::after{content:"";position:absolute;inset:0;opacity:.34;background-image:var(--seigaiha);
+    background-size:88px 44px;mix-blend-mode:overlay;pointer-events:none}
+  .page-hero .in{position:relative;z-index:2;width:100%;padding-bottom:clamp(1.2rem,3vw,1.9rem)}
+  .page-hero .en{font-family:var(--latin);font-style:italic;letter-spacing:.24em;color:#EBB9A0;font-size:.76rem;margin-bottom:.4rem}
+  .page-hero h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:600;letter-spacing:.1em;line-height:1.3;
+    text-shadow:0 2px 24px rgba(0,0,0,.5)}
+  .page-hero .lead{font-family:var(--gothic);font-size:.82rem;letter-spacing:.06em;
+    color:rgba(244,239,230,.8);margin-top:.55rem}
+
+  .crumb{font-family:var(--gothic);font-size:.76rem;letter-spacing:.05em;color:var(--ink-faint);padding:1rem 0 .2rem}
+  .crumb a{color:var(--ink-soft);transition:color .2s}
+  .crumb a:hover{color:var(--beni)}
+  .crumb .sep{margin:0 .5em;color:var(--line-strong)}
+  .crumb .cur{color:var(--beni)}
+
+  /* 本文カラム。規約系は読みやすさ優先で幅を絞る */
+  .narrow{max-width:900px;margin:0 auto}
+  .doc{font-family:var(--gothic);color:var(--ink-soft);line-height:2}
+  .doc h2{font-family:var(--mincho);font-size:clamp(1.15rem,2.4vw,1.4rem);color:var(--ink);
+    letter-spacing:.06em;margin:2.4rem 0 .9rem;padding-bottom:.5rem;border-bottom:1px solid var(--line)}
+  .doc h2:first-child{margin-top:0}
+  .doc h3{font-size:1rem;color:var(--ink);margin:1.5rem 0 .5rem;letter-spacing:.04em}
+  .doc p{margin-bottom:1rem;font-size:.92rem}
+  .doc ul,.doc ol{margin:0 0 1rem 1.3rem;font-size:.92rem}
+  .doc li{margin-bottom:.4rem}
+  .doc .note{font-size:.84rem;color:var(--ink-faint);margin-top:1.4rem;padding:1rem 1.1rem;
+    border-left:2px solid var(--beni);background:rgba(255,255,255,.5)}
+
+  /* 定義表（会社概要・特商法・送料表） */
+  .spec{width:100%;border-collapse:collapse;font-family:var(--gothic);font-size:.9rem}
+  .spec th,.spec td{border-bottom:1px solid var(--line);padding:1rem .9rem;text-align:left;vertical-align:top;line-height:1.9}
+  .spec th{width:30%;color:var(--ink);font-weight:600;background:rgba(255,255,255,.42);white-space:nowrap}
+  .spec td{color:var(--ink-soft)}
+  @media (max-width:600px){
+    .spec th,.spec td{display:block;width:auto;border-bottom:none;padding:.55rem .8rem}
+    .spec th{background:rgba(255,255,255,.6);padding-top:.9rem}
+    .spec tr{display:block;border-bottom:1px solid var(--line);padding-bottom:.6rem}
+  }
+
+  /* 理念の3本柱 */
+  .mvv{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.8rem,2vw,1.3rem);margin:1.6rem 0 0}
+  .mvv .box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.6rem 1.4rem}
+  .mvv .box .en{font-family:var(--latin);font-style:italic;font-size:.7rem;letter-spacing:.16em;color:var(--beni)}
+  .mvv .box h3{font-size:1.05rem;margin:.35rem 0 .2rem;letter-spacing:.04em}
+  .mvv .box .sub{font-family:var(--gothic);font-size:.78rem;color:var(--ink-faint);margin-bottom:.7rem}
+  .mvv .box p{font-family:var(--gothic);font-size:.85rem;color:var(--ink-soft);line-height:1.9}
+  @media (max-width:820px){.mvv{grid-template-columns:1fr}}
+
+  /* 沿革 */
+  .hist{border-left:2px solid var(--line);margin-left:.4rem;padding-left:1.4rem}
+  .hist .row{position:relative;padding:0 0 1.5rem}
+  .hist .row::before{content:"";position:absolute;left:calc(-1.4rem - 5px);top:.55rem;width:8px;height:8px;
+    border-radius:50%;background:var(--beni)}
+  .hist .yr{font-family:var(--gothic);font-size:.8rem;letter-spacing:.08em;color:var(--beni);font-weight:600}
+  .hist .txt{font-family:var(--gothic);font-size:.9rem;color:var(--ink-soft);line-height:1.9;margin-top:.2rem}
+
+  /* カート */
+  .steps{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;margin-bottom:clamp(1.6rem,3vw,2.4rem);
+    font-family:var(--gothic);font-size:.78rem}
+  .steps span{padding:.5rem 1rem;border:1px solid var(--line);color:var(--ink-faint);background:rgba(255,255,255,.5)}
+  .steps span.on{background:var(--sumi);border-color:var(--sumi);color:var(--sumi-ink)}
+  .cart-tbl{width:100%;border-collapse:collapse;font-family:var(--gothic);font-size:.88rem}
+  .cart-tbl th{font-size:.76rem;letter-spacing:.08em;color:var(--ink-faint);font-weight:600;
+    padding:.7rem .6rem;border-bottom:1px solid var(--line-strong);text-align:left}
+  .cart-tbl td{padding:1.1rem .6rem;border-bottom:1px solid var(--line);vertical-align:middle;color:var(--ink-soft)}
+  .cart-tbl .thumb{width:88px;height:66px;background:linear-gradient(135deg,#EDE4D6,#DCCDB8);
+    display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--ink-faint)}
+  .cart-tbl .nm{color:var(--ink);line-height:1.7;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .cart-tbl .qty{display:inline-flex;align-items:center;border:1px solid var(--line)}
+  .cart-tbl .qty button{width:30px;height:30px;background:none;border:none;cursor:pointer;color:var(--ink-soft);font-size:1rem}
+  .cart-tbl .qty .n{min-width:34px;text-align:center;font-size:.9rem}
+  .cart-tbl .del{font-size:.76rem;color:var(--ink-faint);text-decoration:underline}
+  .cart-tbl .del:hover{color:var(--beni)}
+  .cart-sum{margin-top:1.6rem;margin-left:auto;max-width:380px;font-family:var(--gothic);font-size:.9rem}
+  .cart-sum .r{display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--line);color:var(--ink-soft)}
+  .cart-sum .r.total{border-bottom:none;border-top:1px solid var(--line-strong);margin-top:.3rem;
+    padding-top:.9rem;font-size:1.05rem;color:var(--ink);font-weight:600}
+  .cart-sum .r.total .v{color:var(--beni);font-size:1.35rem}
+  .cart-act{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:flex-end;margin-top:1.6rem}
+  @media (max-width:700px){
+    .cart-tbl thead{display:none}
+    .cart-tbl td{display:block;border-bottom:none;padding:.4rem .2rem}
+    .cart-tbl tr{display:block;border-bottom:1px solid var(--line);padding:1rem 0}
+    .cart-sum{max-width:none}
+    .cart-act{justify-content:stretch}
+    .cart-act a{flex:1;text-align:center}
+  }
+
+  /* お問い合わせフォーム（見た目のみ・送信はしません） */
+  .form{display:grid;gap:1.1rem}
+  .form .fld{display:grid;gap:.4rem}
+  .form label{font-family:var(--gothic);font-size:.84rem;color:var(--ink);letter-spacing:.04em}
+  .form label .req{color:#fff;background:var(--beni);font-size:.64rem;padding:.15rem .45rem;margin-left:.5rem;
+    letter-spacing:.06em;vertical-align:middle}
+  .form input,.form select,.form textarea{font-family:var(--gothic);font-size:.92rem;color:var(--ink);
+    padding:.75rem .85rem;border:1px solid var(--line-strong);background:rgba(255,255,255,.72);width:100%}
+  .form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--beni);background:#fff}
+  .form textarea{min-height:170px;resize:vertical;line-height:1.9}
+  .form .two{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+  @media (max-width:640px){.form .two{grid-template-columns:1fr}}
+
+  /* 窓口カード */
+  .contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.7rem,1.8vw,1.1rem);margin-bottom:2.4rem}
+  .contact-cards .c{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.5rem 1.3rem;text-align:center}
+  .contact-cards .c .lb{font-family:var(--latin);font-style:italic;font-size:.68rem;letter-spacing:.16em;color:var(--beni)}
+  .contact-cards .c .v{font-size:1.15rem;color:var(--ink);margin:.4rem 0 .25rem;letter-spacing:.04em}
+  .contact-cards .c .sub{font-family:var(--gothic);font-size:.76rem;color:var(--ink-faint);line-height:1.8}
+  @media (max-width:760px){.contact-cards{grid-template-columns:1fr}}
+
+  /* 営業カレンダー */
+  .cal-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1rem,2.4vw,1.8rem)}
+  @media (max-width:760px){.cal-wrap{grid-template-columns:1fr}}
+  .cal{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.3rem}
+  .cal h3{text-align:center;font-size:1.05rem;letter-spacing:.08em;margin-bottom:.9rem}
+  .cal table{width:100%;border-collapse:collapse;font-family:var(--gothic);font-size:.85rem}
+  .cal th{padding:.5rem 0;font-size:.72rem;letter-spacing:.06em;color:var(--ink-faint);font-weight:600}
+  .cal th.sun,.cal td.sun{color:#B4453A}
+  .cal th.sat,.cal td.sat{color:#3E6B8A}
+  .cal td{padding:.5rem 0;text-align:center;color:var(--ink-soft);border-top:1px solid var(--line)}
+  .cal td.off{background:rgba(159,47,35,.09);color:var(--beni);font-weight:600}
+  .cal td.half{background:rgba(201,150,46,.14)}
+  .cal td.today{outline:2px solid var(--beni);outline-offset:-3px;color:var(--ink);font-weight:700}
+  .cal-legend{display:flex;flex-wrap:wrap;gap:1.2rem;justify-content:center;margin-top:1.6rem;
+    font-family:var(--gothic);font-size:.8rem;color:var(--ink-soft)}
+  .cal-legend .k{display:inline-flex;align-items:center;gap:.45rem}
+  .cal-legend .sw{width:16px;height:16px;border:1px solid var(--line)}
+  .cal-legend .sw.off{background:rgba(159,47,35,.18)}
+  .cal-legend .sw.half{background:rgba(201,150,46,.22)}
+
+  /* FAQ（カテゴリページと同じ見た目） */
+  .faq-list{max-width:840px;margin:0 auto}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-item summary{cursor:pointer;padding:1.15rem .2rem;font-family:var(--gothic);font-weight:600;font-size:.98rem;
+    list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:"＋";color:var(--beni);font-weight:400;font-size:1.2rem}
+  .faq-item[open] summary::after{content:"−"}
+  .faq-item .ans{padding:0 .2rem 1.25rem;font-family:var(--gothic);font-size:.9rem;color:var(--ink-soft);line-height:1.95}
+  .faq-group{font-family:var(--gothic);font-size:.74rem;letter-spacing:.14em;color:var(--beni);
+    margin:2.2rem 0 .3rem;padding-bottom:.4rem;border-bottom:1px solid var(--line-strong)}
+  .faq-group:first-child{margin-top:0}
+
+  .mock{background:#2B1D14;color:#F0E4D4;font-family:var(--gothic);font-size:.74rem;letter-spacing:.04em;
+    text-align:center;padding:.55rem 1rem;line-height:1.6}
+  .mock b{color:#EBB9A0}
+
+  /* ===== ヘッダー統一：2026-07-13 確定仕様（宮元さん確認済み） =====
+     index_04_kaizen.html の #header-sync-category01 と同一内容を保つこと。 */
+  header .wrap, .util .wrap{max-width:none;padding:0 clamp(20px,3.2vw,44px)}
+  header .wrap{min-height:84px}
+  .brand-logo{height:68px;width:68px}
+  .brand .kanji{font-size:2.1rem}
+  header .wrap{justify-content:flex-start;gap:clamp(1.2rem,3vw,2.6rem)}
+  header .wrap > div:last-child{margin-left:auto}
+  .util .wrap{justify-content:flex-start;gap:clamp(1rem,3vw,2rem)}
+  @media (min-width:861px){
+    header .wrap{gap:32px}
+    .util .wrap{gap:32px}
+    .brand{min-width:280px}
+    .util .wrap > span:first-child{min-width:280px}
+  }
+</style>
+
+
+<div class="mock">◎ <b>特定商取引法に基づく表記ページ案（Garden系）</b> — デザイン検討用の試作です。内容の一部はダミーで、本番はMakeShopの機能・実データに置き換わります。</div>
+
+<div class="util">
+  <div class="wrap">
+    <span>香住港より、朝茹で直送｜全国配送承ります</span>
+    <span class="links">
+      <a href="#">楽天市場</a>
+      <a href="#">ふるさと納税</a>
+      <a href="calendar_01.html">営業カレンダー</a>
+      <a href="contact_01.html">お問い合わせ</a>
+    </span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="index_04_kaizen.html">
+      <img class="brand-logo" src="assets/img/logo.png" alt="株式会社丸近 ロゴ" width="44" height="44">
+      <span class="txtgrp"><span class="kanji">丸近</span><span class="en">Maruchika</span></span>
+    </a>
+    <nav class="main">
+      <a href="index_04_kaizen.html#products">商品を探す</a>
+      <a href="index_04_kaizen.html#crab">香住ガニとは</a>
+      <a href="index_04_kaizen.html#strength">丸近の強み</a>
+      <a href="index_04_kaizen.html#voice">お客様の声</a>
+      <a href="company_01.html">会社案内</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:.8rem">
+      <a class="cart" href="cart_01.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.2a1.5 1.5 0 0 0 1.5-1.2L21 7H6"/></svg>
+        カート
+      </a>
+      <button class="menu-btn" aria-label="メニュー">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero" style="--hero:url('assets/img/slide-a.jpg')">
+  <div class="bg"></div>
+  <div class="scrim"></div>
+  <div class="in">
+    <div class="wrap">
+      <p class="en">Legal</p>
+      <h1>特定商取引法に基づく表記</h1>
+      <p class="lead">通信販売に関する表示</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <nav class="crumb" aria-label="現在位置">
+    <a href="index_04_kaizen.html">ホーム</a><span class="sep">›</span>
+    <span class="cur">特定商取引法に基づく表記</span>
+  </nav>
+</div>
+
+<section class="block" style="padding-top:clamp(1rem,2.4vw,1.6rem)">
+  <div class="wrap narrow">
+    <div class="doc">
+      <table class="spec">
+        <tr><th>販売業者の名称</th><td>株式会社　丸近</td></tr>
+        <tr><th>販売責任者名</th><td>宮元　久明</td></tr>
+        <tr><th>販売業者の住所</th><td>〒669-6541　兵庫県美方郡香美町香住区香住３</td></tr>
+        <tr><th>販売業者の連絡先</th><td>電話番号：0796-36-1339<br>メールアドレス：お問い合わせフォームよりご連絡ください</td></tr>
+        <tr><th>商品代金以外の必要料金</th><td>・銀行振り込みでご購入の際の振り込み手数料<br>・代金引換でご購入の際の代引き手数料</td></tr>
+        <tr><th>販売数量</th><td>特に指定はございません（商品によって設定あり）</td></tr>
+        <tr><th>引き渡し時期</th><td>ご注文受付後、5日以内にお届けいたします。</td></tr>
+        <tr><th>お支払い方法</th><td>銀行振込・代金引換・クレジットカード支払・その他</td></tr>
+        <tr><th>お支払い期限</th><td><b>銀行振込の場合</b><br>ご注文日より3日以内に当店指定の口座へお振込みください。3日を超えた場合は一旦キャンセル扱いとさせていただきます。恐れ入りますが、再度ご注文いただきますようお願いします。<br><br><b>代金引換の場合</b><br>商品のお届け時に、担当配達員へ代金のお支払いをお願いします。</td></tr>
+        <tr><th>申し込み有効期限</th><td>原則、受注確認（受注確認のための自動送信メール発信）後、4日間とします。</td></tr>
+        <tr><th>不良品</th><td>商品到着後、速やかにご連絡ください。商品に問題がある場合は速やかに対応いたします。商品に欠陥がある場合を除き、返品には応じかねますのでご了承ください。</td></tr>
+        <tr><th>返品期限</th><td>商品の返品・交換には、初期不良の場合以外では応じられません。</td></tr>
+        <tr><th>返品送料</th><td>初期不良、発送商品間違いの場合は、当店着払いにて対応いたします。</td></tr>
+      </table>
+      <p class="note">※このページはデザイン検討用の試作です。記載内容は現行サイトの情報を掲載しています。</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="co">
+        <div class="kanji">丸近</div>
+        <div class="en">Maruchika Co., Ltd.</div>
+        <address>
+          〒669-6541 兵庫県美方郡香美町香住区香住３<br>
+          香住港より、朝茹で直送<br>
+          TEL 0796-36-1338（受付時間 9:00–17:00）
+        </address>
+      </div>
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <a href="category_03.html">商品一覧</a>
+        <a href="index_04_kaizen.html#ranking">月間ランキング</a>
+        <a href="index_04_kaizen.html#gift">ギフト・のし対応</a>
+        <a href="cart_01.html">カート</a>
+      </div>
+      <div class="foot-col">
+        <h4>About</h4>
+        <a href="index_04_kaizen.html#crab">香住ガニとは</a>
+        <a href="index_04_kaizen.html#strength">丸近の強み</a>
+        <a href="company_01.html">会社案内</a>
+        <a href="index_04_kaizen.html#voice">お客様の声</a>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <a href="shipping_01.html">送料・お届けについて</a>
+        <a href="faq_01.html">よくあるご質問</a>
+        <a href="contact_01.html">お問い合わせ</a>
+        <a href="legal_01.html">特定商取引法</a>
+        <a href="privacy_01.html">プライバシーポリシー</a>
+      </div>
+    </div>
+    <div class="copy">© Maruchika Co., Ltd. ｜ 本ページはデザイン検討用の仮モックアップです（写真・価格・レビューはダミー）</div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.kani-mrck.com/"},
+    {"@type": "ListItem", "position": 2, "name": "特定商取引法に基づく表記"}
+  ]
+}
+</script>
+
+<button class="to-top" id="toTop" aria-label="ページ上部へ戻る">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  <span class="label">Top</span>
+</button>
+
+<script>
+  (function(){
+    var btn=document.getElementById('toTop');
+    var hdr=document.querySelector('header');
+    var onScroll=function(){
+      var y=window.pageYOffset;
+      if(btn){ if(y>400){btn.classList.add('show');}else{btn.classList.remove('show');} }
+      if(hdr){ if(y>40){hdr.classList.add('scrolled');}else{hdr.classList.remove('scrolled');} }
+    };
+    window.addEventListener('scroll',onScroll,{passive:true});
+    onScroll();
+    if(!btn)return;
+    btn.addEventListener('click',function(){
+      var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+      window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});
+    });
+  })();
+</script>
+
+<script>
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    var io=new IntersectionObserver(function(en){
+      en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});
+    },{threshold:.14});
+    els.forEach(function(e){io.observe(e);});
+  })();
+</script>
+
+<script>
+  (function(){
+    var slides=document.querySelectorAll('#heroSlides .slide');
+    if(slides.length<2)return;
+    var i=0;
+    setInterval(function(){
+      slides[i].classList.remove('active');
+      i=(i+1)%slides.length;
+      slides[i].classList.add('active');
+    },5000);
+  })();
+</script>
+
+
+<!-- ▼ リニューアル改善反映：構造化データ JSON-LD（AI検索/リッチリザルト対応・本番公開時に有効） -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"株式会社丸近",
+  "alternateName":"Maruchika Co., Ltd.",
+  "url":"https://www.kani-mrck.com/",
+  "logo":"https://www.kani-mrck.com/assets/logo.png",
+  "description":"兵庫・香住港のブランド蟹「香住ガニ」を、買付けから加工・販売まで一貫してお届けする創業70年の水産会社。",
+  "award":[
+    "ふるさとチョイス 全国1位（浜茹で香住ガニ／2019～2022年度）",
+    "ふるさとチョイス 全国1位（甲羅盛り 香箱造り／2019～2024年度）",
+    "楽天ふるさと納税 全国2位（香住ガニ かに身セット600g／2025年度）"
+  ],
+  "telephone":"+81-796-36-1339",
+  "address":{"@type":"PostalAddress","postalCode":"669-6544","addressRegion":"兵庫県","addressLocality":"美方郡香美町香住区","streetAddress":"香住3番地","addressCountry":"JP"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"株式会社丸近",
+  "url":"https://www.kani-mrck.com/",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":{"@type":"EntryPoint","urlTemplate":"https://www.kani-mrck.com/?q={search_term_string}"},
+    "query-input":"required name=search_term_string"
+  }
+}
+</script>
+
+<!-- ▼ Product / Offer 構造化データ（雛形）
+     ※ name・description・price・availability・url・image は、本番では MakeShop の
+       商品データから動的出力してください（下記の価格はダミーです）。
+     ※ AggregateRating / Review は、実際のレビューデータが入った時点で追加してください
+       （実データのない評価値は掲載しないこと）。 -->
+
+
+
+<!-- ▲ 構造化データ ここまで（※価格・在庫つき Product 情報は本番の実データで自動出力を推奨） -->
+</body>
+</html>
+
