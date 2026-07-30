@@ -88,13 +88,52 @@
     text-align:center;padding:.55rem 1rem;line-height:1.6}
   .mock b{color:#EBB9A0}
 
-  /* ヘッダー/utilバーをほぼ全幅に（左ツラ揃え） */
+  /* ============ カテゴリー切替ナビ ============
+     現行サイト（kani-mrck.com）のカテゴリ構成をそのまま並べ、現在地を紅色でハイライトする。
+     TOP側の .cat-tiles（index_04_kaizen.html）と対になる導線。 */
+  .catnav{margin:0 0 clamp(1.1rem,2.6vw,1.7rem)}
+  .catnav .lb{display:block;font-family:var(--gothic);font-size:.72rem;letter-spacing:.14em;
+    color:var(--ink-faint);margin-bottom:.55rem}
+  .catnav .row{display:flex;flex-wrap:wrap;gap:.45rem}
+  .catnav a{font-family:var(--gothic);font-size:.85rem;letter-spacing:.03em;color:var(--ink-soft);
+    padding:.5rem .95rem;border:1px solid var(--line);background:rgba(255,255,255,.5);
+    transition:color .2s,border-color .2s,background .2s}
+  .catnav a:hover{color:var(--beni);border-color:rgba(159,47,35,.4);background:#fff}
+  .catnav a.on{color:#fff;background:var(--beni);border-color:var(--beni)}
+
+  /* ============ 安心セクション／FAQ ============
+     2026-07-20 に別セッションが category_01 に実装したものを、
+     2026-07-30 宮元さん確認のうえ全8カテゴリへ展開（スタイルは当時のまま踏襲）。 */
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+  @media(max-width:860px){.trust-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.trust-grid{grid-template-columns:1fr}}
+  .trust{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.6rem 1.3rem;text-align:center}
+  .trust h3{font-size:1rem;margin-bottom:.5rem;letter-spacing:.03em}
+  .trust p{font-family:var(--gothic);font-size:.84rem;color:var(--ink-soft);line-height:1.85}
+  .faq-list{max-width:840px;margin:0 auto}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-item summary{cursor:pointer;padding:1.15rem .2rem;font-family:var(--gothic);font-weight:600;font-size:.98rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:"＋";color:var(--beni);font-weight:400;font-size:1.2rem}
+  .faq-item[open] summary::after{content:"−"}
+  .faq-item .ans{padding:0 .2rem 1.25rem;font-family:var(--gothic);font-size:.9rem;color:var(--ink-soft);line-height:1.95}
+
+  /* ===== ヘッダー統一：2026-07-13 確定仕様（宮元さん確認済み） =====
+     ロゴをヘッダー高さいっぱいに拡大し、ヘッダー/utilバーをほぼ全幅化して左ツラを揃える。
+     index_04_kaizen.html の #header-sync-category01 と同一内容を保つこと。 */
   header .wrap, .util .wrap{max-width:none;padding:0 clamp(20px,3.2vw,44px)}
+  header .wrap{min-height:84px}
+  .brand-logo{height:68px;width:68px}
+  .brand .kanji{font-size:2.1rem}
+  header .wrap{justify-content:flex-start;gap:clamp(1.2rem,3vw,2.6rem)}
+  header .wrap > div:last-child{margin-left:auto}
   /* utilバーは左寄せ。1列目（キャッチ）に最小幅を与えて、
      ナビ（商品を探す…）とリンク群（楽天市場…）が同じX座標から始まるようにする。 */
   .util .wrap{justify-content:flex-start;gap:clamp(1rem,3vw,2rem)}
-  @media (min-width:961px){
+  @media (min-width:861px){
+    header .wrap{gap:32px}
     .util .wrap{gap:32px}
+    .brand{min-width:280px}
     .util .wrap > span:first-child{min-width:280px}
   }
 </style>
@@ -257,6 +296,39 @@
   </div>
 </section>
 
+<section class="block alt" id="assurance">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Assurance</span>
+      <h2>安心してお選びいただくために</h2>
+      <span class="jp-label">産地直送・ギフト対応・品質保証</span>
+      <span class="rule"></span>
+    </div>
+    <div class="trust-grid reveal">
+      <div class="trust"><h3>産地直送の鮮度</h3><p>香住港の目の前で買付け、水揚げ当日に加工してお届けします。</p></div>
+      <div class="trust"><h3>のし・ギフト対応</h3><p>のし・表書き・メッセージカードを無料で承ります。</p></div>
+      <div class="trust"><h3>品質保証・返品交換</h3><p>破損・品違い・品質不良は、到着後2日以内のご連絡で交換または返金いたします。</p></div>
+      <div class="trust"><h3>解凍・調理ガイド</h3><p>冷蔵庫で半日～一晩のゆっくり解凍がおすすめ。部位別の調理法もご案内します。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>特別限定商品 よくあるご質問</h2>
+      <span class="jp-label">生成AIにも引用されやすい一問一答</span>
+      <span class="rule"></span>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item"><summary>限定商品はいつ入荷しますか？</summary><div class="ans">水揚げの状況によるため不定期です。入荷情報は「お知らせ」でご案内していますので、ご確認ください。</div></details>
+      <details class="faq-item"><summary>「訳あり」は通常品と何が違いますか？</summary><div class="ans">脚折れや甲羅に傷がある個体です。見た目のみの違いで、身入り・味は通常品と同じ基準で選別しています。</div></details>
+      <details class="faq-item"><summary>売り切れた商品は再入荷しますか？</summary><div class="ans">ご好評の品は再入荷することがありますが、漁の状況次第です。数量限定品はお早めのご注文をおすすめします。</div></details>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div class="foot-grid">
@@ -294,6 +366,188 @@
     <div class="copy">© Maruchika Co., Ltd. ｜ 本ページはデザイン検討用の仮モックアップです（写真・価格・レビューはダミー）</div>
   </div>
 </footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://www.kani-mrck.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "商品カテゴリー",
+      "item": "https://www.kani-mrck.com/view/category/all_items"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "特別限定商品"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "特別限定商品",
+  "numberOfItems": 6,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Product",
+        "name": "***【限定10セット送料込】***［冷蔵］浜茹で／訳あり／松葉がに／2杯入／1kg以上",
+        "brand": {
+          "@type": "Brand",
+          "name": "丸近"
+        },
+        "category": "カニ > 特別限定商品",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "JPY",
+          "price": "12800",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Product",
+        "name": "［冷凍］*** 50セット数量限定 ***【国産ベニズワイガニ】甲羅盛り 香箱造り／160g×4個入り",
+        "brand": {
+          "@type": "Brand",
+          "name": "丸近"
+        },
+        "category": "カニ > 特別限定商品",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "JPY",
+          "price": "9800",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Product",
+        "name": "［冷凍］訳あり／【香住ガニ】／（生）／調理済み／かにすきセット／4肩入（約2匹分入）／大サイズ",
+        "brand": {
+          "@type": "Brand",
+          "name": "丸近"
+        },
+        "category": "カニ > 特別限定商品",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "JPY",
+          "price": "11800",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Product",
+        "name": "［冷蔵］【香住ガニ】／かに身セット／合計600g（300g×2パック）／大容量！／かに酢・かに味噌付き",
+        "brand": {
+          "@type": "Brand",
+          "name": "丸近"
+        },
+        "category": "カニ > 特別限定商品",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "JPY",
+          "price": "10800",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "Product",
+        "name": "［冷凍］【兵庫県産】甘えび／大サイズ・30〜40尾入り・約700g／ぷりぷり／鮮度抜群",
+        "brand": {
+          "@type": "Brand",
+          "name": "丸近"
+        },
+        "category": "カニ > 特別限定商品",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "JPY",
+          "price": "5980",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "Product",
+        "name": "［冷蔵］浜茹で／【松葉がに】／特撰／1杯／1.2kg以上／タグ付き／化粧箱入",
+        "brand": {
+          "@type": "Brand",
+          "name": "丸近"
+        },
+        "category": "カニ > 特別限定商品",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "JPY",
+          "price": "19800",
+          "availability": "https://schema.org/OutOfStock"
+        }
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "限定商品はいつ入荷しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "水揚げの状況によるため不定期です。入荷情報は「お知らせ」でご案内していますので、ご確認ください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "「訳あり」は通常品と何が違いますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "脚折れや甲羅に傷がある個体です。見た目のみの違いで、身入り・味は通常品と同じ基準で選別しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "売り切れた商品は再入荷しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ご好評の品は再入荷することがありますが、漁の状況次第です。数量限定品はお早めのご注文をおすすめします。"
+      }
+    }
+  ]
+}
+</script>
 
 <button class="to-top" id="toTop" aria-label="ページ上部へ戻る">
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
@@ -343,6 +597,49 @@
   })();
 </script>
 
+
+<!-- ▼ リニューアル改善反映：構造化データ JSON-LD（AI検索/リッチリザルト対応・本番公開時に有効） -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"株式会社丸近",
+  "alternateName":"Maruchika Co., Ltd.",
+  "url":"https://www.kani-mrck.com/",
+  "logo":"https://www.kani-mrck.com/assets/logo.png",
+  "description":"兵庫・香住港のブランド蟹「香住ガニ」を、買付けから加工・販売まで一貫してお届けする創業70年の水産会社。",
+  "award":[
+    "ふるさとチョイス 全国1位（浜茹で香住ガニ／2019～2022年度）",
+    "ふるさとチョイス 全国1位（甲羅盛り 香箱造り／2019～2024年度）",
+    "楽天ふるさと納税 全国2位（香住ガニ かに身セット600g／2025年度）"
+  ],
+  "telephone":"+81-796-36-1339",
+  "address":{"@type":"PostalAddress","postalCode":"669-6544","addressRegion":"兵庫県","addressLocality":"美方郡香美町香住区","streetAddress":"香住3番地","addressCountry":"JP"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"株式会社丸近",
+  "url":"https://www.kani-mrck.com/",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":{"@type":"EntryPoint","urlTemplate":"https://www.kani-mrck.com/?q={search_term_string}"},
+    "query-input":"required name=search_term_string"
+  }
+}
+</script>
+
+<!-- ▼ Product / Offer 構造化データ（雛形）
+     ※ name・description・price・availability・url・image は、本番では MakeShop の
+       商品データから動的出力してください（下記の価格はダミーです）。
+     ※ AggregateRating / Review は、実際のレビューデータが入った時点で追加してください
+       （実データのない評価値は掲載しないこと）。 -->
+
+
+
+<!-- ▲ 構造化データ ここまで（※価格・在庫つき Product 情報は本番の実データで自動出力を推奨） -->
 </body>
 </html>
 

@@ -1,7 +1,7 @@
 /* ============================================================
    丸近 公式サイト（テスト環境） 共通スタイル
-   自動生成：_extract_assets.py が index_04.html から抽出。直接編集しないこと。
-   デザインの変更は index_04.html 側を直してから再生成する。
+   自動生成：_extract_assets.py が index_04_kaizen.html から抽出。直接編集しないこと。
+   デザインの変更は index_04_kaizen.html 側を直してから再生成する。
    ============================================================ */
 
   :root{
@@ -288,30 +288,3 @@
   .to-top svg{stroke:currentColor}
   .to-top .label{font-family:var(--latin);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;line-height:1}
   @media (prefers-reduced-motion:reduce){.to-top{transition:opacity .2s ease}}
-
-  /* ============ カテゴリー導線（TOP・カテゴリページ共通） ============
-     現行サイト（kani-mrck.com）のカテゴリ構成をそのまま引き継ぐナビ。
-     TOPでは「カテゴリーから探す」タイル、カテゴリページでは現在地ハイライト付きの帯として使う。 */
-  .catnav{margin:0 0 clamp(1.1rem,2.6vw,1.7rem)}
-  .catnav .lb{display:block;font-family:var(--gothic);font-size:.72rem;letter-spacing:.14em;
-    color:var(--ink-faint);margin-bottom:.55rem}
-  .catnav .row{display:flex;flex-wrap:wrap;gap:.45rem}
-  .catnav a{font-family:var(--gothic);font-size:.85rem;letter-spacing:.03em;color:var(--ink-soft);
-    padding:.5rem .95rem;border:1px solid var(--line);background:rgba(255,255,255,.5);
-    transition:color .2s,border-color .2s,background .2s}
-  .catnav a:hover{color:var(--beni);border-color:rgba(159,47,35,.4);background:#fff}
-  .catnav a.on{color:#fff;background:var(--beni);border-color:var(--beni)}
-
-  /* TOP用：カテゴリータイル（写真なしの簡易版・和の罫線で区切る） */
-  .cat-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.6rem,1.4vw,1rem)}
-  .cat-tiles a{position:relative;display:flex;flex-direction:column;justify-content:center;gap:.3rem;
-    min-height:96px;padding:1.1rem 1.2rem;border:1px solid var(--line);background:rgba(255,255,255,.56);
-    text-align:left;transition:transform .22s ease,border-color .22s,background .22s,box-shadow .22s}
-  .cat-tiles a:hover{transform:translateY(-2px);border-color:rgba(159,47,35,.42);background:#fff;
-    box-shadow:0 14px 30px -18px rgba(60,30,15,.4)}
-  .cat-tiles .en{font-family:var(--latin);font-style:italic;font-size:.66rem;letter-spacing:.16em;color:var(--beni)}
-  .cat-tiles .jp{font-size:1.02rem;font-weight:600;letter-spacing:.05em;color:var(--ink)}
-  .cat-tiles .arrow{position:absolute;right:1rem;bottom:.8rem;font-size:.8rem;color:var(--ink-faint);transition:color .2s,transform .2s}
-  .cat-tiles a:hover .arrow{color:var(--beni);transform:translateX(3px)}
-  @media (max-width:900px){.cat-tiles{grid-template-columns:repeat(2,1fr)}}
-  @media (max-width:420px){.cat-tiles{grid-template-columns:1fr}}

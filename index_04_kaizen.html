@@ -430,7 +430,46 @@
         </div>
       </article>
     </div>
-    <div class="more reveal"><a class="btn-line" href="#">すべての商品を見る</a></div>
+    <div class="more reveal"><a class="btn-line" href="category_03.html">すべての商品を見る</a></div>
+  </div>
+</section>
+
+<style id="category-tiles">
+  /* ===== カテゴリー導線（2026-07-30 追加）=====
+     現行サイト（kani-mrck.com）のカテゴリ構成をそのままタイル化し、
+     category_01〜08.html へ繋ぐ。カテゴリページ側の .catnav と対になる導線。 */
+  .cat-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.6rem,1.4vw,1rem)}
+  .cat-tiles a{position:relative;display:flex;flex-direction:column;justify-content:center;gap:.3rem;
+    min-height:96px;padding:1.1rem 1.2rem;border:1px solid var(--line);background:rgba(255,255,255,.56);
+    text-align:left;transition:transform .22s ease,border-color .22s,background .22s,box-shadow .22s}
+  .cat-tiles a:hover{transform:translateY(-2px);border-color:rgba(159,47,35,.42);background:#fff;
+    box-shadow:0 14px 30px -18px rgba(60,30,15,.4)}
+  .cat-tiles .en{font-family:var(--latin);font-style:italic;font-size:.66rem;letter-spacing:.16em;color:var(--beni)}
+  .cat-tiles .jp{font-size:1.02rem;font-weight:600;letter-spacing:.05em;color:var(--ink)}
+  .cat-tiles .arrow{position:absolute;right:1rem;bottom:.8rem;font-size:.8rem;color:var(--ink-faint);transition:color .2s,transform .2s}
+  .cat-tiles a:hover .arrow{color:var(--beni);transform:translateX(3px)}
+  @media (max-width:900px){.cat-tiles{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:420px){.cat-tiles{grid-template-columns:1fr}}
+</style>
+
+<section class="block" id="categories" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Categories</span>
+      <h2>カテゴリーから探す</h2>
+      <span class="jp-label">お目当ての品から、旬のおすすめまで</span>
+      <span class="rule"></span>
+    </div>
+    <nav class="cat-tiles reveal" aria-label="商品カテゴリー">
+      <a href="category_02.html"><span class="en">Special</span><span class="jp">特別限定商品</span><span class="arrow">→</span></a>
+      <a href="category_03.html"><span class="en">All Items</span><span class="jp">全ての商品</span><span class="arrow">→</span></a>
+      <a href="category_04.html"><span class="en">Crab Meat</span><span class="jp">かに身</span><span class="arrow">→</span></a>
+      <a href="category_05.html"><span class="en">Kouramori</span><span class="jp">甲羅盛り</span><span class="arrow">→</span></a>
+      <a href="category_01.html"><span class="en">Boiled Crab</span><span class="jp">茹でがに</span><span class="arrow">→</span></a>
+      <a href="category_06.html"><span class="en">Live Crab</span><span class="jp">活けがに</span><span class="arrow">→</span></a>
+      <a href="category_07.html"><span class="en">Crab Hot Pot</span><span class="jp">かにすき</span><span class="arrow">→</span></a>
+      <a href="category_08.html"><span class="en">Others</span><span class="jp">その他</span><span class="arrow">→</span></a>
+    </nav>
   </div>
 </section>
 
