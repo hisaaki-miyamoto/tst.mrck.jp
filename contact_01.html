@@ -265,7 +265,21 @@
       <span class="txtgrp"><span class="kanji">丸近</span><span class="en">Maruchika</span></span>
     </a>
     <nav class="main">
-      <a href="index_04_kaizen.html#products">商品を探す</a>
+      <span class="has-drop">
+        <a href="index_04_kaizen.html#products">商品を探す</a>
+        <div class="drop">
+          <a href="category_02.html">特別限定商品</a>
+          <a href="category_03.html">全ての商品</a>
+          <a href="category_04.html">かに身</a>
+          <a href="category_05.html">甲羅盛り</a>
+          <a href="category_01.html">茹でがに</a>
+          <a href="category_06.html">活けがに</a>
+          <a href="category_07.html">かにすき</a>
+          <a href="category_08.html">その他</a>
+          <span class="sep"></span>
+          <a class="all" href="category_03.html">すべての商品を見る →</a>
+        </div>
+      </span>
       <a href="index_04_kaizen.html#crab">香住ガニとは</a>
       <a href="index_04_kaizen.html#strength">丸近の強み</a>
       <a href="voice_01.html">お客様の声</a>
@@ -523,6 +537,32 @@
 
 
 <!-- ▲ 構造化データ ここまで（※価格・在庫つき Product 情報は本番の実データで自動出力を推奨） -->
+<script>
+  /* ヘッダー「商品を探す」のカテゴリメニュー：
+     マウスのホバーはCSSで対応。タッチ端末とクリック操作のためにJSでも開閉する。 */
+  (function(){
+    var wrap=document.querySelector('nav.main .has-drop');
+    if(!wrap)return;
+    var trigger=wrap.querySelector(':scope > a');
+    trigger.setAttribute('aria-haspopup','true');
+    trigger.setAttribute('aria-expanded','false');
+    function setOpen(v){
+      wrap.classList.toggle('open',v);
+      trigger.setAttribute('aria-expanded',v?'true':'false');
+    }
+    trigger.addEventListener('click',function(e){
+      e.preventDefault();
+      setOpen(!wrap.classList.contains('open'));
+    });
+    document.addEventListener('click',function(e){
+      if(!wrap.contains(e.target))setOpen(false);
+    });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape')setOpen(false);
+    });
+  })();
+</script>
+
 </body>
 </html>
 
