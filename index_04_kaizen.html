@@ -340,6 +340,14 @@
   .prod-grid .card:hover .ph img{transform:scale(1.05)}
   .rank-item .thumb{overflow:hidden}
   .rank-item .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* 実商品名は長いため、TOPのカードとランキングは行数を制限して高さを揃える（2026-07-31） */
+  .prod-grid .card h3{font-size:.98rem;line-height:1.6;display:-webkit-box;
+    -webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .prod-grid .card .desc{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .rank-item .info h3{font-size:.94rem;line-height:1.6;display:-webkit-box;
+    -webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .rank-item .info p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 </style>
 
 <div class="mock">◎ <b>トップページ案04（Garden系）改善反映版</b> — 採用ベースにMAGI診断の改善を反映した試作。写真枠・価格・レビュー・実績表示はすべてダミー／検討用です。本番はMakeShopの動的タグで実データが入ります。</div>
@@ -572,29 +580,29 @@
     </div>
     <div class="prod-grid reveal">
       <article class="card">
-        <div class="ph"><span class="tag">人気No.1</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000097_mYKFtEy.png" alt="浜茹で 香住ガニ 約1kg" loading="lazy" decoding="async"></div>
+        <div class="ph"><span class="tag">人気No.1</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/0000000000122_aaue5vI.jpg" alt="［冷凍］【香住ガニ】甲羅盛り 香箱造り／１６０ｇ×４個入り／ふるさとチョイス「カニ部門」全国１位！" loading="lazy" decoding="async"></div>
         <div class="body">
-          <h3>浜茹で 香住ガニ 約1kg</h3>
-          <p class="desc">水揚げ当日に茹で上げ。甘みと繊細な身質が自慢の一杯。</p>
+          <h3>［冷凍］【香住ガニ】甲羅盛り 香箱造り／１６０ｇ×４個入り／ふるさとチョイス「カニ部門」全国１位！</h3>
+          <p class="desc">甲羅に詰めた贅沢なひと皿。ふるさとチョイス「カニ部門」全国1位の実績。</p>
           <div class="price"><span class="yen">¥ 8,800</span><span class="tax">税込・送料無料</span></div>
           <a class="buy" href="#">カートに入れる</a>
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span class="tag">ギフト向け</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000098_tOHYhQT.jpg" alt="甲羅盛り 香箱造り" loading="lazy" decoding="async"></div>
+        <div class="ph"><span class="tag">ギフト向け</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/0000000000432_9aiboL1.png" alt="［冷蔵］【香住産】松葉ガニ／活け／鮮度抜群／1kg以上／贈答用・ご自宅用にも最適" loading="lazy" decoding="async"></div>
         <div class="body">
-          <h3>甲羅盛り 香箱造り</h3>
-          <p class="desc">内子・外子・かに身を甲羅に美しく詰めた贅沢な逸品。</p>
-          <div class="price"><span class="yen">¥ 6,480</span><span class="tax">税込・送料無料</span></div>
+          <h3>［冷蔵］【香住産】松葉ガニ／活け／鮮度抜群／1kg以上／贈答用・ご自宅用にも最適</h3>
+          <p class="desc">香住産の松葉ガニを活けのまま。大切な方への贈り物に。</p>
+          <div class="price"><span class="yen">¥ 32,400</span><span class="tax">税込・送料無料</span></div>
           <a class="buy" href="#">カートに入れる</a>
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span class="tag">ご自宅用</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000017_HeFdzsH.jpg" alt="香住ガニ かに身セット 600g" loading="lazy" decoding="async"></div>
+        <div class="ph"><span class="tag">ご自宅用</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/0000000000022_ImWcIBc.jpg" alt="［冷凍］【香住ガニ】かに身ほぐし身／白身／約カニ１０杯分相当（５００ｇ）／殻なし手剥き身／かに酢付" loading="lazy" decoding="async"></div>
         <div class="body">
-          <h3>香住ガニ かに身セット 600g</h3>
-          <p class="desc">むき身だから手軽。かに鍋にも、そのままでも美味しく。</p>
-          <div class="price"><span class="yen">¥ 5,200</span><span class="tax">税込・送料無料</span></div>
+          <h3>［冷凍］【香住ガニ】かに身ほぐし身／白身／約カニ１０杯分相当（５００ｇ）／殻なし手剥き身／かに酢付</h3>
+          <p class="desc">殻をむく手間なし。かに玉にも炊き込みご飯にも使えます。</p>
+          <div class="price"><span class="yen">¥ 4,320</span><span class="tax">税込・送料無料</span></div>
           <a class="buy" href="#">カートに入れる</a>
         </div>
       </article>
@@ -614,20 +622,20 @@
     <div class="rank-list reveal">
       <a class="rank-item" href="#">
         <span class="no">1<small>1st</small></span>
-        <span class="thumb"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000097_mYKFtEy.png" alt="浜茹で 香住ガニ 約1kg" loading="lazy" decoding="async"></span>
-        <span class="info"><h3>浜茹で 香住ガニ 約1kg</h3><p>贈答・ご自宅用に不動の一番人気</p><span class="yen">¥ 8,800</span></span>
+        <span class="thumb"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/0000000000122_aaue5vI.jpg" alt="［冷凍］【香住ガニ】甲羅盛り 香箱造り／１６０ｇ×４個入り／ふるさとチョイス「カニ部門」全国１位！" loading="lazy" decoding="async"></span>
+        <span class="info"><h3>［冷凍］【香住ガニ】甲羅盛り 香箱造り／１６０ｇ×４個入り／ふるさとチョイス「カニ部門」全国１位！</h3><p>甲羅にぎっしり。贈答でもご自宅でも不動の一番人気（2025年8月〜2026年7月の販売数 261点）</p><span class="yen">¥ 8,800</span></span>
         <span class="arrow">→</span>
       </a>
       <a class="rank-item" href="#">
         <span class="no">2<small>2nd</small></span>
-        <span class="thumb"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000098_tOHYhQT.jpg" alt="甲羅盛り 香箱造り" loading="lazy" decoding="async"></span>
-        <span class="info"><h3>甲羅盛り 香箱造り</h3><p>季節限定・数量限定の贅沢盛り</p><span class="yen">¥ 6,480</span></span>
+        <span class="thumb"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/0000000000012_ghjYnDg.jpg" alt="［冷蔵］【香住ガニ】棒崩れ身／中身／カニ姿約１０杯分相当（５００ｇ）／殻なし手剥き身／かに酢付き" loading="lazy" decoding="async"></span>
+        <span class="info"><h3>［冷蔵］【香住ガニ】棒崩れ身／中身／カニ姿約１０杯分相当（５００ｇ）／殻なし手剥き身／かに酢付き</h3><p>殻むき不要の手軽さで、リピーターが最も多い一品（2025年8月〜2026年7月の販売数 143点）</p><span class="yen">¥ 5,400</span></span>
         <span class="arrow">→</span>
       </a>
       <a class="rank-item" href="#">
         <span class="no">3<small>3rd</small></span>
-        <span class="thumb"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000017_HeFdzsH.jpg" alt="香住ガニ かに身セット 600g" loading="lazy" decoding="async"></span>
-        <span class="info"><h3>香住ガニ かに身セット 600g</h3><p>手軽に楽しめるとリピーター多数</p><span class="yen">¥ 5,200</span></span>
+        <span class="thumb"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/0000000000072_DiUYEwH.jpg" alt="［冷凍］【香住ガニ】大サイズ／調理済み／生足ガニ／足だけ30本入／焼きガニ・かにすき／かにすき出汁付" loading="lazy" decoding="async"></span>
+        <span class="info"><h3>［冷凍］【香住ガニ】大サイズ／調理済み／生足ガニ／足だけ30本入／焼きガニ・かにすき／かにすき出汁付</h3><p>足だけ30本。焼きガニにも鍋にも使える定番（2025年8月〜2026年7月の販売数 135点）</p><span class="yen">¥ 12,960</span></span>
         <span class="arrow">→</span>
       </a>
     </div>
