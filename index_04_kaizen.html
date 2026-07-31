@@ -348,6 +348,23 @@
   .rank-item .info h3{font-size:.94rem;line-height:1.6;display:-webkit-box;
     -webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .rank-item .info p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+  /* merge-sections-css ===== 11ブロック構成（2026-07-31 MAGI合議）=====
+     グループの2枚目以降は上の余白を詰め、見出しを小さくして
+     前のセクションとひと続きの1ブロックに見せる。 */
+  /* 続きのセクションは上の余白を消し、細い罫線でひと続きに見せる。
+     見出しの入れ物（sec-head/.story など）が違っても効くよう .wrap 側に罫線を置く。 */
+  .block.cont, .message.cont{padding-top:0}
+  .block.cont > .wrap, .message.cont > .wrap{
+    border-top:1px solid var(--line);padding-top:clamp(1.9rem,4vw,3.2rem)}
+  .sub-head{text-align:center;margin-bottom:clamp(1.4rem,3vw,2.2rem)}
+  .sub-head .eyebrow{display:block;font-family:var(--latin);font-style:italic;
+    font-size:.68rem;letter-spacing:.2em;color:var(--beni);margin-bottom:.4rem}
+  .sub-head .jp-label{display:block;font-family:var(--gothic);font-size:.76rem;
+    letter-spacing:.08em;color:var(--ink-faint);margin-top:.5rem}
+  /* 小見出しは、入れ物によらず同じ見た目に揃える */
+  .sub-h{font-family:var(--mincho);font-size:clamp(1.15rem,2.6vw,1.55rem);
+    font-weight:600;letter-spacing:.08em;line-height:1.5;color:var(--ink)}
 </style>
 
 <div class="mock">◎ <b>トップページ案04（Garden系）改善反映版</b> — 採用ベースにMAGI診断の改善を反映した試作。写真枠・価格・レビュー・実績表示はすべてダミー／検討用です。本番はMakeShopの動的タグで実データが入ります。</div>
@@ -524,8 +541,8 @@
   .ship-note{margin-top:1.5rem;text-align:center;font-family:var(--gothic);font-size:.78rem;color:var(--ink-faint)}
 </style>
 <!-- ============================================================
-     TOPページ セクション掲載順：2026-07-31 MAGI合議の結論に基づく
-     並び順の変更は _reorder_top.py の DESIRED_ORDER を編集して再実行する
+     TOPページ 11ブロック構成：2026-07-31 MAGI合議の結論
+     グループ分けは _merge_sections.py の GROUPS を編集して再実行する
      ============================================================ -->
 <section class="hero">
   <div class="slides" id="heroSlides">
@@ -550,7 +567,7 @@
   </div>
 </section>
 
-<section class="block" id="season">
+<section class="block alt" id="season">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Season &amp; Members</span>
@@ -570,7 +587,7 @@
   </div>
 </section>
 
-<section class="block alt" id="products">
+<section class="block" id="products">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Products</span>
@@ -611,13 +628,13 @@
   </div>
 </section>
 
-<section class="block" id="ranking">
+<section class="block cont" id="ranking">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sub-head reveal">
       <span class="eyebrow">Ranking</span>
-      <h2>月間ご購入ランキング</h2>
+      <h3 class="sub-h">月間ご購入ランキング</h3>
       <span class="jp-label">たくさんのお客様に選ばれています</span>
-      <span class="rule"></span>
+      
     </div>
     <div class="rank-list reveal">
       <a class="rank-item" href="#">
@@ -660,12 +677,12 @@
   </div>
 </section>
 
-<section class="block" id="direct">
+<section class="block alt cont" id="direct">
   <div class="wrap">
     <div class="direct reveal">
       <div class="lead">
         <span class="eyebrow">Direct from Kasumi</span>
-        <h2>産地から、直接あなたの食卓へ。</h2>
+        <h3 class="sub-h">産地から、直接あなたの食卓へ。</h3>
         <p>丸近の公式ショップは、香住港の目の前で選び抜いた一杯を、いちばん美味しい状態で直接お届けします。「食べたい時に、贈りたい時に、すぐ」——それは産地の店だからできることです。</p>
       </div>
       <div class="direct-grid">
@@ -686,7 +703,7 @@
   </div>
 </section>
 
-<section class="block alt" id="strength">
+<section class="block" id="strength">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Our Strength</span>
@@ -716,13 +733,13 @@
   </div>
 </section>
 
-<section class="block" id="awards">
+<section class="block cont" id="awards">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sub-head reveal">
       <span class="eyebrow">Awards</span>
-      <h2>数字が語る、丸近の実績</h2>
+      <h3 class="sub-h">数字が語る、丸近の実績</h3>
       <span class="jp-label">ふるさと納税ランキング 全国1位</span>
-      <span class="rule"></span>
+      
     </div>
     <div class="awards-grid reveal">
       <div class="award">
@@ -754,13 +771,13 @@
   </div>
 </section>
 
-<section class="block alt" id="quality">
+<section class="block cont" id="quality">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sub-head reveal">
       <span class="eyebrow">Quality &amp; Safety</span>
-      <h2>安心してお選びいただくために</h2>
+      <h3 class="sub-h">安心してお選びいただくために</h3>
       <span class="jp-label">原産地・食品表示・保証</span>
-      <span class="rule"></span>
+      
     </div>
     <table class="info-table reveal">
       <tr><th>原産地</th><td>兵庫県・香住港 水揚げ（香住ガニ＝紅ズワイガニ／松葉がに＝ズワイガニ）</td></tr>
@@ -776,7 +793,7 @@
   </div>
 </section>
 
-<section class="block" id="story">
+<section class="block alt" id="story">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Our Story</span>
@@ -814,15 +831,15 @@
   </div>
 </section>
 
-<section class="message reveal">
+<section class="message reveal cont">
   <div class="wrap">
     <p class="en">Our Philosophy</p>
-    <h2>食で感動を創り、幸せをつなぐ。</h2>
+    <h3 class="sub-h">食で感動を創り、幸せをつなぐ。</h3>
     <p>地元・香住で競り落とした確かな一杯を、いちばん美味しい状態で。産地だからできる目利きと技で、ご家庭に、大切な方への贈り物に、海の感動をお届けします。</p>
   </div>
 </section>
 
-<section class="block alt" id="categories" style="padding-top:0">
+<section class="block" id="categories" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Categories</span>
@@ -843,7 +860,7 @@
   </div>
 </section>
 
-<section class="block" id="voice">
+<section class="block alt" id="voice">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Customer Voice</span>
@@ -875,7 +892,7 @@
   </div>
 </section>
 
-<section class="block alt" id="gift">
+<section class="block" id="gift">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Gift</span>
@@ -894,13 +911,13 @@
   </div>
 </section>
 
-<section class="block" id="choose">
+<section class="block cont" id="choose">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sub-head reveal">
       <span class="eyebrow">How to Choose</span>
-      <h2>はじめての方へ、カニの選び方</h2>
+      <h3 class="sub-h">はじめての方へ、カニの選び方</h3>
       <span class="jp-label">種類・状態・形状で、ぴったりの一杯を</span>
-      <span class="rule"></span>
+      
     </div>
     <div class="choose-grid reveal">
       <div class="choose-card">
@@ -932,13 +949,13 @@
   </div>
 </section>
 
-<section class="block alt" id="guide">
+<section class="block cont" id="guide">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sub-head reveal">
       <span class="eyebrow">How to Enjoy</span>
-      <h2>失敗しない、召し上がり方</h2>
+      <h3 class="sub-h">失敗しない、召し上がり方</h3>
       <span class="jp-label">解凍・調理・保存の基本</span>
-      <span class="rule"></span>
+      
     </div>
     <div class="pillars reveal">
       <div class="pillar">
@@ -964,7 +981,7 @@
   </div>
 </section>
 
-<section class="block" id="faq">
+<section class="block alt" id="faq">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">FAQ</span>
@@ -986,13 +1003,13 @@
   </div>
 </section>
 
-<section class="block alt" id="delivery">
+<section class="block alt cont" id="delivery">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sub-head reveal">
       <span class="eyebrow">Shipping</span>
-      <h2>送料・お届けについて</h2>
+      <h3 class="sub-h">送料・お届けについて</h3>
       <span class="jp-label">産地直送・クール便でお届けします</span>
-      <span class="rule"></span>
+      
     </div>
     <div class="ship-grid reveal">
       <div class="ship">

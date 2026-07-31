@@ -5,7 +5,14 @@ Thumbs.db
 _build_category.py
 _build_pages.py
 _extract_assets.py
+_merge_sections.py
+_names_backup.json
 _products.json
+_rename_applied.json
+_rename_batch1.json
+_rename_plan.json
+_rename_plan.py
+_rename_rest.json
 _reorder_top.py
 _skeleton_*.html
 _top_products.py
