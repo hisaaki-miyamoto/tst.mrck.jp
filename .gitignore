@@ -1,9 +1,10 @@
 Thumbs.db
 .DS_Store
 
-# build helper (local only)
+# build helper / data cache (local only)
 _build_category.py
 _build_pages.py
 _extract_assets.py
+_products.json
 _reorder_top.py
 _skeleton_*.html
