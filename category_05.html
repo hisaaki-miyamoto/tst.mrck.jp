@@ -61,6 +61,14 @@
   @media (max-width:760px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:430px){.cat-grid{grid-template-columns:1fr}}
 
+  /* 商品写真（現行サイトのMakeShop CDNを直接参照）。
+     枠いっぱいに収め、ホバーでわずかに寄る。読み込み前は下地の色が見える。 */
+  .cat-grid .card .ph{overflow:hidden}
+  .cat-grid .card .ph img{width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .5s ease}
+  .cat-grid .card:hover .ph img{transform:scale(1.05)}
+  .cat-grid .card.soldout .ph img{filter:grayscale(1) brightness(.92)}
+
   /* 商品名は本番（MakeShop）の実データが長いため、3行で切り詰めてカードの高さを揃える */
   .cat-grid .card .body h3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;
     overflow:hidden;font-size:.92rem;line-height:1.65;min-height:calc(.92rem * 1.65 * 3)}
@@ -252,7 +260,7 @@
 
     <div class="cat-grid reveal">
       <article class="card">
-        <div class="ph"><span class="tag">全国1位</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">全国1位</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000098_tOHYhQT.jpg" alt="［冷凍］*** 50セット数量限定 ***【国産ベニズワイガニ】甲羅盛り 香箱造り／160g×4個入り" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］*** 50セット数量限定 ***【国産ベニズワイガニ】甲羅盛り 香箱造り／160g×4個入り</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.9 (152)</span></div>
@@ -261,7 +269,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span class="tag">ギフト向け</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">ギフト向け</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000010_oFbhulI.png" alt="［冷凍］【香住ガニ】甲羅味噌付／活〆／特大サイズ1杯分／約900〜1kg級以上使用／かにすき出汁付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住ガニ】甲羅味噌付／活〆／特大サイズ1杯分／約900〜1kg級以上使用／かにすき出汁付</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.8 (44)</span></div>
@@ -270,7 +278,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000009_Jg2NdyC.jpg" alt="［冷凍］【香住ガニ】甲羅味噌付／大サイズ2杯分／約1kg級を使用／焼きがに・かにすき／かにすき出汁付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住ガニ】甲羅味噌付／大サイズ2杯分／約1kg級を使用／焼きがに・かにすき／かにすき出汁付</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.6 (39)</span></div>
@@ -279,7 +287,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span class="tag">季節限定</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">季節限定</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000098_tOHYhQT.jpg" alt="［冷凍］【せこがに】甲羅盛り／内子・外子たっぷり／4個入り／珍味／日本酒のお供に" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【せこがに】甲羅盛り／内子・外子たっぷり／4個入り／珍味／日本酒のお供に</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.7 (58)</span></div>
@@ -288,7 +296,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000098_tOHYhQT.jpg" alt="［冷凍］【オオズワイガニ】甲羅盛り／160g×2個入り／お試しセット／かに酢付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【オオズワイガニ】甲羅盛り／160g×2個入り／お試しセット／かに酢付</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.4 (33)</span></div>
@@ -297,7 +305,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000098_tOHYhQT.jpg" alt="［冷凍］【国産ベニズワイガニ】甲羅盛り 香箱造り／160g×8個入り／大容量／ご家族に" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【国産ベニズワイガニ】甲羅盛り 香箱造り／160g×8個入り／大容量／ご家族に</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.8 (47)</span></div>
@@ -306,7 +314,7 @@
         </div>
       </article>
       <article class="card soldout">
-        <div class="ph"><span class="soldlabel">SOLD OUT</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="soldlabel">SOLD OUT</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000098_tOHYhQT.jpg" alt="［冷凍］【香住ガニ】甲羅盛り／かに味噌たっぷり／2個入り／お試しサイズ" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住ガニ】甲羅盛り／かに味噌たっぷり／2個入り／お試しサイズ</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.3 (25)</span></div>

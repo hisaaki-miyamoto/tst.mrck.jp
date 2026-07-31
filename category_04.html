@@ -61,6 +61,14 @@
   @media (max-width:760px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:430px){.cat-grid{grid-template-columns:1fr}}
 
+  /* 商品写真（現行サイトのMakeShop CDNを直接参照）。
+     枠いっぱいに収め、ホバーでわずかに寄る。読み込み前は下地の色が見える。 */
+  .cat-grid .card .ph{overflow:hidden}
+  .cat-grid .card .ph img{width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .5s ease}
+  .cat-grid .card:hover .ph img{transform:scale(1.05)}
+  .cat-grid .card.soldout .ph img{filter:grayscale(1) brightness(.92)}
+
   /* 商品名は本番（MakeShop）の実データが長いため、3行で切り詰めてカードの高さを揃える */
   .cat-grid .card .body h3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;
     overflow:hidden;font-size:.92rem;line-height:1.65;min-height:calc(.92rem * 1.65 * 3)}
@@ -251,7 +259,7 @@
 
     <div class="cat-grid reveal">
       <article class="card">
-        <div class="ph"><span class="tag">人気No.1</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">人気No.1</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000032_WdNZhob.jpg" alt="［冷凍］【香住ガニ】棒上身／約カニ10杯分相当（500g)／殻なし手剥き身／便利パック／かに酢付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住ガニ】棒上身／約カニ10杯分相当（500g)／殻なし手剥き身／便利パック／かに酢付</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.8 (94)</span></div>
@@ -260,7 +268,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000034_7eHjZcn.jpg" alt="［冷凍］【香住ガニ】棒崩れ身／中身／約カニ10杯分相当（500g）／殻なし手剥き身／かに酢付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住ガニ】棒崩れ身／中身／約カニ10杯分相当（500g）／殻なし手剥き身／かに酢付</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.6 (73)</span></div>
@@ -269,7 +277,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span class="tag">お手軽</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">お手軽</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000002_3O7kTiY.jpg" alt="［冷凍］【香住ガニ】かに身ほぐし身／白身／約カニ10杯分相当（500g）／殻なし手剥き身／かに酢付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住ガニ】かに身ほぐし身／白身／約カニ10杯分相当（500g）／殻なし手剥き身／かに酢付</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.5 (58)</span></div>
@@ -278,7 +286,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span class="tag">大容量</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">大容量</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000017_HeFdzsH.jpg" alt="［冷蔵］【香住ガニ】／かに身セット／合計600g（300g×2パック）／大容量！／かに酢・かに味噌付き" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷蔵］【香住ガニ】／かに身セット／合計600g（300g×2パック）／大容量！／かに酢・かに味噌付き</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.8 (76)</span></div>
@@ -287,7 +295,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000032_WdNZhob.jpg" alt="［冷凍］【香住ガニ】棒上身／約カニ20杯分相当（1kg）／殻なし手剥き身／業務用サイズ／かに酢付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住ガニ】棒上身／約カニ20杯分相当（1kg）／殻なし手剥き身／業務用サイズ／かに酢付</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.9 (31)</span></div>
@@ -296,7 +304,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000017_HeFdzsH.jpg" alt="［冷蔵］【香住ガニ】／かに身セット／300g×1パック／お試しサイズ／かに酢付き" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷蔵］【香住ガニ】／かに身セット／300g×1パック／お試しサイズ／かに酢付き</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.4 (66)</span></div>
@@ -305,7 +313,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000032_WdNZhob.jpg" alt="［冷凍］【松葉がに】棒上身／約500g／殻なし手剥き身／最高級／かに酢付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【松葉がに】棒上身／約500g／殻なし手剥き身／最高級／かに酢付</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.9 (22)</span></div>
@@ -314,7 +322,7 @@
         </div>
       </article>
       <article class="card soldout">
-        <div class="ph"><span class="soldlabel">SOLD OUT</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="soldlabel">SOLD OUT</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000002_3O7kTiY.jpg" alt="［冷凍］【香住ガニ】かに身ほぐし身／白身／250g／少量パック／かに酢付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住ガニ】かに身ほぐし身／白身／250g／少量パック／かに酢付</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.3 (41)</span></div>

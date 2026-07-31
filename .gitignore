@@ -5,4 +5,5 @@ Thumbs.db
 _build_category.py
 _build_pages.py
 _extract_assets.py
+_reorder_top.py
 _skeleton_*.html

@@ -61,6 +61,14 @@
   @media (max-width:760px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:430px){.cat-grid{grid-template-columns:1fr}}
 
+  /* 商品写真（現行サイトのMakeShop CDNを直接参照）。
+     枠いっぱいに収め、ホバーでわずかに寄る。読み込み前は下地の色が見える。 */
+  .cat-grid .card .ph{overflow:hidden}
+  .cat-grid .card .ph img{width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .5s ease}
+  .cat-grid .card:hover .ph img{transform:scale(1.05)}
+  .cat-grid .card.soldout .ph img{filter:grayscale(1) brightness(.92)}
+
   /* 商品名は本番（MakeShop）の実データが長いため、3行で切り詰めてカードの高さを揃える */
   .cat-grid .card .body h3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;
     overflow:hidden;font-size:.92rem;line-height:1.65;min-height:calc(.92rem * 1.65 * 3)}
@@ -247,7 +255,7 @@
 
     <div class="cat-grid reveal">
       <article class="card">
-        <div class="ph"><span class="tag">人気No.1</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">人気No.1</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000016_QDLTFAT.jpg" alt="［冷凍］【兵庫県産】甘えび／大サイズ・30〜40尾入り・約700g／ぷりぷり／鮮度抜群／お中元・お歳暮にも！" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【兵庫県産】甘えび／大サイズ・30〜40尾入り・約700g／ぷりぷり／鮮度抜群／お中元・お歳暮にも！</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.7 (61)</span></div>
@@ -256,7 +264,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span class="tag">定番</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">定番</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000078_VTizSDh.jpg" alt="［冷蔵］かに酢「かに三杯」／茹でがに等におすすめ／かにの風味を引き立てる万能酢／万能かに酢" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷蔵］かに酢「かに三杯」／茹でがに等におすすめ／かにの風味を引き立てる万能酢／万能かに酢</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.4 (48)</span></div>
@@ -265,7 +273,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000016_QDLTFAT.jpg" alt="［冷凍］【兵庫県産】甘えび／中サイズ・40〜50尾入り・約500g／お試しサイズ／鮮度抜群" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【兵庫県産】甘えび／中サイズ・40〜50尾入り・約500g／お試しサイズ／鮮度抜群</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.5 (37)</span></div>
@@ -274,7 +282,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000078_VTizSDh.jpg" alt="［冷蔵］かに酢「かに三杯」／3本セット／贈答にも／かにの風味を引き立てる万能酢" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷蔵］かに酢「かに三杯」／3本セット／贈答にも／かにの風味を引き立てる万能酢</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.6 (22)</span></div>
@@ -283,7 +291,7 @@
         </div>
       </article>
       <article class="card soldout">
-        <div class="ph"><span class="tag">季節限定</span><span class="soldlabel">SOLD OUT</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">季節限定</span><span class="soldlabel">SOLD OUT</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000016_QDLTFAT.jpg" alt="［冷凍］【香住産】するめいか／一夜干し／5枚入／日本海の味／酒の肴に" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住産】するめいか／一夜干し／5枚入／日本海の味／酒の肴に</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.3 (18)</span></div>

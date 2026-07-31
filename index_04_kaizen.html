@@ -333,6 +333,13 @@
   .to-top svg{stroke:currentColor}
   .to-top .label{font-family:var(--latin);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;line-height:1}
   @media (prefers-reduced-motion:reduce){.to-top{transition:opacity .2s ease}}
+
+  /* 商品写真（現行サイトのMakeShop CDNを直接参照・2026-07-31） */
+  .prod-grid .card .ph{overflow:hidden}
+  .prod-grid .card .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+  .prod-grid .card:hover .ph img{transform:scale(1.05)}
+  .rank-item .thumb{overflow:hidden}
+  .rank-item .thumb img{width:100%;height:100%;object-fit:cover;display:block}
 </style>
 
 <div class="mock">◎ <b>トップページ案04（Garden系）改善反映版</b> — 採用ベースにMAGI診断の改善を反映した試作。写真枠・価格・レビュー・実績表示はすべてダミー／検討用です。本番はMakeShopの動的タグで実データが入ります。</div>
@@ -404,79 +411,6 @@
     </div>
   </div>
 </header>
-
-<section class="hero">
-  <div class="slides" id="heroSlides">
-    <div class="slide active" style="background-image:var(--slide-a)"></div>
-    <div class="slide" style="background-image:var(--slide-b)"></div>
-    <div class="slide" style="background-image:var(--slide-c)"></div>
-  </div>
-  <div class="scrim"></div>
-  <div class="content">
-    <div class="wrap">
-      <h1 class="vcopy"><span class="line">香住の恵みを、</span><span class="line accent">食卓へ。</span></h1>
-    </div>
-  </div>
-  <div class="subrow">
-    <div class="wrap">
-      <p class="lead">
-        <span class="eyebrow">Kasumi Brand Crab</span>
-        香住港のタグ付きブランド蟹「香住ガニ」。買付けから加工・販売まで一貫し、朝茹での鮮度をそのままお届けします。
-      </p>
-      <span class="scroll">Scroll</span>
-    </div>
-  </div>
-</section>
-
-<section class="message reveal">
-  <div class="wrap">
-    <p class="en">Our Philosophy</p>
-    <h2>食で感動を創り、幸せをつなぐ。</h2>
-    <p>地元・香住で競り落とした確かな一杯を、いちばん美味しい状態で。産地だからできる目利きと技で、ご家庭に、大切な方への贈り物に、海の感動をお届けします。</p>
-  </div>
-</section>
-
-<section class="block" id="products">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Products</span>
-      <h2>丸近のおすすめ</h2>
-      <span class="jp-label">厳選した旬の逸品</span>
-      <span class="rule"></span>
-    </div>
-    <div class="prod-grid reveal">
-      <article class="card">
-        <div class="ph"><span class="tag">人気No.1</span><span>［商品写真］</span></div>
-        <div class="body">
-          <h3>浜茹で 香住ガニ 約1kg</h3>
-          <p class="desc">水揚げ当日に茹で上げ。甘みと繊細な身質が自慢の一杯。</p>
-          <div class="price"><span class="yen">¥ 8,800</span><span class="tax">税込・送料無料</span></div>
-          <a class="buy" href="#">カートに入れる</a>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><span class="tag">ギフト向け</span><span>［商品写真］</span></div>
-        <div class="body">
-          <h3>甲羅盛り 香箱造り</h3>
-          <p class="desc">内子・外子・かに身を甲羅に美しく詰めた贅沢な逸品。</p>
-          <div class="price"><span class="yen">¥ 6,480</span><span class="tax">税込・送料無料</span></div>
-          <a class="buy" href="#">カートに入れる</a>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ph"><span class="tag">ご自宅用</span><span>［商品写真］</span></div>
-        <div class="body">
-          <h3>香住ガニ かに身セット 600g</h3>
-          <p class="desc">むき身だから手軽。かに鍋にも、そのままでも美味しく。</p>
-          <div class="price"><span class="yen">¥ 5,200</span><span class="tax">税込・送料無料</span></div>
-          <a class="buy" href="#">カートに入れる</a>
-        </div>
-      </article>
-    </div>
-    <div class="more reveal"><a class="btn-line" href="category_03.html">すべての商品を見る</a></div>
-  </div>
-</section>
-
 <style id="category-tiles">
   /* ===== カテゴリー導線（2026-07-30 追加）=====
      現行サイト（kani-mrck.com）のカテゴリ構成をそのままタイル化し、
@@ -494,77 +428,6 @@
   @media (max-width:900px){.cat-tiles{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:420px){.cat-tiles{grid-template-columns:1fr}}
 </style>
-
-<section class="block" id="categories" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Categories</span>
-      <h2>カテゴリーから探す</h2>
-      <span class="jp-label">お目当ての品から、旬のおすすめまで</span>
-      <span class="rule"></span>
-    </div>
-    <nav class="cat-tiles reveal" aria-label="商品カテゴリー">
-      <a href="category_02.html"><span class="en">Special</span><span class="jp">特別限定商品</span><span class="arrow">→</span></a>
-      <a href="category_03.html"><span class="en">All Items</span><span class="jp">全ての商品</span><span class="arrow">→</span></a>
-      <a href="category_04.html"><span class="en">Crab Meat</span><span class="jp">かに身</span><span class="arrow">→</span></a>
-      <a href="category_05.html"><span class="en">Kouramori</span><span class="jp">甲羅盛り</span><span class="arrow">→</span></a>
-      <a href="category_01.html"><span class="en">Boiled Crab</span><span class="jp">茹でがに</span><span class="arrow">→</span></a>
-      <a href="category_06.html"><span class="en">Live Crab</span><span class="jp">活けがに</span><span class="arrow">→</span></a>
-      <a href="category_07.html"><span class="en">Crab Hot Pot</span><span class="jp">かにすき</span><span class="arrow">→</span></a>
-      <a href="category_08.html"><span class="en">Others</span><span class="jp">その他</span><span class="arrow">→</span></a>
-    </nav>
-  </div>
-</section>
-
-<section class="block alt" id="ranking">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Ranking</span>
-      <h2>月間ご購入ランキング</h2>
-      <span class="jp-label">たくさんのお客様に選ばれています</span>
-      <span class="rule"></span>
-    </div>
-    <div class="rank-list reveal">
-      <a class="rank-item" href="#">
-        <span class="no">1<small>1st</small></span>
-        <span class="thumb"></span>
-        <span class="info"><h3>浜茹で 香住ガニ 約1kg</h3><p>贈答・ご自宅用に不動の一番人気</p><span class="yen">¥ 8,800</span></span>
-        <span class="arrow">→</span>
-      </a>
-      <a class="rank-item" href="#">
-        <span class="no">2<small>2nd</small></span>
-        <span class="thumb"></span>
-        <span class="info"><h3>甲羅盛り 香箱造り</h3><p>季節限定・数量限定の贅沢盛り</p><span class="yen">¥ 6,480</span></span>
-        <span class="arrow">→</span>
-      </a>
-      <a class="rank-item" href="#">
-        <span class="no">3<small>3rd</small></span>
-        <span class="thumb"></span>
-        <span class="info"><h3>香住ガニ かに身セット 600g</h3><p>手軽に楽しめるとリピーター多数</p><span class="yen">¥ 5,200</span></span>
-        <span class="arrow">→</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="crab">
-  <div class="wrap">
-    <div class="story">
-      <div class="visual reveal">
-        <div class="stamp">香住港<br>直送</div>
-        <span>［ 写真：競り／香住の港 ］</span>
-      </div>
-      <div class="txt reveal">
-        <span class="eyebrow">Our Crab</span>
-        <h2>香住ガニとは。</h2>
-        <p>兵庫・香住港で水揚げされる紅ズワイガニ。鮮度が命のこの蟹を、港のすぐそばで扱えることが丸近の何よりの強みです。</p>
-        <p>みずみずしい甘さと、とろけるような舌触り。獲れたてをその日のうちに茹で上げるからこそ味わえる、産地ならではの一杯をお届けします。</p>
-        <a class="link" href="#">香住ガニの物語を読む →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <style id="story-styles">
   .story-lead{max-width:820px;margin:0 auto clamp(1.8rem,4vw,2.6rem);text-align:center;font-family:var(--gothic);font-size:.95rem;color:var(--ink-soft);line-height:2}
   .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
@@ -578,45 +441,6 @@
   .story-close .big{font-family:var(--mincho);font-size:clamp(1.4rem,3.4vw,2rem);color:var(--ink);letter-spacing:.12em;font-weight:600;line-height:1.6}
   .story-close .en{display:block;font-family:var(--latin);font-style:italic;font-size:.78rem;letter-spacing:.24em;color:var(--ink-faint);margin-top:.5rem}
 </style>
-
-<section class="block alt" id="story">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Our Story</span>
-      <h2>香住とともに、七十年。</h2>
-      <span class="jp-label">創業から変わらない、目利きの心</span>
-      <span class="rule"></span>
-    </div>
-    <p class="story-lead reveal">日本海に面した小さな港町・香住で、丸近は一杯の蟹とともに歩んできました。移り変わる時代のなかで変わらなかったのは、「いちばん美味しい状態で届けたい」という一心と、港のすぐそばで確かな一杯を選び抜く目利きの心です。</p>
-    <div class="timeline reveal">
-      <div class="tl">
-        <span class="step">Chapter 01</span>
-        <h3>創業 — 香住の港で</h3>
-        <p>香住の港町で、海の恵みを世に届ける歩みが始まりました。地元の海とともに生きる、丸近の原点です。</p>
-      </div>
-      <div class="tl">
-        <span class="step">Chapter 02</span>
-        <h3>目利きの継承</h3>
-        <p>港のすぐそばで、買付けから加工・販売まで一貫して。確かな品質だけを選び抜く目を、代々受け継いできました。</p>
-      </div>
-      <div class="tl">
-        <span class="step">Chapter 03</span>
-        <h3>全国へ</h3>
-        <p>ふるさと納税ランキングで全国1位の評価をいただき、香住ガニの美味しさが全国のご家庭へ届くようになりました。</p>
-      </div>
-      <div class="tl">
-        <span class="step">Chapter 04</span>
-        <h3>これから</h3>
-        <p>地方から、世界へ。香住で育んだ味と感動を、次の世代とその先の食卓まで届けていきます。</p>
-      </div>
-    </div>
-    <div class="story-close reveal">
-      <span class="big">食で感動を創り、幸せをつなぐ。</span>
-      <span class="en">From Kasumi to the world.</span>
-    </div>
-  </div>
-</section>
-
 <style id="choose-styles">
   .choose-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
   @media(max-width:760px){.choose-grid{grid-template-columns:1fr}}
@@ -631,135 +455,6 @@
   .choose-note div{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.3rem;font-family:var(--gothic);font-size:.86rem;color:var(--ink-soft);line-height:1.9}
   .choose-note b{color:var(--ink)}
 </style>
-
-<section class="block" id="choose">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">How to Choose</span>
-      <h2>はじめての方へ、カニの選び方</h2>
-      <span class="jp-label">種類・状態・形状で、ぴったりの一杯を</span>
-      <span class="rule"></span>
-    </div>
-    <div class="choose-grid reveal">
-      <div class="choose-card">
-        <span class="k">Type 01</span>
-        <h3>香住ガニ</h3>
-        <p class="sub">紅ズワイガニ</p>
-        <p class="body">みずみずしい甘さと、とろけるような舌触り。香住港ならではの鮮度が魅力です。</p>
-        <p class="scene">▶ 日常のごちそう・食べ盛りのご家庭に</p>
-      </div>
-      <div class="choose-card">
-        <span class="k">Type 02</span>
-        <h3>松葉がに</h3>
-        <p class="sub">ズワイガニ</p>
-        <p class="body">締まった身と、濃厚で深い旨み。冬の味覚の王様と呼ばれる特別な一杯です。</p>
-        <p class="scene">▶ 特別な日・大切な方への贈り物に</p>
-      </div>
-      <div class="choose-card">
-        <span class="k">Type 03</span>
-        <h3>セコガニ</h3>
-        <p class="sub">松葉がにの雌</p>
-        <p class="body">内子・外子のねっとり濃厚な味わい。旬が短い、知る人ぞ知る季節の逸品です。</p>
-        <p class="scene">▶ 通の味・秋冬の季節限定で</p>
-      </div>
-    </div>
-    <div class="choose-note reveal">
-      <div><b>状態で選ぶ：</b>すぐ食べたいなら<b>浜茹で</b>（解凍してそのまま）。通年楽しみたい・作り置きなら<b>冷凍</b>が便利です。</div>
-      <div><b>形状で選ぶ：</b>見栄え・お祝いには<b>姿・甲羅盛り</b>。手軽に・お鍋には殻むき不要の<b>むき身セット</b>がおすすめです。</div>
-    </div>
-  </div>
-</section>
-
-<section class="block alt" id="strength">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Our Strength</span>
-      <h2>丸近が選ばれる理由</h2>
-      <span class="rule"></span>
-    </div>
-    <div class="pillars reveal">
-      <div class="pillar">
-        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2C7 8 4 11 4 15a8 8 0 0 0 16 0c0-4-3-7-8-13Z"/></svg></div>
-        <div class="num">01</div>
-        <h3>産地直送の鮮度</h3>
-        <p>香住港の目の前で買付け。水揚げ当日に加工し、鮮度を落とさずお届けします。</p>
-      </div>
-      <div class="pillar">
-        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l2.5 5.2 5.7.8-4.1 4 1 5.7L12 21l-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></div>
-        <div class="num">02</div>
-        <h3>一貫した目利き</h3>
-        <p>買付け・加工・販売まで自社一貫。確かな品質だけを選び抜きます。</p>
-      </div>
-      <div class="pillar">
-        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 7L9 18l-5-5"/></svg></div>
-        <div class="num">03</div>
-        <h3>安心のサポート</h3>
-        <p>贈答対応から到着後のご相談まで。丁寧な対応で長くご愛顧いただいています。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="direct">
-  <div class="wrap">
-    <div class="direct reveal">
-      <div class="lead">
-        <span class="eyebrow">Direct from Kasumi</span>
-        <h2>産地から、直接あなたの食卓へ。</h2>
-        <p>丸近の公式ショップは、香住港の目の前で選び抜いた一杯を、いちばん美味しい状態で直接お届けします。「食べたい時に、贈りたい時に、すぐ」——それは産地の店だからできることです。</p>
-      </div>
-      <div class="direct-grid">
-        <div class="direct-item">
-          <h3>いつでも、旬を</h3>
-          <p>解禁シーズンはもちろん、冷凍加工品で通年ご用意。ご希望のお届け日を指定して、食べたい時にお迎えできます。</p>
-        </div>
-        <div class="direct-item">
-          <h3>朝茹での鮮度を直送</h3>
-          <p>水揚げ当日に茹で上げ、産地から直送。港のすぐそばで扱う丸近だからこそのスピードと鮮度です。</p>
-        </div>
-        <div class="direct-item">
-          <h3>贈り物にも、まっすぐ</h3>
-          <p>のし・メッセージカード無料、お届け先を分けての発送も。大切な方へ、香住の感動をそのままお届けします。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="voice">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Customer Voice</span>
-      <h2>お客様の声</h2>
-      <span class="jp-label">※ 掲載内容はイメージ（ダミー）です</span>
-      <span class="rule"></span>
-    </div>
-    <div class="reviews reveal">
-      <div class="review">
-        <span class="stars">★★★★★</span>
-        <p>身がぎっしりで甘みが濃い。毎年こちらで注文しています。冬の楽しみです。</p>
-        <span class="who">兵庫県・60代 / 浜茹で香住ガニ</span>
-      </div>
-      <div class="review">
-        <span class="stars">★★★★★</span>
-        <p>両親への贈り物に。届いてすぐ食べられる手軽さと鮮度に大満足でした。</p>
-        <span class="who">東京都・40代 / 甲羅盛り</span>
-      </div>
-      <div class="review">
-        <span class="stars">★★★★☆</span>
-        <p>むき身セットは本当に便利。鍋にそのまま入れられて子どもも大喜びです。</p>
-        <span class="who">大阪府・30代 / かに身セット</span>
-      </div>
-    </div>
-    <div class="review-cta reveal">
-      <p><b>★ お写真付きレビューを募集中</b>　届いたカニやお料理の写真とご感想を、ぜひお寄せください。次にお選びになる方の、いちばんの参考になります。<span class="rc-note">※ レビュー投稿で使えるクーポンをご用意予定です。</span></p>
-      <a class="btn-line" href="#">レビューを投稿する</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ================= ▼ リニューアル改善 反映セクション（既存デザイン準拠） ================= -->
 <style id="kaizen-styles">
   .gift-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
   @media(max-width:860px){.gift-grid{grid-template-columns:repeat(2,1fr)}}
@@ -806,7 +501,6 @@
   .direct-item h3{font-size:1.02rem;letter-spacing:.03em;margin-bottom:.4rem;color:var(--sumi-ink)}
   .direct-item p{font-family:var(--gothic);font-size:.83rem;color:#D9C7B8;line-height:1.85}
 </style>
-
 <style id="delivery-styles">
   .review-cta{margin-top:2rem;background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:1.4rem 1.6rem;display:flex;align-items:center;justify-content:space-between;gap:1.2rem;flex-wrap:wrap}
   .review-cta p{font-family:var(--gothic);font-size:.9rem;color:var(--ink-soft);line-height:1.8;flex:1;min-width:260px}
@@ -821,42 +515,200 @@
   .ship p{font-family:var(--gothic);font-size:.83rem;color:var(--ink-soft);line-height:1.8}
   .ship-note{margin-top:1.5rem;text-align:center;font-family:var(--gothic);font-size:.78rem;color:var(--ink-faint)}
 </style>
-
-<section class="block" id="delivery">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Shipping</span>
-      <h2>送料・お届けについて</h2>
-      <span class="jp-label">産地直送・クール便でお届けします</span>
-      <span class="rule"></span>
+<!-- ============================================================
+     TOPページ セクション掲載順：2026-07-31 MAGI合議の結論に基づく
+     並び順の変更は _reorder_top.py の DESIRED_ORDER を編集して再実行する
+     ============================================================ -->
+<section class="hero">
+  <div class="slides" id="heroSlides">
+    <div class="slide active" style="background-image:var(--slide-a)"></div>
+    <div class="slide" style="background-image:var(--slide-b)"></div>
+    <div class="slide" style="background-image:var(--slide-c)"></div>
+  </div>
+  <div class="scrim"></div>
+  <div class="content">
+    <div class="wrap">
+      <h1 class="vcopy"><span class="line">香住の恵みを、</span><span class="line accent">食卓へ。</span></h1>
     </div>
-    <div class="ship-grid reveal">
-      <div class="ship">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7M5.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM18.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg></div>
-        <h3>産地直送・クール便</h3>
-        <p>香住港より、鮮度を保ったままクール便（冷蔵／冷凍）で全国へお届けします。</p>
-      </div>
-      <div class="ship">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 4h18v4H3zM3 8v12h18V8M8 12h8"/></svg></div>
-        <h3>送料の目安</h3>
-        <p>商品ごとに税込・送料込みの総額を表示。冷蔵・冷凍は別便のため送料が分かれる場合があります。</p>
-      </div>
-      <div class="ship">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
-        <h3>お届け日の指定</h3>
-        <p>ご注文から中2〜3日が目安。着日・時間帯のご指定を承ります（一部地域・繁忙期を除く）。</p>
-      </div>
-      <div class="ship">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3>年末年始のご注意</h3>
-        <p>お歳暮・年末は配送が集中します。着日指定不可期間が生じるため、お早めのご注文をおすすめします。</p>
-      </div>
+  </div>
+  <div class="subrow">
+    <div class="wrap">
+      <p class="lead">
+        <span class="eyebrow">Kasumi Brand Crab</span>
+        香住港のタグ付きブランド蟹「香住ガニ」。買付けから加工・販売まで一貫し、朝茹での鮮度をそのままお届けします。
+      </p>
+      <span class="scroll">Scroll</span>
     </div>
-    <p class="ship-note">※ 具体的な送料・お届け日数・対応エリアは、各商品ページおよび「お買い物ガイド」に明記します（本番実装）。</p>
   </div>
 </section>
 
-<section class="block alt" id="awards">
+<section class="block" id="season">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Season &amp; Members</span>
+      <h2>旬の入荷と、お得なご案内</h2>
+      <span class="jp-label">香住ガニは季節の恵み</span>
+      <span class="rule"></span>
+    </div>
+    <div class="season-wrap reveal">
+      <p>香住ガニ・松葉がにには漁期があります。<strong>禁漁期（およそ6～8月）</strong>は生の提供をお休みし、冷凍加工品でお届けします。</p>
+      <div class="sched">🦀 解禁の入荷・数量限定品は <strong>LINE・会員メール</strong> でいち早くご案内／ご予約を承ります</div>
+      <p>毎年のお歳暮・鍋シーズンに便利な <strong>定期便・リピート特典</strong> もご用意予定です。</p>
+      <div class="season-cta">
+        <a class="btn-line-fill" href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 4 3.9 7.3 9 7.9.4 0 .6.2.6.5v2.2c0 .3.3.5.6.4 3.9-2 8.2-5.9 9.2-9 .1-.4.1-.7.1-1 0-4.4-4.5-8-11.5-8Z"/></svg>LINEで友だち追加</a>
+        <a class="btn-line" href="#">会員登録（入荷通知・ポイント）</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="products">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Products</span>
+      <h2>丸近のおすすめ</h2>
+      <span class="jp-label">厳選した旬の逸品</span>
+      <span class="rule"></span>
+    </div>
+    <div class="prod-grid reveal">
+      <article class="card">
+        <div class="ph"><span class="tag">人気No.1</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000097_mYKFtEy.png" alt="浜茹で 香住ガニ 約1kg" loading="lazy" decoding="async"></div>
+        <div class="body">
+          <h3>浜茹で 香住ガニ 約1kg</h3>
+          <p class="desc">水揚げ当日に茹で上げ。甘みと繊細な身質が自慢の一杯。</p>
+          <div class="price"><span class="yen">¥ 8,800</span><span class="tax">税込・送料無料</span></div>
+          <a class="buy" href="#">カートに入れる</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph"><span class="tag">ギフト向け</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000098_tOHYhQT.jpg" alt="甲羅盛り 香箱造り" loading="lazy" decoding="async"></div>
+        <div class="body">
+          <h3>甲羅盛り 香箱造り</h3>
+          <p class="desc">内子・外子・かに身を甲羅に美しく詰めた贅沢な逸品。</p>
+          <div class="price"><span class="yen">¥ 6,480</span><span class="tax">税込・送料無料</span></div>
+          <a class="buy" href="#">カートに入れる</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph"><span class="tag">ご自宅用</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000017_HeFdzsH.jpg" alt="香住ガニ かに身セット 600g" loading="lazy" decoding="async"></div>
+        <div class="body">
+          <h3>香住ガニ かに身セット 600g</h3>
+          <p class="desc">むき身だから手軽。かに鍋にも、そのままでも美味しく。</p>
+          <div class="price"><span class="yen">¥ 5,200</span><span class="tax">税込・送料無料</span></div>
+          <a class="buy" href="#">カートに入れる</a>
+        </div>
+      </article>
+    </div>
+    <div class="more reveal"><a class="btn-line" href="category_03.html">すべての商品を見る</a></div>
+  </div>
+</section>
+
+<section class="block" id="ranking">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Ranking</span>
+      <h2>月間ご購入ランキング</h2>
+      <span class="jp-label">たくさんのお客様に選ばれています</span>
+      <span class="rule"></span>
+    </div>
+    <div class="rank-list reveal">
+      <a class="rank-item" href="#">
+        <span class="no">1<small>1st</small></span>
+        <span class="thumb"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000097_mYKFtEy.png" alt="浜茹で 香住ガニ 約1kg" loading="lazy" decoding="async"></span>
+        <span class="info"><h3>浜茹で 香住ガニ 約1kg</h3><p>贈答・ご自宅用に不動の一番人気</p><span class="yen">¥ 8,800</span></span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="rank-item" href="#">
+        <span class="no">2<small>2nd</small></span>
+        <span class="thumb"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000098_tOHYhQT.jpg" alt="甲羅盛り 香箱造り" loading="lazy" decoding="async"></span>
+        <span class="info"><h3>甲羅盛り 香箱造り</h3><p>季節限定・数量限定の贅沢盛り</p><span class="yen">¥ 6,480</span></span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="rank-item" href="#">
+        <span class="no">3<small>3rd</small></span>
+        <span class="thumb"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000017_HeFdzsH.jpg" alt="香住ガニ かに身セット 600g" loading="lazy" decoding="async"></span>
+        <span class="info"><h3>香住ガニ かに身セット 600g</h3><p>手軽に楽しめるとリピーター多数</p><span class="yen">¥ 5,200</span></span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="crab">
+  <div class="wrap">
+    <div class="story">
+      <div class="visual reveal">
+        <div class="stamp">香住港<br>直送</div>
+        <span>［ 写真：競り／香住の港 ］</span>
+      </div>
+      <div class="txt reveal">
+        <span class="eyebrow">Our Crab</span>
+        <h2>香住ガニとは。</h2>
+        <p>兵庫・香住港で水揚げされる紅ズワイガニ。鮮度が命のこの蟹を、港のすぐそばで扱えることが丸近の何よりの強みです。</p>
+        <p>みずみずしい甘さと、とろけるような舌触り。獲れたてをその日のうちに茹で上げるからこそ味わえる、産地ならではの一杯をお届けします。</p>
+        <a class="link" href="#">香住ガニの物語を読む →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="direct">
+  <div class="wrap">
+    <div class="direct reveal">
+      <div class="lead">
+        <span class="eyebrow">Direct from Kasumi</span>
+        <h2>産地から、直接あなたの食卓へ。</h2>
+        <p>丸近の公式ショップは、香住港の目の前で選び抜いた一杯を、いちばん美味しい状態で直接お届けします。「食べたい時に、贈りたい時に、すぐ」——それは産地の店だからできることです。</p>
+      </div>
+      <div class="direct-grid">
+        <div class="direct-item">
+          <h3>いつでも、旬を</h3>
+          <p>解禁シーズンはもちろん、冷凍加工品で通年ご用意。ご希望のお届け日を指定して、食べたい時にお迎えできます。</p>
+        </div>
+        <div class="direct-item">
+          <h3>朝茹での鮮度を直送</h3>
+          <p>水揚げ当日に茹で上げ、産地から直送。港のすぐそばで扱う丸近だからこそのスピードと鮮度です。</p>
+        </div>
+        <div class="direct-item">
+          <h3>贈り物にも、まっすぐ</h3>
+          <p>のし・メッセージカード無料、お届け先を分けての発送も。大切な方へ、香住の感動をそのままお届けします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="strength">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Our Strength</span>
+      <h2>丸近が選ばれる理由</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="pillars reveal">
+      <div class="pillar">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2C7 8 4 11 4 15a8 8 0 0 0 16 0c0-4-3-7-8-13Z"/></svg></div>
+        <div class="num">01</div>
+        <h3>産地直送の鮮度</h3>
+        <p>香住港の目の前で買付け。水揚げ当日に加工し、鮮度を落とさずお届けします。</p>
+      </div>
+      <div class="pillar">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l2.5 5.2 5.7.8-4.1 4 1 5.7L12 21l-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></div>
+        <div class="num">02</div>
+        <h3>一貫した目利き</h3>
+        <p>買付け・加工・販売まで自社一貫。確かな品質だけを選び抜きます。</p>
+      </div>
+      <div class="pillar">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 7L9 18l-5-5"/></svg></div>
+        <div class="num">03</div>
+        <h3>安心のサポート</h3>
+        <p>贈答対応から到着後のご相談まで。丁寧な対応で長くご愛顧いただいています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="awards">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Awards</span>
@@ -894,7 +746,128 @@
   </div>
 </section>
 
-<section class="block" id="gift">
+<section class="block alt" id="quality">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Quality &amp; Safety</span>
+      <h2>安心してお選びいただくために</h2>
+      <span class="jp-label">原産地・食品表示・保証</span>
+      <span class="rule"></span>
+    </div>
+    <table class="info-table reveal">
+      <tr><th>原産地</th><td>兵庫県・香住港 水揚げ（香住ガニ＝紅ズワイガニ／松葉がに＝ズワイガニ）</td></tr>
+      <tr><th>加工・製造者</th><td>株式会社丸近（香住港すぐの自社加工場で、買付けから加工まで一貫）</td></tr>
+      <tr><th>保存方法</th><td>冷蔵品：要冷蔵（10℃以下）／冷凍品：要冷凍（-18℃以下）</td></tr>
+      <tr><th>賞味期限</th><td>商品ごとに明記（例：冷凍品は製造日から約30日／解凍後はお早めにお召し上がりください）</td></tr>
+      <tr><th>アレルゲン</th><td>かに（特定原材料）。同一施設でえび等も取り扱っています。</td></tr>
+      <tr><th>お支払い方法</th><td>各種クレジットカード／代金引換／コンビニ・後払い 等（本番実装予定）</td></tr>
+    </table>
+    <div class="assure reveal">
+      <strong>品質保証・返品交換について｜</strong>万一、破損・品違い・品質不良の商品が届いた場合は、到着後2日以内にご連絡いただければ、交換または返金で対応いたします。生鮮品の性質上、お客様都合による返品はお受けできない場合がございます。詳しくは「送料・お届けについて」「特定商取引法に基づく表記」をご覧ください。
+    </div>
+  </div>
+</section>
+
+<section class="block" id="story">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Our Story</span>
+      <h2>香住とともに、七十年。</h2>
+      <span class="jp-label">創業から変わらない、目利きの心</span>
+      <span class="rule"></span>
+    </div>
+    <p class="story-lead reveal">日本海に面した小さな港町・香住で、丸近は一杯の蟹とともに歩んできました。移り変わる時代のなかで変わらなかったのは、「いちばん美味しい状態で届けたい」という一心と、港のすぐそばで確かな一杯を選び抜く目利きの心です。</p>
+    <div class="timeline reveal">
+      <div class="tl">
+        <span class="step">Chapter 01</span>
+        <h3>創業 — 香住の港で</h3>
+        <p>香住の港町で、海の恵みを世に届ける歩みが始まりました。地元の海とともに生きる、丸近の原点です。</p>
+      </div>
+      <div class="tl">
+        <span class="step">Chapter 02</span>
+        <h3>目利きの継承</h3>
+        <p>港のすぐそばで、買付けから加工・販売まで一貫して。確かな品質だけを選び抜く目を、代々受け継いできました。</p>
+      </div>
+      <div class="tl">
+        <span class="step">Chapter 03</span>
+        <h3>全国へ</h3>
+        <p>ふるさと納税ランキングで全国1位の評価をいただき、香住ガニの美味しさが全国のご家庭へ届くようになりました。</p>
+      </div>
+      <div class="tl">
+        <span class="step">Chapter 04</span>
+        <h3>これから</h3>
+        <p>地方から、世界へ。香住で育んだ味と感動を、次の世代とその先の食卓まで届けていきます。</p>
+      </div>
+    </div>
+    <div class="story-close reveal">
+      <span class="big">食で感動を創り、幸せをつなぐ。</span>
+      <span class="en">From Kasumi to the world.</span>
+    </div>
+  </div>
+</section>
+
+<section class="message reveal">
+  <div class="wrap">
+    <p class="en">Our Philosophy</p>
+    <h2>食で感動を創り、幸せをつなぐ。</h2>
+    <p>地元・香住で競り落とした確かな一杯を、いちばん美味しい状態で。産地だからできる目利きと技で、ご家庭に、大切な方への贈り物に、海の感動をお届けします。</p>
+  </div>
+</section>
+
+<section class="block alt" id="categories" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Categories</span>
+      <h2>カテゴリーから探す</h2>
+      <span class="jp-label">お目当ての品から、旬のおすすめまで</span>
+      <span class="rule"></span>
+    </div>
+    <nav class="cat-tiles reveal" aria-label="商品カテゴリー">
+      <a href="category_02.html"><span class="en">Special</span><span class="jp">特別限定商品</span><span class="arrow">→</span></a>
+      <a href="category_03.html"><span class="en">All Items</span><span class="jp">全ての商品</span><span class="arrow">→</span></a>
+      <a href="category_04.html"><span class="en">Crab Meat</span><span class="jp">かに身</span><span class="arrow">→</span></a>
+      <a href="category_05.html"><span class="en">Kouramori</span><span class="jp">甲羅盛り</span><span class="arrow">→</span></a>
+      <a href="category_01.html"><span class="en">Boiled Crab</span><span class="jp">茹でがに</span><span class="arrow">→</span></a>
+      <a href="category_06.html"><span class="en">Live Crab</span><span class="jp">活けがに</span><span class="arrow">→</span></a>
+      <a href="category_07.html"><span class="en">Crab Hot Pot</span><span class="jp">かにすき</span><span class="arrow">→</span></a>
+      <a href="category_08.html"><span class="en">Others</span><span class="jp">その他</span><span class="arrow">→</span></a>
+    </nav>
+  </div>
+</section>
+
+<section class="block" id="voice">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Customer Voice</span>
+      <h2>お客様の声</h2>
+      <span class="jp-label">※ 掲載内容はイメージ（ダミー）です</span>
+      <span class="rule"></span>
+    </div>
+    <div class="reviews reveal">
+      <div class="review">
+        <span class="stars">★★★★★</span>
+        <p>身がぎっしりで甘みが濃い。毎年こちらで注文しています。冬の楽しみです。</p>
+        <span class="who">兵庫県・60代 / 浜茹で香住ガニ</span>
+      </div>
+      <div class="review">
+        <span class="stars">★★★★★</span>
+        <p>両親への贈り物に。届いてすぐ食べられる手軽さと鮮度に大満足でした。</p>
+        <span class="who">東京都・40代 / 甲羅盛り</span>
+      </div>
+      <div class="review">
+        <span class="stars">★★★★☆</span>
+        <p>むき身セットは本当に便利。鍋にそのまま入れられて子どもも大喜びです。</p>
+        <span class="who">大阪府・30代 / かに身セット</span>
+      </div>
+    </div>
+    <div class="review-cta reveal">
+      <p><b>★ お写真付きレビューを募集中</b>　届いたカニやお料理の写真とご感想を、ぜひお寄せください。次にお選びになる方の、いちばんの参考になります。<span class="rc-note">※ レビュー投稿で使えるクーポンをご用意予定です。</span></p>
+      <a class="btn-line" href="#">レビューを投稿する</a>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="gift">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Gift</span>
@@ -910,6 +883,44 @@
     </div>
     <p class="gift-note"><strong>のし・メッセージカード無料</strong>／ラッピング対応／お届け先を分けての発送も承ります。</p>
     <p class="gift-note">🎁 <strong>ご入用日の2～3日前まで</strong>のご注文がおすすめです。天候による遅延に備え、余裕をもってお届け日をご指定ください。</p>
+  </div>
+</section>
+
+<section class="block" id="choose">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How to Choose</span>
+      <h2>はじめての方へ、カニの選び方</h2>
+      <span class="jp-label">種類・状態・形状で、ぴったりの一杯を</span>
+      <span class="rule"></span>
+    </div>
+    <div class="choose-grid reveal">
+      <div class="choose-card">
+        <span class="k">Type 01</span>
+        <h3>香住ガニ</h3>
+        <p class="sub">紅ズワイガニ</p>
+        <p class="body">みずみずしい甘さと、とろけるような舌触り。香住港ならではの鮮度が魅力です。</p>
+        <p class="scene">▶ 日常のごちそう・食べ盛りのご家庭に</p>
+      </div>
+      <div class="choose-card">
+        <span class="k">Type 02</span>
+        <h3>松葉がに</h3>
+        <p class="sub">ズワイガニ</p>
+        <p class="body">締まった身と、濃厚で深い旨み。冬の味覚の王様と呼ばれる特別な一杯です。</p>
+        <p class="scene">▶ 特別な日・大切な方への贈り物に</p>
+      </div>
+      <div class="choose-card">
+        <span class="k">Type 03</span>
+        <h3>セコガニ</h3>
+        <p class="sub">松葉がにの雌</p>
+        <p class="body">内子・外子のねっとり濃厚な味わい。旬が短い、知る人ぞ知る季節の逸品です。</p>
+        <p class="scene">▶ 通の味・秋冬の季節限定で</p>
+      </div>
+    </div>
+    <div class="choose-note reveal">
+      <div><b>状態で選ぶ：</b>すぐ食べたいなら<b>浜茹で</b>（解凍してそのまま）。通年楽しみたい・作り置きなら<b>冷凍</b>が便利です。</div>
+      <div><b>形状で選ぶ：</b>見栄え・お祝いには<b>姿・甲羅盛り</b>。手軽に・お鍋には殻むき不要の<b>むき身セット</b>がおすすめです。</div>
+    </div>
   </div>
 </section>
 
@@ -945,48 +956,6 @@
   </div>
 </section>
 
-<section class="block" id="quality">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Quality &amp; Safety</span>
-      <h2>安心してお選びいただくために</h2>
-      <span class="jp-label">原産地・食品表示・保証</span>
-      <span class="rule"></span>
-    </div>
-    <table class="info-table reveal">
-      <tr><th>原産地</th><td>兵庫県・香住港 水揚げ（香住ガニ＝紅ズワイガニ／松葉がに＝ズワイガニ）</td></tr>
-      <tr><th>加工・製造者</th><td>株式会社丸近（香住港すぐの自社加工場で、買付けから加工まで一貫）</td></tr>
-      <tr><th>保存方法</th><td>冷蔵品：要冷蔵（10℃以下）／冷凍品：要冷凍（-18℃以下）</td></tr>
-      <tr><th>賞味期限</th><td>商品ごとに明記（例：冷凍品は製造日から約30日／解凍後はお早めにお召し上がりください）</td></tr>
-      <tr><th>アレルゲン</th><td>かに（特定原材料）。同一施設でえび等も取り扱っています。</td></tr>
-      <tr><th>お支払い方法</th><td>各種クレジットカード／代金引換／コンビニ・後払い 等（本番実装予定）</td></tr>
-    </table>
-    <div class="assure reveal">
-      <strong>品質保証・返品交換について｜</strong>万一、破損・品違い・品質不良の商品が届いた場合は、到着後2日以内にご連絡いただければ、交換または返金で対応いたします。生鮮品の性質上、お客様都合による返品はお受けできない場合がございます。詳しくは「送料・お届けについて」「特定商取引法に基づく表記」をご覧ください。
-    </div>
-  </div>
-</section>
-
-<section class="block alt" id="season">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Season &amp; Members</span>
-      <h2>旬の入荷と、お得なご案内</h2>
-      <span class="jp-label">香住ガニは季節の恵み</span>
-      <span class="rule"></span>
-    </div>
-    <div class="season-wrap reveal">
-      <p>香住ガニ・松葉がにには漁期があります。<strong>禁漁期（およそ6～8月）</strong>は生の提供をお休みし、冷凍加工品でお届けします。</p>
-      <div class="sched">🦀 解禁の入荷・数量限定品は <strong>LINE・会員メール</strong> でいち早くご案内／ご予約を承ります</div>
-      <p>毎年のお歳暮・鍋シーズンに便利な <strong>定期便・リピート特典</strong> もご用意予定です。</p>
-      <div class="season-cta">
-        <a class="btn-line-fill" href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 4 3.9 7.3 9 7.9.4 0 .6.2.6.5v2.2c0 .3.3.5.6.4 3.9-2 8.2-5.9 9.2-9 .1-.4.1-.7.1-1 0-4.4-4.5-8-11.5-8Z"/></svg>LINEで友だち追加</a>
-        <a class="btn-line" href="#">会員登録（入荷通知・ポイント）</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="block" id="faq">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -1008,7 +977,40 @@
     </div>
   </div>
 </section>
-<!-- ================= ▲ リニューアル改善 反映セクション ここまで ================= -->
+
+<section class="block alt" id="delivery">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Shipping</span>
+      <h2>送料・お届けについて</h2>
+      <span class="jp-label">産地直送・クール便でお届けします</span>
+      <span class="rule"></span>
+    </div>
+    <div class="ship-grid reveal">
+      <div class="ship">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7M5.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM18.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg></div>
+        <h3>産地直送・クール便</h3>
+        <p>香住港より、鮮度を保ったままクール便（冷蔵／冷凍）で全国へお届けします。</p>
+      </div>
+      <div class="ship">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 4h18v4H3zM3 8v12h18V8M8 12h8"/></svg></div>
+        <h3>送料の目安</h3>
+        <p>商品ごとに税込・送料込みの総額を表示。冷蔵・冷凍は別便のため送料が分かれる場合があります。</p>
+      </div>
+      <div class="ship">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
+        <h3>お届け日の指定</h3>
+        <p>ご注文から中2〜3日が目安。着日・時間帯のご指定を承ります（一部地域・繁忙期を除く）。</p>
+      </div>
+      <div class="ship">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>年末年始のご注意</h3>
+        <p>お歳暮・年末は配送が集中します。着日指定不可期間が生じるため、お早めのご注文をおすすめします。</p>
+      </div>
+    </div>
+    <p class="ship-note">※ 具体的な送料・お届け日数・対応エリアは、各商品ページおよび「お買い物ガイド」に明記します（本番実装）。</p>
+  </div>
+</section>
 
 <section class="cta">
   <div class="in wrap">

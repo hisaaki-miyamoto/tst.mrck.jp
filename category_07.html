@@ -61,6 +61,14 @@
   @media (max-width:760px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:430px){.cat-grid{grid-template-columns:1fr}}
 
+  /* 商品写真（現行サイトのMakeShop CDNを直接参照）。
+     枠いっぱいに収め、ホバーでわずかに寄る。読み込み前は下地の色が見える。 */
+  .cat-grid .card .ph{overflow:hidden}
+  .cat-grid .card .ph img{width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .5s ease}
+  .cat-grid .card:hover .ph img{transform:scale(1.05)}
+  .cat-grid .card.soldout .ph img{filter:grayscale(1) brightness(.92)}
+
   /* 商品名は本番（MakeShop）の実データが長いため、3行で切り詰めてカードの高さを揃える */
   .cat-grid .card .body h3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;
     overflow:hidden;font-size:.92rem;line-height:1.65;min-height:calc(.92rem * 1.65 * 3)}
@@ -251,7 +259,7 @@
 
     <div class="cat-grid reveal">
       <article class="card">
-        <div class="ph"><span class="tag">人気No.1</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">人気No.1</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000007_O3iUJXV.jpg" alt="［冷凍］【香住ガニ】大サイズ／調理済み／生足ガニ／足だけ30本入／焼きガニ・かにすき／かにすき出汁付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住ガニ】大サイズ／調理済み／生足ガニ／足だけ30本入／焼きガニ・かにすき／かにすき出汁付</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.7 (67)</span></div>
@@ -260,7 +268,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000006_TwEC5yF.jpg" alt="［冷凍］【香住ガニ】中サイズ／調理済み／生足ガニ／足だけ30本入／焼きガニ・かにすき／かにすき出汁付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住ガニ】中サイズ／調理済み／生足ガニ／足だけ30本入／焼きガニ・かにすき／かにすき出汁付</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.5 (52)</span></div>
@@ -269,7 +277,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000007_O3iUJXV.jpg" alt="［冷凍］【香住ガニ】生足ガニ／かにすきセット／大サイズ6肩入／焼きがに・かにすき／かにすき出汁付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住ガニ】生足ガニ／かにすきセット／大サイズ6肩入／焼きがに・かにすき／かにすき出汁付</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.6 (35)</span></div>
@@ -278,7 +286,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span class="tag">訳あり</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">訳あり</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000030_JniQMLf.png" alt="［冷凍］訳あり／【香住ガニ】／（生）／調理済み／かにすきセット／4肩入（約2匹分入）／大サイズ" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］訳あり／【香住ガニ】／（生）／調理済み／かにすきセット／4肩入（約2匹分入）／大サイズ</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.6 (88)</span></div>
@@ -287,7 +295,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span class="tag">ご家族用</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">ご家族用</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000003_3yF51hs.jpg" alt="［冷凍］【ずわいがに】／調理済み／かにすきセット／8肩入（約4匹分入）／大容量／かにすき出汁付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【ずわいがに】／調理済み／かにすきセット／8肩入（約4匹分入）／大容量／かにすき出汁付</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.8 (43)</span></div>
@@ -296,7 +304,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000007_O3iUJXV.jpg" alt="［冷凍］【ずわいがに】／生足ガニ／足だけ20本入／焼きガニ・かにすき／お試しサイズ／出汁付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【ずわいがに】／生足ガニ／足だけ20本入／焼きガニ・かにすき／お試しサイズ／出汁付</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.4 (31)</span></div>

@@ -61,6 +61,14 @@
   @media (max-width:760px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:430px){.cat-grid{grid-template-columns:1fr}}
 
+  /* 商品写真（現行サイトのMakeShop CDNを直接参照）。
+     枠いっぱいに収め、ホバーでわずかに寄る。読み込み前は下地の色が見える。 */
+  .cat-grid .card .ph{overflow:hidden}
+  .cat-grid .card .ph img{width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .5s ease}
+  .cat-grid .card:hover .ph img{transform:scale(1.05)}
+  .cat-grid .card.soldout .ph img{filter:grayscale(1) brightness(.92)}
+
   /* 商品名は本番（MakeShop）の実データが長いため、3行で切り詰めてカードの高さを揃える */
   .cat-grid .card .body h3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;
     overflow:hidden;font-size:.92rem;line-height:1.65;min-height:calc(.92rem * 1.65 * 3)}
@@ -247,7 +255,7 @@
 
     <div class="cat-grid reveal">
       <article class="card">
-        <div class="ph"><span class="tag">人気No.1</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">人気No.1</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000097_mYKFtEy.png" alt="［冷蔵］浜茹で／【香住ガニ】／大サイズ1杯／約1kg級／産地直送" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷蔵］浜茹で／【香住ガニ】／大サイズ1杯／約1kg級／産地直送</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.9 (128)</span></div>
@@ -256,7 +264,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span class="tag">全国1位</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">全国1位</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000098_tOHYhQT.jpg" alt="［冷凍］*** 50セット数量限定 ***【国産ベニズワイガニ】甲羅盛り 香箱造り／160g×4個入り" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］*** 50セット数量限定 ***【国産ベニズワイガニ】甲羅盛り 香箱造り／160g×4個入り</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.9 (152)</span></div>
@@ -265,7 +273,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000032_WdNZhob.jpg" alt="［冷凍］【香住ガニ】棒上身／約カニ10杯分相当（500g)／殻なし手剥き身／便利パック／かに酢付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住ガニ】棒上身／約カニ10杯分相当（500g)／殻なし手剥き身／便利パック／かに酢付</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.8 (94)</span></div>
@@ -274,7 +282,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000034_7eHjZcn.jpg" alt="［冷凍］【香住ガニ】棒崩れ身／中身／約カニ10杯分相当（500g）／殻なし手剥き身／かに酢付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住ガニ】棒崩れ身／中身／約カニ10杯分相当（500g）／殻なし手剥き身／かに酢付</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.6 (73)</span></div>
@@ -283,7 +291,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000002_3O7kTiY.jpg" alt="［冷凍］【香住ガニ】かに身ほぐし身／白身／約カニ10杯分相当（500g）／殻なし手剥き身／かに酢付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住ガニ】かに身ほぐし身／白身／約カニ10杯分相当（500g）／殻なし手剥き身／かに酢付</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.5 (58)</span></div>
@@ -292,7 +300,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span class="tag">ギフト向け</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">ギフト向け</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000010_oFbhulI.png" alt="［冷凍］【香住ガニ】甲羅味噌付／活〆／特大サイズ1杯分／約900〜1kg級以上使用／かにすき出汁付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住ガニ】甲羅味噌付／活〆／特大サイズ1杯分／約900〜1kg級以上使用／かにすき出汁付</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.8 (44)</span></div>
@@ -301,7 +309,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000009_Jg2NdyC.jpg" alt="［冷凍］【香住ガニ】甲羅味噌付／大サイズ2杯分／約1kg級を使用／焼きがに・かにすき／かにすき出汁付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住ガニ】甲羅味噌付／大サイズ2杯分／約1kg級を使用／焼きがに・かにすき／かにすき出汁付</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.6 (39)</span></div>
@@ -310,7 +318,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000007_O3iUJXV.jpg" alt="［冷凍］【香住ガニ】大サイズ／調理済み／生足ガニ／足だけ30本入／焼きガニ・かにすき／かにすき出汁付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住ガニ】大サイズ／調理済み／生足ガニ／足だけ30本入／焼きガニ・かにすき／かにすき出汁付</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.7 (67)</span></div>
@@ -319,7 +327,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000006_TwEC5yF.jpg" alt="［冷凍］【香住ガニ】中サイズ／調理済み／生足ガニ／足だけ30本入／焼きガニ・かにすき／かにすき出汁付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住ガニ】中サイズ／調理済み／生足ガニ／足だけ30本入／焼きガニ・かにすき／かにすき出汁付</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.5 (52)</span></div>
@@ -328,7 +336,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000007_O3iUJXV.jpg" alt="［冷凍］【香住ガニ】生足ガニ／かにすきセット／大サイズ6肩入／焼きがに・かにすき／かにすき出汁付" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【香住ガニ】生足ガニ／かにすきセット／大サイズ6肩入／焼きがに・かにすき／かにすき出汁付</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.6 (35)</span></div>
@@ -337,7 +345,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000030_JniQMLf.png" alt="［冷凍］訳あり／【香住ガニ】／（生）／調理済み／かにすきセット／4肩入（約2匹分入）／大サイズ" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］訳あり／【香住ガニ】／（生）／調理済み／かにすきセット／4肩入（約2匹分入）／大サイズ</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.6 (88)</span></div>
@@ -346,7 +354,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000017_HeFdzsH.jpg" alt="［冷蔵］【香住ガニ】／かに身セット／合計600g（300g×2パック）／大容量！／かに酢・かに味噌付き" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷蔵］【香住ガニ】／かに身セット／合計600g（300g×2パック）／大容量！／かに酢・かに味噌付き</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.8 (76)</span></div>
@@ -355,7 +363,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000016_QDLTFAT.jpg" alt="［冷凍］【兵庫県産】甘えび／大サイズ・30〜40尾入り・約700g／ぷりぷり／鮮度抜群" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【兵庫県産】甘えび／大サイズ・30〜40尾入り・約700g／ぷりぷり／鮮度抜群</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.7 (61)</span></div>
@@ -364,7 +372,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span>［商品写真］</span></div>
+        <div class="ph"><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000078_VTizSDh.jpg" alt="［冷蔵］かに酢「かに三杯」／茹でがに等におすすめ／かにの風味を引き立てる万能酢／万能かに酢" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷蔵］かに酢「かに三杯」／茹でがに等におすすめ／かにの風味を引き立てる万能酢／万能かに酢</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.4 (48)</span></div>

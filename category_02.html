@@ -61,6 +61,14 @@
   @media (max-width:760px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:430px){.cat-grid{grid-template-columns:1fr}}
 
+  /* 商品写真（現行サイトのMakeShop CDNを直接参照）。
+     枠いっぱいに収め、ホバーでわずかに寄る。読み込み前は下地の色が見える。 */
+  .cat-grid .card .ph{overflow:hidden}
+  .cat-grid .card .ph img{width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .5s ease}
+  .cat-grid .card:hover .ph img{transform:scale(1.05)}
+  .cat-grid .card.soldout .ph img{filter:grayscale(1) brightness(.92)}
+
   /* 商品名は本番（MakeShop）の実データが長いため、3行で切り詰めてカードの高さを揃える */
   .cat-grid .card .body h3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;
     overflow:hidden;font-size:.92rem;line-height:1.65;min-height:calc(.92rem * 1.65 * 3)}
@@ -247,7 +255,7 @@
 
     <div class="cat-grid reveal">
       <article class="card">
-        <div class="ph"><span class="tag">限定10セット</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">限定10セット</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000097_mYKFtEy.png" alt="***【限定10セット送料込】***［冷蔵］浜茹で／訳あり／松葉がに／2杯入／1kg以上" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>***【限定10セット送料込】***［冷蔵］浜茹で／訳あり／松葉がに／2杯入／1kg以上</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.5 (203)</span></div>
@@ -256,7 +264,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span class="tag">全国1位</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">全国1位</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000098_tOHYhQT.jpg" alt="［冷凍］*** 50セット数量限定 ***【国産ベニズワイガニ】甲羅盛り 香箱造り／160g×4個入り" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］*** 50セット数量限定 ***【国産ベニズワイガニ】甲羅盛り 香箱造り／160g×4個入り</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.9 (152)</span></div>
@@ -265,7 +273,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span class="tag">数量限定</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">数量限定</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000030_JniQMLf.png" alt="［冷凍］訳あり／【香住ガニ】／（生）／調理済み／かにすきセット／4肩入（約2匹分入）／大サイズ" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］訳あり／【香住ガニ】／（生）／調理済み／かにすきセット／4肩入（約2匹分入）／大サイズ</h3>
           <div class="rev"><span class="stars">★★★★☆</span><span class="n">4.6 (88)</span></div>
@@ -274,7 +282,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span class="tag">期間限定</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">期間限定</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000017_HeFdzsH.jpg" alt="［冷蔵］【香住ガニ】／かに身セット／合計600g（300g×2パック）／大容量！／かに酢・かに味噌付き" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷蔵］【香住ガニ】／かに身セット／合計600g（300g×2パック）／大容量！／かに酢・かに味噌付き</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.8 (76)</span></div>
@@ -283,7 +291,7 @@
         </div>
       </article>
       <article class="card">
-        <div class="ph"><span class="tag">送料込</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">送料込</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000016_QDLTFAT.jpg" alt="［冷凍］【兵庫県産】甘えび／大サイズ・30〜40尾入り・約700g／ぷりぷり／鮮度抜群" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷凍］【兵庫県産】甘えび／大サイズ・30〜40尾入り・約700g／ぷりぷり／鮮度抜群</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.7 (61)</span></div>
@@ -292,7 +300,7 @@
         </div>
       </article>
       <article class="card soldout">
-        <div class="ph"><span class="tag">残りわずか</span><span class="soldlabel">SOLD OUT</span><span>［商品写真］</span></div>
+        <div class="ph"><span class="tag">残りわずか</span><span class="soldlabel">SOLD OUT</span><img src="https://makeshop-multi-images.akamaized.net/maruchika/itemimages/000000000097_mYKFtEy.png" alt="［冷蔵］浜茹で／【松葉がに】／特撰／1杯／1.2kg以上／タグ付き／化粧箱入" loading="lazy" decoding="async"></div>
         <div class="body">
           <h3>［冷蔵］浜茹で／【松葉がに】／特撰／1杯／1.2kg以上／タグ付き／化粧箱入</h3>
           <div class="rev"><span class="stars">★★★★★</span><span class="n">4.8 (86)</span></div>
