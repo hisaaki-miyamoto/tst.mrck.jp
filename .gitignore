@@ -20,9 +20,12 @@ _top_products.py
 # MakeShopクリモ移植まわり（ローカル専用）
 _makeshop_category.py
 _makeshop_common.py
+_makeshop_item.py
 _makeshop_lint.py
 _makeshop_top.py
 _simulate_makeshop.py
+_item_sample.json
 _tags_common.json
 _tags_category.json
+_tags_item.json
 preview/
