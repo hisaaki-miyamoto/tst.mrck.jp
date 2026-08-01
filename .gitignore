@@ -16,3 +16,13 @@ _rename_rest.json
 _reorder_top.py
 _skeleton_*.html
 _top_products.py
+
+# MakeShopクリモ移植まわり（ローカル専用）
+_makeshop_category.py
+_makeshop_common.py
+_makeshop_lint.py
+_makeshop_top.py
+_simulate_makeshop.py
+_tags_common.json
+_tags_category.json
+preview/
