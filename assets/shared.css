@@ -324,3 +324,28 @@
   .prod-grid .card:hover .ph img{transform:scale(1.05)}
   .rank-item .thumb{overflow:hidden}
   .rank-item .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* 実商品名は長いため、TOPのカードとランキングは行数を制限して高さを揃える（2026-07-31） */
+  .prod-grid .card h3{font-size:.98rem;line-height:1.6;display:-webkit-box;
+    -webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .prod-grid .card .desc{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .rank-item .info h3{font-size:.94rem;line-height:1.6;display:-webkit-box;
+    -webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .rank-item .info p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+  /* merge-sections-css ===== 11ブロック構成（2026-07-31 MAGI合議）=====
+     グループの2枚目以降は上の余白を詰め、見出しを小さくして
+     前のセクションとひと続きの1ブロックに見せる。 */
+  /* 続きのセクションは上の余白を消し、細い罫線でひと続きに見せる。
+     見出しの入れ物（sec-head/.story など）が違っても効くよう .wrap 側に罫線を置く。 */
+  .block.cont, .message.cont{padding-top:0}
+  .block.cont > .wrap, .message.cont > .wrap{
+    border-top:1px solid var(--line);padding-top:clamp(1.9rem,4vw,3.2rem)}
+  .sub-head{text-align:center;margin-bottom:clamp(1.4rem,3vw,2.2rem)}
+  .sub-head .eyebrow{display:block;font-family:var(--latin);font-style:italic;
+    font-size:.68rem;letter-spacing:.2em;color:var(--beni);margin-bottom:.4rem}
+  .sub-head .jp-label{display:block;font-family:var(--gothic);font-size:.76rem;
+    letter-spacing:.08em;color:var(--ink-faint);margin-top:.5rem}
+  /* 小見出しは、入れ物によらず同じ見た目に揃える */
+  .sub-h{font-family:var(--mincho);font-size:clamp(1.15rem,2.6vw,1.55rem);
+    font-weight:600;letter-spacing:.08em;line-height:1.5;color:var(--ink)}
