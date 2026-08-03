@@ -22,10 +22,19 @@ _makeshop_category.py
 _makeshop_common.py
 _makeshop_item.py
 _makeshop_lint.py
+_makeshop_static.py
 _makeshop_top.py
 _simulate_makeshop.py
+_static_content.py
 _item_sample.json
+_static_content.json
 _tags_common.json
 _tags_category.json
 _tags_item.json
+_tags_static.json
 preview/
+
+# 商品説明文の整形案（バックアップ／本番未反映・ローカル専用）
+_desc_rewrite.py
+_desc_backup.json
+_desc_plan.json
