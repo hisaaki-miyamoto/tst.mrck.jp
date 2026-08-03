@@ -47,3 +47,4 @@ _tags_news.json
 _tags_search.json
 # MakeShop純正のデザインセット（.cdarを展開したもの＝タグの正解データ）
 _designset/
+__pycache__/
