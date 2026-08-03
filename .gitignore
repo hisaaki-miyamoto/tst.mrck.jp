@@ -38,3 +38,12 @@ preview/
 _desc_rewrite.py
 _desc_backup.json
 _desc_plan.json
+
+# カート・お知らせ・検索結果まわり（ローカル専用）
+_makeshop_base.py
+_makeshop_shop.py
+_policy_trim.py
+_tags_news.json
+_tags_search.json
+# MakeShop純正のデザインセット（.cdarを展開したもの＝タグの正解データ）
+_designset/
