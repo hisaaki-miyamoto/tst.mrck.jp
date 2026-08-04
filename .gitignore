@@ -48,3 +48,8 @@ _tags_search.json
 # MakeShop純正のデザインセット（.cdarを展開したもの＝タグの正解データ）
 _designset/
 __pycache__/
+_rename_star.py
+_star_current.json
+_star_plan.json
+_star_backup.json
+_star_after.json
