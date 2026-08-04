@@ -60,3 +60,5 @@ _polish_*.json
 _rename_polish.py
 _final_*.json
 _rename_final.py
+_rename_verify.py
+_rename_verify_*.log
