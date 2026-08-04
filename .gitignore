@@ -56,3 +56,7 @@ _star_after.json
 _star_*.json
 _rest_*.json
 _rename_rest.py
+_polish_*.json
+_rename_polish.py
+_final_*.json
+_rename_final.py
