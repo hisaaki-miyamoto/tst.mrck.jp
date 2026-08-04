@@ -54,3 +54,5 @@ _star_plan.json
 _star_backup.json
 _star_after.json
 _star_*.json
+_rest_*.json
+_rename_rest.py
