@@ -332,12 +332,9 @@
   /* ---------- hero の動画（2026-08-14 追加） ----------
      スライド（.slides）の上に重ねる。動画が読めなければ下のスライドが見えるので、
      切り替え用のJSやフォールバックの記述は要らない。
-     スマホでは出さない（通信量・電池のため）。スマホは従来どおり写真3枚が切り替わる。 */
+     ※2026-08-17：プレゼン試作として、スマホでも動画を再生する版（本来はPCのみ表示）。 */
   .hero .movie{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-    z-index:1;display:none;pointer-events:none;background:var(--sumi)}
-  @media (min-width:769px){
-    .hero .movie{display:block}
-  }
+    z-index:1;display:block;pointer-events:none;background:var(--sumi)}
   /* 動きを控えたい設定の方には動画を出さない（写真の切り替えに戻す） */
   @media (prefers-reduced-motion:reduce){
     .hero .movie{display:none}
