@@ -59,7 +59,7 @@
   var leads  = document.querySelectorAll('#heroLeads .lead');
   if (slides.length < 2 && leads.length < 2) return;
 
-  var CUTS = [0, 5.0, 9.5];   // 動画のシーンの変わり目（秒）
+  var CUTS = [0, 5.5, 10.0];  // 動画のシーンの変わり目（秒）※2026-08-17 並べ替えに合わせて変更
   var cur = 0;
 
   function show(n) {
@@ -311,4 +311,40 @@
   if (!el) return;
   var y = String(new Date().getFullYear());
   if (el.textContent !== y) el.textContent = y;
+})();
+
+
+/* 11. スマホ・タブレットのハンバーガーメニュー（2026-08-17 追加）
+      ボタン（.menu-btn）は前からあったが、押しても何も起きなかった。
+      ヘッダーに nav-open を付け外しして、メニューの開閉を行う。
+      メニューの外を押したとき、Escキー、画面が広がったときは自動で閉じる。 */
+(function () {
+  var btn  = document.querySelector('.menu-btn');
+  var head = document.querySelector('header');
+  if (!btn || !head) return;
+
+  btn.setAttribute('aria-expanded', 'false');
+
+  function setOpen(v) {
+    head.classList.toggle('nav-open', v);
+    btn.classList.toggle('open', v);
+    btn.setAttribute('aria-expanded', v ? 'true' : 'false');
+  }
+
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    setOpen(!head.classList.contains('nav-open'));
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!head.contains(e.target)) setOpen(false);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' || e.keyCode === 27) setOpen(false);
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 860) setOpen(false);
+  });
 })();

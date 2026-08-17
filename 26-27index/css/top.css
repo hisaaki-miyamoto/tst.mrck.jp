@@ -10,7 +10,14 @@
   .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
   @media(max-width:760px){.timeline{grid-template-columns:1fr 1fr}}
   @media(max-width:480px){.timeline{grid-template-columns:1fr}}
-  .tl{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.6rem 1.3rem}
+  /* 2026-08-17：文字だけのカードが続いて重かったので、章ごとに写真を入れた。 */
+  .tl{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    display:flex;flex-direction:column}
+  .tl .tl-ph{aspect-ratio:4/3;background:var(--sumi);overflow:hidden}
+  .tl .tl-ph img{width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .5s ease}
+  .tl:hover .tl-ph img{transform:scale(1.05)}
+  .tl .tl-body{padding:1.35rem 1.3rem 1.6rem}
   .tl .step{font-family:var(--latin);font-style:italic;font-size:.72rem;letter-spacing:.2em;color:var(--beni);text-transform:uppercase}
   .tl h3{font-size:1.05rem;margin:.35rem 0 .5rem;letter-spacing:.03em}
   .tl p{font-family:var(--gothic);font-size:.83rem;color:var(--ink-soft);line-height:1.85}

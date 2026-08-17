@@ -136,6 +136,33 @@
     nav.main .drop{position:static;opacity:1;visibility:visible;transform:none;
       box-shadow:none;border:none;background:none;backdrop-filter:none;min-width:0;padding:0}
   }
+  /* ===== スマホ・タブレットのメニュー（2026-08-17 追加）
+     ハンバーガーのボタンはあったが、開く仕組みが入っていなかったので用意した。
+     860px以下でボタンを押すと、ヘッダーの下にメニューが降りてくる。
+     カテゴリー（商品を探す）は畳まずに、最初から開いた状態で並べる。 ===== */
+  @media (max-width:860px){
+    header.nav-open{background:color-mix(in srgb,var(--ground) 97%,transparent);
+      -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+      border-bottom-color:var(--line)}
+    header.nav-open nav.main{display:flex;flex-direction:column;align-items:stretch;gap:0;
+      position:absolute;top:100%;left:0;right:0;z-index:60;
+      background:color-mix(in srgb,var(--ground) 97%,transparent);
+      -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+      border-top:1px solid var(--line);
+      box-shadow:0 18px 40px -22px rgba(40,22,10,.55);
+      padding:.3rem clamp(1rem,5vw,1.6rem) 1rem;
+      max-height:calc(100vh - 76px);overflow-y:auto}
+    header.nav-open nav.main > a,
+    header.nav-open nav.main .has-drop > a{display:block;padding:.85rem .2rem;font-size:.98rem;
+      border-bottom:1px solid var(--line)}
+    header.nav-open nav.main a::after{display:none}
+    header.nav-open nav.main .has-drop{display:block;width:100%}
+    header.nav-open nav.main .drop{padding:.15rem 0 .6rem .9rem}
+    header.nav-open nav.main .drop a{padding:.62rem .2rem;border-bottom:1px solid var(--line)}
+    header.nav-open nav.main .drop .sep{display:none}
+    .menu-btn.open{border-color:var(--beni);color:var(--beni)}
+  }
+
   .cart{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--gothic);font-size:.82rem;letter-spacing:.08em;border:1px solid var(--line-strong);border-radius:999px;padding:.5rem 1.05rem;transition:all .2s}
   .cart:hover{border-color:var(--beni);color:var(--beni)}
   .menu-btn{display:none;background:none;border:1px solid var(--line-strong);border-radius:8px;padding:.45rem .6rem;cursor:pointer;color:var(--ink)}
@@ -172,7 +199,21 @@
   .hero .leads .lead{opacity:0;visibility:hidden;transition:opacity .9s ease}
   .hero .leads .lead:not(:first-child){position:absolute;left:0;top:0;width:100%}
   .hero .leads .lead.active{opacity:1;visibility:visible}
-  .hero .scroll{font-family:var(--latin);font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(244,239,230,.55);writing-mode:vertical-rl;height:90px}
+  /* スクロールの合図（2026-08-15 変更）。
+     右下から画面中央下へ移し、文字の下に細い縦線を引いて、
+     その中を光がゆっくり下りていく。「下に続きがある」ことを静かに伝える。 */
+  .hero .scroll{position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+    writing-mode:vertical-rl;height:auto;padding-bottom:72px;
+    font-family:var(--latin);font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;
+    color:rgba(244,239,230,.55);pointer-events:none}
+  .hero .scroll::after{content:"";position:absolute;left:50%;bottom:0;
+    transform:translateX(-50%);width:1px;height:60px;
+    background-color:rgba(244,239,230,.20);
+    background-image:linear-gradient(to bottom,transparent,#EBB9A0,transparent);
+    background-repeat:no-repeat;background-size:100% 45%;background-position:0 -45%;
+    animation:scrollLine 2.6s cubic-bezier(.45,0,.25,1) infinite}
+  @keyframes scrollLine{0%{background-position:0 -45%}100%{background-position:0 145%}}
+  @media (prefers-reduced-motion:reduce){.hero .scroll::after{animation:none}}
 
   /* ---------- brand message ---------- */
   .message{padding:clamp(4.5rem,10vw,7.5rem) 0;text-align:center;background:var(--ground)}
@@ -332,9 +373,14 @@
   /* ---------- hero の動画（2026-08-14 追加） ----------
      スライド（.slides）の上に重ねる。動画が読めなければ下のスライドが見えるので、
      切り替え用のJSやフォールバックの記述は要らない。
-     ※2026-08-17：プレゼン試作として、スマホでも動画を再生する版（本来はPCのみ表示）。 */
+     スマホでは出さない（通信量・電池のため）。スマホは従来どおり写真3枚が切り替わる。 */
   .hero .movie{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-    z-index:1;display:block;pointer-events:none;background:var(--sumi)}
+    z-index:1;display:none;pointer-events:none;background:var(--sumi)}
+  /* ★このプレビュー限定★ 2026-08-17 朝の指定で、スマホでも動画を再生する。
+     本番（クリモ貼付用）はPC・タブレットのみ動画で、スマホは写真の紙芝居のまま。
+     戻すときは、下の1行を消して次を使う：
+       @media (min-width:769px), (hover:hover) and (pointer:fine){ .hero .movie{display:block} } */
+  .hero .movie{display:block}
   /* 動きを控えたい設定の方には動画を出さない（写真の切り替えに戻す） */
   @media (prefers-reduced-motion:reduce){
     .hero .movie{display:none}
@@ -427,6 +473,29 @@ header .wrap > div:last-child{margin-left:auto}
    （375px幅で ロゴ68＋漢字39＋カート73＋メニュー41 に収まる） */
 @media (max-width:600px){
   .brand .en{display:none}
+}
+
+/* ============================================================
+   2026-08-17：スマホでメニューのボタンが画面の外へ押し出されていた。
+   丸の印章52 ＋ 横ロゴ120 ＋ カート80 ＋ ボタン41 ＋ 隙間29 ＝ 約322px。
+   これに左右の余白48pxが加わると、375pxの機種でぎりぎり、
+   360pxの機種でははみ出してボタンが見えなくなっていた。
+   狭い画面ではロゴを縮め、カートは文字を落としてアイコンだけにする。
+   ============================================================ */
+@media (max-width:860px){
+  header .wrap{gap:.7rem}
+  .brand{min-width:0;flex:0 1 auto;overflow:hidden}
+  .brand-logo{max-width:min(38vw,160px)}
+  .cart,.menu-btn{flex:none}
+}
+@media (max-width:430px){
+  header .wrap{gap:.5rem}
+  .brand-mark{height:44px;width:44px}
+  .brand-logo{height:34px;max-width:min(32vw,112px)}
+  /* カートは文字を落としてアイコンだけに（リンク先も見た目も変えない） */
+  .cart{font-size:0;gap:0;padding:.5rem .62rem}
+  .cart svg{width:18px;height:18px}
+  .menu-btn{padding:.45rem .5rem}
 }
 
 /* ============================================================
