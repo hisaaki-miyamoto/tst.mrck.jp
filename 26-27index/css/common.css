@@ -270,7 +270,7 @@
   .story .visual span{display:none}
   .story .visual .stamp{position:absolute;top:20px;right:20px;width:78px;height:78px;border:1px solid var(--beni);color:var(--beni);border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-size:.78rem;letter-spacing:.08em;line-height:1.4;background:rgba(20,16,12,.35)}
   .story .txt .eyebrow{margin-bottom:1rem;display:block}
-  .story .txt h2{font-size:clamp(1.6rem,3.6vw,2.3rem);font-weight:600;line-height:1.7;letter-spacing:.06em;margin-bottom:1.4rem;text-wrap:balance}
+  .story .txt h2{font-size:clamp(1.7rem,4.2vw,2.55rem);font-weight:600;line-height:1.4;letter-spacing:.06em;margin-bottom:1.4rem;text-wrap:balance}
   .story .txt p{color:var(--ink-soft);margin-bottom:1.1rem;font-size:1rem;line-height:2.05}
   .story .txt .link{font-family:var(--gothic);font-size:.88rem;letter-spacing:.1em;color:var(--beni);border-bottom:1px solid var(--beni);padding-bottom:.2rem}
 
@@ -429,14 +429,17 @@
   .block.cont, .message.cont{padding-top:0}
   .block.cont > .wrap, .message.cont > .wrap{
     border-top:1px solid var(--line);padding-top:clamp(1.9rem,4vw,3.2rem)}
-  .sub-head{text-align:center;margin-bottom:clamp(1.4rem,3vw,2.2rem)}
+  .sub-head{text-align:center;margin-bottom:clamp(2rem,5vw,3.4rem)}
   .sub-head .eyebrow{display:block;font-family:var(--latin);font-style:italic;
-    font-size:.68rem;letter-spacing:.2em;color:var(--beni);margin-bottom:.4rem}
-  .sub-head .jp-label{display:block;font-family:var(--gothic);font-size:.76rem;
-    letter-spacing:.08em;color:var(--ink-faint);margin-top:.5rem}
-  /* 小見出しは、入れ物によらず同じ見た目に揃える */
-  .sub-h{font-family:var(--mincho);font-size:clamp(1.15rem,2.6vw,1.55rem);
-    font-weight:600;letter-spacing:.08em;line-height:1.5;color:var(--ink)}
+    font-size:.72rem;letter-spacing:.32em;color:var(--beni);margin-bottom:.5rem}
+  .sub-head .jp-label{display:block;font-family:var(--gothic);font-size:.72rem;
+    letter-spacing:.24em;color:var(--ink-faint);margin-top:.5rem}
+  /* 2026-08-17：宮元さんのご指定で、セクション見出しの大きさを全部そろえた。
+     もとは「続きのセクション」だけ小さくしていたが、
+     ページ全体で見出しの大きさが揃っていないと落ち着かないため、
+     .sec-head h2 と同じ寸法にした。 */
+  .sub-h{font-family:var(--mincho);font-size:clamp(1.7rem,4.2vw,2.55rem);
+    font-weight:600;letter-spacing:.06em;line-height:1.4;color:var(--ink);text-wrap:balance}
 
 
 /* ============================================================
