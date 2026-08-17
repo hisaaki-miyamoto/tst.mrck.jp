@@ -103,7 +103,8 @@
   .brand .kanji{font-size:1.7rem;font-weight:700;letter-spacing:.16em}
   .brand .en{font-family:var(--latin);font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-faint)}
   nav.main{display:flex;align-items:center;gap:clamp(1rem,2.4vw,2rem)}
-  nav.main a{font-size:.92rem;letter-spacing:.06em;position:relative;padding:.3rem 0;transition:color .2s}
+  /* 2026-08-17：宮元さんのご指定で、グローバルナビの文字を大きくした（.92→1.02rem）。 */
+  nav.main a{font-size:1.02rem;letter-spacing:.06em;position:relative;padding:.3rem 0;transition:color .2s}
   nav.main a:hover{color:var(--beni)}
   nav.main a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--beni);transition:width .28s}
   nav.main a:hover::after{width:100%}
@@ -126,7 +127,7 @@
   nav.main .has-drop:focus-within .drop,
   nav.main .has-drop.open .drop{opacity:1;visibility:visible;transform:none}
   nav.main .drop::before{content:"";position:absolute;top:-10px;left:0;right:0;height:10px}
-  nav.main .drop a{display:block;padding:.52rem 1.15rem;font-size:.86rem;letter-spacing:.04em;
+  nav.main .drop a{display:block;padding:.56rem 1.15rem;font-size:.93rem;letter-spacing:.04em;
     color:var(--ink-soft);white-space:nowrap}
   nav.main .drop a::after{display:none}
   nav.main .drop a:hover{color:var(--beni);background:rgba(159,47,35,.07)}
