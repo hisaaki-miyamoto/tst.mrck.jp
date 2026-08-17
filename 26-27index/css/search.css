@@ -1,0 +1,133 @@
+/* ============================================================================
+   株式会社丸近　公式サイト　商品検索結果ページ専用スタイル
+   クリエイターモード ＞ 商品検索結果ページ ＞ CSS に、この内容をすべて貼り付けてください。
+
+   ・共通の見た目（ヘッダー／フッター／色／余白）は「全ページ共通 ＞ CSS」にあります。
+   ・商品カードの見た目は商品カテゴリーページと共通です（06のCSSをそのまま含めています）。
+   ============================================================================ */
+/* ============ 商品カテゴリーページ 固有スタイル ============ */
+  /* コンパクトなカテゴリバナー（TOPの全画面ヒーローの代わり） */
+  /* バナー高さ：2026-07-13 宮元さん確定＝上限360px（説明文〜ボタン間の余白圧縮で見えやすさを確保した上で、迫力を最大に）。デスクトップは360px、短い画面では少し縮む */
+  .cat-hero{position:relative;min-height:clamp(240px,50vh,360px);background:var(--sumi);color:var(--sumi-ink);overflow:hidden;display:flex;align-items:flex-end}
+  /* 背景はページごとに --hero で差し替える（未指定なら slide-a） */
+  .cat-hero .bg{position:absolute;inset:0;background-image:var(--hero,var(--slide-a));background-size:cover;background-position:center;transform:scale(1.04)}
+  .cat-hero .scrim{position:absolute;inset:0;background:
+      linear-gradient(0deg,rgba(12,8,5,.82),rgba(12,8,5,.25) 60%,rgba(12,8,5,.5)),
+      linear-gradient(90deg,rgba(12,8,5,.5),rgba(12,8,5,0) 45%)}
+  .cat-hero::after{content:"";position:absolute;inset:0;opacity:.38;background-image:var(--seigaiha);background-size:88px 44px;mix-blend-mode:overlay;pointer-events:none}
+  .cat-hero .in{position:relative;z-index:2;width:100%;padding-bottom:clamp(1.6rem,4vw,2.6rem)}
+  .cat-hero .en{font-family:var(--latin);font-style:italic;letter-spacing:.24em;color:#EBB9A0;font-size:.8rem;margin-bottom:.5rem}
+  .cat-hero h1{font-size:clamp(1.9rem,5vw,3rem);font-weight:600;letter-spacing:.1em;line-height:1.3;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+  .cat-hero .count{font-family:var(--gothic);font-size:.82rem;letter-spacing:.06em;color:rgba(244,239,230,.78);margin-top:.7rem}
+
+  /* パンくず */
+  .crumb{font-family:var(--gothic);font-size:.76rem;letter-spacing:.05em;color:var(--ink-faint);padding:1rem 0 .2rem}
+  .crumb a{color:var(--ink-soft);transition:color .2s}
+  .crumb a:hover{color:var(--beni)}
+  .crumb .sep{margin:0 .5em;color:var(--line-strong)}
+  .crumb .cur{color:var(--beni)}
+
+  /* カテゴリ説明（1行キャッチ）：デスクトップで1行に収まる幅を確保。狭い画面では自然に折り返す。
+     2026-07-13：上余白を圧縮し、説明文と下の選択ボタンを引き上げてボタンを見えやすく
+     2026-07-14：フォントを .94rem → 1.08rem に拡大（宮元さん依頼） */
+  .cat-intro{max-width:54em;margin:0 auto;text-align:center;padding:clamp(.5rem,1.4vw,.9rem) 0 0}
+  .cat-intro p{font-family:var(--gothic);font-size:1.08rem;color:var(--ink-soft);line-height:1.9}
+
+  /* 絞り込み・並び替えツールバー */
+  .toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;
+    padding:clamp(.9rem,2vw,1.2rem) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    margin-bottom:clamp(1.2rem,2.6vw,1.8rem)}
+  .subcat{display:flex;flex-wrap:wrap;gap:.4rem}
+  .subcat a{font-family:var(--gothic);font-size:.82rem;letter-spacing:.03em;color:var(--ink-soft);
+    padding:.42rem .9rem;border:1px solid var(--line);transition:color .2s,border-color .2s,background .2s}
+  .subcat a:hover{color:var(--beni);border-color:rgba(159,47,35,.4);background:rgba(255,255,255,.6)}
+  .subcat a.on{color:#fff;background:var(--sumi);border-color:var(--sumi)}
+  .sortbar{display:flex;align-items:center;gap:.2rem;font-family:var(--gothic);font-size:.78rem}
+  .sortbar .lb{color:var(--ink-faint);letter-spacing:.1em;margin-right:.5rem}
+  .sortbar a{color:var(--ink-soft);padding:.3rem .6rem;transition:color .2s}
+  .sortbar a:hover{color:var(--beni)}
+  .sortbar a.on{color:var(--beni);font-weight:600;border-bottom:1px solid var(--beni)}
+
+  /* 商品グリッド */
+  .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,2.2vw,1.6rem)}
+  @media (max-width:1000px){.cat-grid{grid-template-columns:repeat(3,1fr)}}
+  @media (max-width:760px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:430px){.cat-grid{grid-template-columns:1fr}}
+
+  /* 商品写真（現行サイトのMakeShop CDNを直接参照）。
+     枠いっぱいに収め、ホバーでわずかに寄る。読み込み前は下地の色が見える。 */
+  .cat-grid .card .ph{overflow:hidden}
+  .cat-grid .card .ph img{width:100%;height:100%;object-fit:cover;display:block;
+    transition:transform .5s ease}
+  .cat-grid .card:hover .ph img{transform:scale(1.05)}
+  .cat-grid .card.soldout .ph img{filter:grayscale(1) brightness(.92)}
+
+  /* 商品名は本番（MakeShop）の実データが長いため、3行で切り詰めてカードの高さを揃える */
+  .cat-grid .card .body h3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;
+    overflow:hidden;font-size:.92rem;line-height:1.65;min-height:calc(.92rem * 1.65 * 3)}
+  .cat-grid .card .rev{display:flex;align-items:center;gap:.4rem;margin:.5rem 0 .1rem;font-family:var(--gothic)}
+  .cat-grid .card .rev .stars{color:#C9962E;font-size:.78rem;letter-spacing:.06em}
+  .cat-grid .card .rev .n{color:var(--ink-faint);font-size:.7rem}
+  .cat-grid .card.soldout .ph{filter:grayscale(1) brightness(.92)}
+  .cat-grid .card .soldlabel{position:absolute;top:50%;left:0;right:0;transform:translateY(-50%);
+    text-align:center;font-family:var(--gothic);font-size:.8rem;letter-spacing:.16em;
+    color:#fff;background:rgba(36,24,18,.66);padding:.4rem 0}
+  .cat-grid .card.soldout .buy{background:var(--line-strong);border-color:var(--line-strong);
+    color:rgba(255,255,255,.85);pointer-events:none}
+
+  /* ページ送り */
+  .pager{display:flex;justify-content:center;align-items:center;gap:.4rem;
+    margin-top:clamp(2rem,4.4vw,3.2rem);font-family:var(--gothic);font-size:.85rem}
+  .pager a,.pager span{min-width:38px;height:38px;display:inline-flex;align-items:center;justify-content:center;
+    border:1px solid var(--line);color:var(--ink-soft);transition:color .2s,border-color .2s,background .2s}
+  .pager a:hover{color:var(--beni);border-color:rgba(159,47,35,.4);background:rgba(255,255,255,.6)}
+  .pager .cur{color:#fff;background:var(--sumi);border-color:var(--sumi)}
+  .pager .nav{min-width:auto;padding:0 .9rem}
+
+  /* テスト環境の注記帯 */
+  .mock{background:#2B1D14;color:#F0E4D4;font-family:var(--gothic);font-size:.74rem;letter-spacing:.04em;
+    text-align:center;padding:.55rem 1rem;line-height:1.6}
+  .mock b{color:#EBB9A0}
+
+  /* ============ カテゴリー切替ナビ ============
+     現行サイト（kani-mrck.com）のカテゴリ構成をそのまま並べ、現在地を紅色でハイライトする。
+     TOP側の .cat-tiles（index_04_kaizen.html）と対になる導線。 */
+  .catnav{margin:0 0 clamp(1.1rem,2.6vw,1.7rem)}
+  .catnav .lb{display:block;font-family:var(--gothic);font-size:.72rem;letter-spacing:.14em;
+    color:var(--ink-faint);margin-bottom:.55rem}
+  .catnav .row{display:flex;flex-wrap:wrap;gap:.45rem}
+  .catnav a{font-family:var(--gothic);font-size:.85rem;letter-spacing:.03em;color:var(--ink-soft);
+    padding:.5rem .95rem;border:1px solid var(--line);background:rgba(255,255,255,.5);
+    transition:color .2s,border-color .2s,background .2s}
+  .catnav a:hover{color:var(--beni);border-color:rgba(159,47,35,.4);background:#fff}
+  .catnav a.on{color:#fff;background:var(--beni);border-color:var(--beni)}
+
+  /* ============ 安心セクション／FAQ ============
+     2026-07-20 に別セッションが category_01 に実装したものを、
+     2026-07-30 宮元さん確認のうえ全8カテゴリへ展開（スタイルは当時のまま踏襲）。 */
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+  @media(max-width:860px){.trust-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.trust-grid{grid-template-columns:1fr}}
+  .trust{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.6rem 1.3rem;text-align:center}
+  .trust h3{font-size:1rem;margin-bottom:.5rem;letter-spacing:.03em}
+  .trust p{font-family:var(--gothic);font-size:.84rem;color:var(--ink-soft);line-height:1.85}
+  .faq-list{max-width:840px;margin:0 auto}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-item summary{cursor:pointer;padding:1.15rem .2rem;font-family:var(--gothic);font-weight:600;font-size:.98rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:"＋";color:var(--beni);font-weight:400;font-size:1.2rem}
+  .faq-item[open] summary::after{content:"−"}
+  .faq-item .ans{padding:0 .2rem 1.25rem;font-family:var(--gothic);font-size:.9rem;color:var(--ink-soft);line-height:1.95}
+/* ---- 検索結果ページの追加分 --------------------------------------------- */
+/* 件数表示は絞り込みチップの位置に置く */
+.toolbar .subcat .jp-label{font-family:var(--gothic);font-size:.85rem;color:var(--ink-soft)}
+
+/* 該当なしのとき */
+.search-none{text-align:center;padding:clamp(2.6rem,7vw,4.5rem) 1rem;font-family:var(--gothic)}
+.search-none .lead{font-size:1.05rem;color:var(--ink);margin-bottom:1rem}
+.search-none ul{list-style:none;margin:0 0 1.8rem;padding:0;font-size:.86rem;
+  color:var(--ink-faint);line-height:2}
+.btn-fill{display:inline-block;font-family:var(--gothic);font-size:.9rem;letter-spacing:.08em;
+  padding:.95rem 2.6rem;background:var(--beni);color:#fff;border:1px solid var(--beni);
+  border-radius:2px;transition:background .2s,border-color .2s}
+.btn-fill:hover{background:var(--beni-deep);border-color:var(--beni-deep)}

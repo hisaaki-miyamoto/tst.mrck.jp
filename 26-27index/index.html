@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>公式サイト リニューアル 試作版｜株式会社 丸近</title>
+<style>
+  :root { --ink:#2b2724; --sub:#6b625b; --line:#e3dbcf; --accent:#9b2743; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:#f6f2ea; color:var(--ink);
+         font-family:"Hiragino Sans","Yu Gothic",sans-serif; line-height:1.8; }
+  .wrap { max-width:960px; margin:0 auto; padding:4rem 1.5rem 6rem; }
+  .eyebrow { letter-spacing:.28em; font-size:.72rem; color:var(--sub); }
+  h1 { font-size:1.7rem; margin:.4rem 0 1.2rem; letter-spacing:.06em; }
+  .lead { color:var(--sub); margin-bottom:.6rem; }
+  .note { background:#fff; border:1px solid var(--line); border-radius:12px;
+          padding:1.2rem 1.4rem; margin:2rem 0 2.6rem; font-size:.92rem; }
+  .note b { color:var(--accent); }
+  .grid { display:grid; gap:.9rem;
+          grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); }
+  .card { display:block; background:#fff; border:1px solid var(--line);
+          border-radius:12px; padding:1.1rem 1.2rem; text-decoration:none;
+          color:inherit; transition:transform .16s ease, box-shadow .16s ease; }
+  .card:hover { transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.08); }
+  .card .t { display:block; font-weight:700; letter-spacing:.04em; }
+  .card .n { display:block; font-size:.82rem; color:var(--sub); margin-top:.3rem; }
+  footer { margin-top:3rem; font-size:.8rem; color:var(--sub); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="eyebrow">MARUCHIKA WEBSITE RENEWAL</p>
+    <h1>公式サイト リニューアル 試作版</h1>
+    <p class="lead">全体のレイアウト・リンクの導線・ページごとの掲載内容をご確認いただくためのものです。</p>
+
+    <div class="note">
+      <p><b>これは試作です。本番サイトには反映されていません。</b></p>
+      <p>・写真（メインビジュアル等）は<b>仮のもの</b>です。正式な写真に差し替えます。<br>
+         ・商品名・価格・お知らせは、実際のデータを読み込んでいます。<br>
+         ・商品詳細は代表1商品のみご用意しています（全83商品が同じ作りになります）。<br>
+         ・カートの「レジに進む」など、実際のご注文にはつながりません。</p>
+    </div>
+
+    <div class="grid">
+      <a class="card" href="top.html">
+        <span class="t">TOPページ</span>
+        <span class="n">サイトの顔。11ブロック構成</span>
+      </a>
+      <a class="card" href="all_items.html">
+        <span class="t">商品カテゴリー（全商品）</span>
+        <span class="n">8カテゴリーすべて同じ作り</span>
+      </a>
+      <a class="card" href="kanimi.html">
+        <span class="t">商品カテゴリー（かに身）</span>
+        <span class="n">カテゴリー別の表示例</span>
+      </a>
+      <a class="card" href="item.html">
+        <span class="t">商品詳細</span>
+        <span class="n">全83商品がこの1テンプレート</span>
+      </a>
+      <a class="card" href="cart.html">
+        <span class="t">カート</span>
+        <span class="n">ご注文が入る画面</span>
+      </a>
+      <a class="card" href="search.html">
+        <span class="t">商品検索結果</span>
+        <span class="n">ヘッダーの検索の結果</span>
+      </a>
+      <a class="card" href="crabpage.html">
+        <span class="t">香住ガニとは</span>
+        <span class="n">新規ページ。読み物として</span>
+      </a>
+      <a class="card" href="reviewpage.html">
+        <span class="t">お客様の声</span>
+        <span class="n">レビューを集めたページ</span>
+      </a>
+      <a class="card" href="newslist.html">
+        <span class="t">お知らせ一覧</span>
+        <span class="n">カテゴリー色分けつき</span>
+      </a>
+      <a class="card" href="newsdetail.html">
+        <span class="t">お知らせ詳細</span>
+        <span class="n">記事の本文</span>
+      </a>
+      <a class="card" href="company.html">
+        <span class="t">会社概要</span>
+        <span class="n">本文は管理画面のデータ</span>
+      </a>
+      <a class="card" href="guide.html">
+        <span class="t">ご利用案内</span>
+        <span class="n">同上</span>
+      </a>
+      <a class="card" href="contract.html">
+        <span class="t">特定商取引法</span>
+        <span class="n">同上</span>
+      </a>
+      <a class="card" href="policy.html">
+        <span class="t">プライバシーポリシー</span>
+        <span class="n">同上</span>
+      </a>
+    </div>
+
+    <footer>株式会社 丸近／公式サイトリニューアル 試作版（2026年8月）</footer>
+  </div>
+</body>
+</html>

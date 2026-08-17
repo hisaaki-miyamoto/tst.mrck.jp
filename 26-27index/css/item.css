@@ -1,0 +1,146 @@
+/* ============================================================================
+   株式会社丸近　公式サイト　商品詳細ページ専用スタイル
+   クリエイターモード ＞ 商品詳細ページ ＞ CSS に、この内容をすべて貼り付けてください。
+
+   ・共通の見た目（ヘッダー／フッター／見出し／レビュー枠など）は
+     「全ページ共通 ＞ CSS」に入っています。こちらは商品詳細固有分のみです。
+   ============================================================================ */
+
+  .crumbs{font-family:var(--gothic);font-size:.78rem;color:var(--ink-faint);padding:clamp(1rem,2.5vw,1.4rem) 0 0}
+  .crumbs a{color:var(--ink-soft)} .crumbs span{color:var(--beni)}
+  .pd{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(1.6rem,4vw,3rem);align-items:start;padding-top:clamp(1rem,2.5vw,1.6rem)}
+  @media(max-width:860px){.pd{grid-template-columns:1fr}}
+  .pd-gallery .main{aspect-ratio:4/3;border-radius:16px;background:var(--surface-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--ink-faint);font-family:var(--gothic);font-size:.9rem;position:relative;overflow:hidden}
+  .pd-gallery .main .tag{position:absolute;top:1rem;left:1rem;background:var(--beni);color:#fff;font-family:var(--gothic);font-size:.72rem;padding:.35rem .8rem;border-radius:999px;letter-spacing:.05em}
+  .pd-gallery .thumbs{display:flex;gap:.6rem;margin-top:.7rem}
+  .pd-gallery .thumbs span{width:64px;height:64px;border-radius:8px;background:var(--surface-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--ink-faint);font-size:.6rem}
+  .pd-info .eyebrow{margin-bottom:.4rem}
+  .pd-info h1{font-size:clamp(1.5rem,3.4vw,2.05rem);font-weight:600;letter-spacing:.04em;line-height:1.45;margin-bottom:.6rem}
+  .pd-rev{display:flex;align-items:center;gap:.5rem;font-family:var(--gothic);font-size:.84rem;color:var(--ink-soft);margin-bottom:.9rem}
+  .pd-rev .stars{color:#D4A017;letter-spacing:.05em}
+  .pd-price{display:flex;align-items:baseline;gap:.6rem;padding:.9rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .pd-price .yen{font-size:1.9rem;font-weight:700;color:var(--ink)}
+  .pd-price .tax{font-family:var(--gothic);font-size:.8rem;color:var(--ink-soft)}
+  .pd-benefits{list-style:none;margin:1.1rem 0;font-family:var(--gothic)}
+  .pd-benefits li{position:relative;padding-left:1.5rem;margin-bottom:.55rem;font-size:.9rem;color:var(--ink-soft);line-height:1.7}
+  .pd-benefits li::before{content:"";position:absolute;left:0;top:.5em;width:.5rem;height:.5rem;border-radius:50%;background:var(--beni)}
+  .pd-buy{display:flex;gap:.8rem;align-items:center;margin:1.2rem 0 .8rem;flex-wrap:wrap}
+  .pd-buy .qty{display:flex;align-items:center;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden}
+  .pd-buy .qty button{width:38px;height:46px;border:none;background:var(--surface);font-size:1.1rem;color:var(--ink);cursor:pointer}
+  .pd-buy .qty input{width:46px;height:46px;border:none;text-align:center;font-size:1rem;font-family:var(--gothic)}
+  .buy-lg{flex:1;min-width:220px;background:var(--beni);color:#fff;border:none;border-radius:12px;padding:0 1.6rem;height:52px;font-family:var(--gothic);font-size:1rem;font-weight:600;letter-spacing:.05em;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:.5rem}
+  .buy-lg:hover{background:var(--beni-deep)}
+  .pd-assure{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:1rem;font-family:var(--gothic);font-size:.78rem;color:var(--ink-soft)}
+  .pd-assure span{display:inline-flex;align-items:center;gap:.35rem}
+  .pd-assure svg{width:16px;height:16px;color:var(--beni)}
+  .spec-table{width:100%;border-collapse:collapse;font-family:var(--gothic);font-size:.88rem;max-width:860px}
+  .spec-table th,.spec-table td{border-bottom:1px solid var(--line);padding:.85rem 1rem;text-align:left;vertical-align:top}
+  .spec-table th{width:28%;background:var(--surface-2);color:var(--ink-soft);font-weight:600;white-space:nowrap}
+  .rel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+  @media(max-width:860px){.rel-grid{grid-template-columns:repeat(2,1fr)}}
+  .rel{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .rel .ph{aspect-ratio:1/1;background:var(--surface-2);display:flex;align-items:center;justify-content:center;color:var(--ink-faint);font-size:.7rem;font-family:var(--gothic)}
+  .rel .b{padding:.8rem .9rem} .rel h3{font-size:.86rem;margin-bottom:.3rem;line-height:1.4} .rel .yen{font-weight:700;color:var(--ink);font-size:.95rem}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-item summary{cursor:pointer;padding:1.1rem .2rem;font-family:var(--gothic);font-weight:600;font-size:.96rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:"＋";color:var(--beni)} .faq-item[open] summary::after{content:"−"}
+  .faq-item .ans{padding:0 .2rem 1.1rem;font-family:var(--gothic);font-size:.88rem;color:var(--ink-soft);line-height:1.9}
+
+/* ============================================================
+   実データ化に伴う追加分（試作は文字だけのダミー枠だった箇所）
+   ============================================================ */
+/* パンくず：区切り記号に余白を入れ、現在地だけ色を変える
+   （試作では「＞」を直書きしていたので余白の指定が無かった） */
+.crumbs .sep{margin:0 .45rem;color:var(--ink-faint)}
+.crumbs .cur{color:var(--beni)}
+
+/* 写真：枠いっぱいに収める */
+.pd-gallery .main{color:transparent}
+.pd-gallery .main img{width:100%;height:100%;object-fit:cover;display:block}
+/* サムネイル：商品によって3〜18枚と幅があるので折り返す */
+.pd-gallery .thumbs{flex-wrap:wrap}
+.pd-gallery .thumbs .thumb{width:64px;height:64px;padding:0;border-radius:8px;overflow:hidden;
+  border:1px solid var(--line);background:var(--surface-2);cursor:pointer;
+  transition:border-color .2s,transform .2s}
+.pd-gallery .thumbs .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.pd-gallery .thumbs .thumb:hover{transform:translateY(-2px)}
+.pd-gallery .thumbs .thumb.on{border-color:var(--beni)}
+
+/* カテゴリー名のリンク色は見出し扱いのまま */
+.pd-info .eyebrow a{color:inherit}
+/* レビュー件数へのリンク */
+.pd-rev a{color:var(--ink-soft);border-bottom:1px solid var(--line)}
+/* セール前価格・在庫の注意書き */
+.pd-price .was{font-family:var(--gothic);font-size:.9rem;color:var(--ink-faint);text-decoration:line-through;margin-right:.2rem}
+.pd-ship{font-family:var(--gothic);font-size:.82rem;color:var(--ink-soft);margin-top:.35rem}
+.pd-stock{font-family:var(--gothic);font-size:.85rem;margin-top:.5rem}
+.pd-stock.low{color:var(--beni)}
+.pd-stock.out{color:var(--ink-faint)}
+/* 売り切れ・再入荷ボタン */
+.buy-lg.out{background:var(--surface-2);color:var(--ink-faint);border-color:var(--line);cursor:default}
+.buy-lg.restock{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+/* MakeShopが出力するオプション欄 */
+.pd-option{margin:.2rem 0 1rem;font-family:var(--gothic);font-size:.9rem}
+.pd-option select,.pd-option input[type="text"],.pd-option input[type="number"]{
+  font-family:var(--gothic);font-size:.9rem;padding:.5rem .7rem;border:1px solid var(--line-strong);
+  border-radius:8px;background:#fff;max-width:100%}
+.pd-option .makeshop-option-label{font-size:.82rem;color:var(--ink-soft);margin:.6rem 0 .3rem}
+
+/* 商品説明文（管理画面のHTMLがそのまま入るので、最低限の見た目だけ整える） */
+.item-desc{max-width:860px;margin:0 auto;font-family:var(--gothic);font-size:.92rem;
+  color:var(--ink-soft);line-height:2}
+.item-desc img{max-width:100%;height:auto;display:block;margin:1rem auto;border-radius:10px}
+.item-desc table{max-width:100%;border-collapse:collapse}
+.item-desc td,.item-desc th{border:1px solid var(--line);padding:.6rem .8rem}
+.item-desc a{color:var(--beni);text-decoration:underline}
+
+/* 食品表示の表（商品説明文2）
+   現行サイト時代の古い書き方（width="310" / bgcolor / <font>）で入っているので、
+   新デザインの見た目に上書きする。中身のデータには一切手を触れない。 */
+.item-spec{max-width:860px;margin:0 auto;overflow-x:auto}
+.item-spec table{width:100%!important;border-collapse:collapse!important;
+  background:transparent!important;border:1px solid var(--line)}
+.item-spec table th,.item-spec table td{
+  background:transparent!important;border:1px solid var(--line);
+  padding:.8rem 1rem!important;font-family:var(--gothic);font-size:.88rem;
+  text-align:left!important;vertical-align:top;line-height:1.8}
+.item-spec table th{width:32%;background:var(--surface-2)!important;
+  color:var(--ink-soft)!important;font-weight:600;white-space:nowrap}
+.item-spec table td{color:var(--ink-soft)!important}
+/* 表の1行目（「商品説明」の見出し帯）だけは中央に */
+.item-spec table th[colspan]{width:auto;text-align:center!important;color:var(--ink)!important}
+/* <font size> <font color> を無効化して本文の書式に揃える */
+.item-spec font{font-size:inherit!important;color:inherit!important;font-family:inherit!important}
+.item-spec b,.item-spec strong{font-weight:600}
+@media(max-width:520px){.item-spec table th{width:38%;white-space:normal}}
+
+/* 全商品共通のご注意 */
+.item-notice{max-width:860px;margin:1.6rem auto 0;padding:1.1rem 1.4rem;
+  background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--beni);
+  border-radius:10px}
+.item-notice h3{font-family:var(--gothic);font-size:.86rem;letter-spacing:.06em;
+  color:var(--ink);margin-bottom:.5rem}
+.item-notice ul{list-style:none;margin:0;padding:0}
+.item-notice li{position:relative;padding-left:1.1em;font-family:var(--gothic);
+  font-size:.83rem;color:var(--ink-soft);line-height:1.9}
+.item-notice li::before{content:"&#131;B";position:absolute;left:0;color:var(--ink-faint)}
+
+/* 関連商品の写真 */
+.rel .ph{overflow:hidden}
+.rel .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.rel:hover .ph img{transform:scale(1.05)}
+.rel .b h3{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* レビューがまだ無い商品の募集バンド（大見出しを出さず1行で収める） */
+.review-invite{display:flex;align-items:center;justify-content:space-between;gap:1.2rem;
+  flex-wrap:wrap;margin:clamp(1.6rem,4vw,2.6rem) 0;padding:1.1rem 1.4rem;
+  background:var(--surface-2);border:1px solid var(--line);border-radius:14px}
+.review-invite p{font-family:var(--gothic);font-size:.88rem;color:var(--ink-soft);
+  line-height:1.85;flex:1;min-width:240px;margin:0}
+.review-invite .btn-line{padding:.7rem 1.6rem;font-size:.85rem;white-space:nowrap}
+/* レビューがある商品は「すべて見る」と「投稿する」を横並びに */
+.more .btn-line + .btn-line{margin-left:.8rem}
+
+/* レビューの投稿者・日付 */
+.reviews .review .who{font-family:var(--gothic);font-size:.76rem;color:var(--ink-faint)}

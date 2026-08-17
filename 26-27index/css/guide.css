@@ -1,0 +1,103 @@
+/* ============================================================================
+   株式会社丸近　公式サイト　利用案内ページ専用スタイル
+   クリエイターモード ＞ 利用案内ページ ＞ CSS に貼り付けてください。
+   ============================================================================ */
+/* ---- ページ見出し帯 ------------------------------------------------------
+   商品カテゴリの .cat-hero より低くして、本文を早く見せる */
+.page-hero{position:relative;min-height:clamp(170px,26vh,230px);background:var(--sumi);
+  color:var(--sumi-ink);overflow:hidden;display:flex;align-items:flex-end}
+.page-hero .bg{position:absolute;inset:0;background-image:var(--hero,var(--slide-a));
+  background-size:cover;background-position:center;transform:scale(1.04)}
+.page-hero .scrim{position:absolute;inset:0;background:
+    linear-gradient(0deg,rgba(12,8,5,.86),rgba(12,8,5,.35) 60%,rgba(12,8,5,.55)),
+    linear-gradient(90deg,rgba(12,8,5,.5),rgba(12,8,5,0) 45%)}
+.page-hero::after{content:"";position:absolute;inset:0;opacity:.34;
+  background-image:var(--seigaiha);background-size:88px 44px;
+  mix-blend-mode:overlay;pointer-events:none}
+.page-hero .in{position:relative;z-index:2;width:100%;padding-bottom:clamp(1.2rem,3vw,1.9rem)}
+.page-hero .en{font-family:var(--latin);font-style:italic;letter-spacing:.24em;
+  color:#EBB9A0;font-size:.76rem;margin-bottom:.4rem}
+.page-hero h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:600;letter-spacing:.1em;
+  line-height:1.3;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+.page-hero .lead{font-family:var(--gothic);font-size:.82rem;letter-spacing:.06em;
+  color:rgba(244,239,230,.8);margin-top:.55rem}
+
+/* ---- パンくず ---- */
+.crumb{font-family:var(--gothic);font-size:.76rem;letter-spacing:.05em;
+  color:var(--ink-faint);padding:1rem 0 .2rem}
+.crumb a{color:var(--ink-soft);transition:color .2s}
+.crumb a:hover{color:var(--beni)}
+.crumb .sep{margin:0 .5em;color:var(--line-strong)}
+.crumb .cur{color:var(--beni)}
+
+/* ---- 本文カラム。規約系は読みやすさ優先で幅を絞る ---- */
+.narrow{max-width:900px;margin:0 auto}
+.doc{font-family:var(--gothic);color:var(--ink-soft);line-height:2}
+.doc h2{font-family:var(--mincho);font-size:clamp(1.15rem,2.4vw,1.4rem);color:var(--ink);
+  letter-spacing:.06em;margin:2.6rem 0 .9rem;padding-bottom:.5rem;border-bottom:1px solid var(--line)}
+.doc h2:first-child{margin-top:0}
+.doc h3{font-size:1rem;color:var(--ink);margin:1.5rem 0 .5rem;letter-spacing:.04em}
+.doc p{margin-bottom:1rem;font-size:.92rem}
+.doc ul,.doc ol{margin:0 0 1rem 1.4rem;font-size:.92rem}
+.doc li{margin-bottom:.4rem}
+.doc a{color:var(--beni);text-decoration:underline;text-underline-offset:.2em}
+.doc .note{font-size:.84rem;color:var(--ink-faint);margin-top:2rem;padding:1rem 1.1rem;
+  border-left:2px solid var(--beni);background:rgba(255,255,255,.5);line-height:1.95}
+
+/* ---- ページ下部の関連リンク ---- */
+.doc-links{display:flex;flex-wrap:wrap;gap:.6rem .5rem;justify-content:center;
+  margin:clamp(2.4rem,5vw,3.6rem) 0 0;padding-top:clamp(1.6rem,3vw,2.2rem);
+  border-top:1px solid var(--line);font-family:var(--gothic);font-size:.82rem}
+.doc-links a,.doc-links .cur{padding:.5rem 1.1rem;border:1px solid var(--line);
+  border-radius:999px;line-height:1.6;transition:border-color .2s,color .2s,background .2s}
+.doc-links a{color:var(--ink-soft);background:rgba(255,255,255,.5)}
+.doc-links a:hover{border-color:var(--beni);color:var(--beni);background:#fff}
+.doc-links .cur{color:var(--sumi-ink);background:var(--sumi);border-color:var(--sumi)}
+/* ---- 管理画面の入力内容を包む領域 ----------------------------------------
+   現行サイト向けに書かれたHTMLがそのまま入るため、
+   全ページ共通CSSのリセット（*{margin:0;padding:0}）で潰れた分を戻し、
+   古い書式（table幅・bgcolor・font）を打ち消す。データ側は一切変更していない。 */
+.cms{font-family:var(--gothic);color:var(--ink-soft);line-height:2;font-size:.92rem}
+.cms p{margin-bottom:1rem}
+.cms ul,.cms ol{margin:0 0 1rem 1.5rem}
+.cms ul{list-style:disc}
+.cms ol{list-style:decimal}
+.cms li{margin-bottom:.35rem}
+.cms a{color:var(--beni);text-decoration:underline;text-underline-offset:.2em}
+.cms b,.cms strong{font-weight:600;color:var(--ink)}
+/* <font size> <font color> を無効化して本文の書式に揃える */
+.cms font{font-size:inherit!important;color:inherit!important;font-family:inherit!important}
+/* 画像は幅指定（width=50% など）を打ち消して、はみ出さない範囲で原寸まで */
+.cms img{max-width:100%!important;width:auto!important;height:auto!important;
+  margin:.6rem 0;border-radius:6px}
+.cms iframe{max-width:100%;width:100%;border:0;border-radius:10px}
+/* 表：古い width / bgcolor を打ち消して、新デザインの定義表に揃える */
+.cms table{width:100%!important;border-collapse:collapse!important;
+  background:none!important;font-size:.9rem;margin:0 0 1rem}
+.cms table th,.cms table td{border:none!important;border-bottom:1px solid var(--line)!important;
+  padding:1rem .9rem!important;text-align:left!important;vertical-align:top;
+  line-height:1.9;background:none!important;color:var(--ink-soft)!important}
+.cms table th{width:30%;white-space:nowrap;font-weight:600;
+  color:var(--ink)!important;background:rgba(255,255,255,.42)!important}
+@media (max-width:600px){
+  .cms table th,.cms table td{display:block;width:auto;border-bottom:none!important;
+    padding:.55rem .8rem!important}
+  .cms table th{background:rgba(255,255,255,.6)!important;padding-top:.9rem!important;
+    white-space:normal}
+  .cms table tr{display:block;border-bottom:1px solid var(--line);padding-bottom:.6rem}
+}
+
+/* ---- ご利用案内 ---------------------------------------------------------- */
+/* ページ先頭の目次 */
+.doc-toc{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 clamp(2rem,4vw,2.8rem);
+  padding:clamp(1rem,2.4vw,1.3rem);background:var(--surface-2);
+  border:1px solid var(--line);border-radius:14px;font-family:var(--gothic);font-size:.84rem}
+.doc-toc a{padding:.45rem 1rem;border:1px solid var(--line);border-radius:999px;
+  background:#fff;color:var(--ink-soft);transition:border-color .2s,color .2s}
+.doc-toc a:hover{border-color:var(--beni);color:var(--beni)}
+/* 見出しにジャンプしたときヘッダーに隠れないように */
+.doc-sec{scroll-margin-top:110px}
+.doc-sec + .doc-sec{margin-top:clamp(2.2rem,4.5vw,3.2rem)}
+/* 入力内容が全角スペースで字下げされているため、行頭のぶら下がりを抑える */
+.cms-rich{overflow-wrap:anywhere}
+.cms-rich p{margin-bottom:0}
