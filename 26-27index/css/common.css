@@ -249,17 +249,18 @@
 
   /* ---------- ranking ---------- */
   .rank-list{display:flex;flex-direction:column;max-width:760px;margin:0 auto;border-top:1px solid var(--line)}
-  .rank-item{display:flex;align-items:center;gap:clamp(1rem,3vw,2rem);padding:1.4rem .3rem;border-bottom:1px solid var(--line);transition:background .2s}
+  .rank-item{display:flex;align-items:center;gap:clamp(1.1rem,3vw,2.2rem);padding:1.6rem .3rem;border-bottom:1px solid var(--line);transition:background .2s}
   .rank-item:hover{background:color-mix(in srgb,var(--beni) 5%,transparent)}
-  .rank-item .no{font-family:var(--latin);font-size:2.2rem;font-style:italic;color:var(--beni);min-width:2.2ch;text-align:center;line-height:1}
+  .rank-item .no{font-family:var(--latin);font-size:2.6rem;font-style:italic;color:var(--beni);min-width:2.2ch;text-align:center;line-height:1}
   .rank-item .no small{display:block;font-size:.5rem;letter-spacing:.2em;font-style:normal;color:var(--ink-faint)}
-  .rank-item .thumb{width:74px;height:74px;flex:none;background:
+  /* 2026-08-17：宮元さんのご指定でサムネイルを大きくした（74→104px）。 */
+  .rank-item .thumb{width:104px;height:104px;flex:none;border-radius:6px;background:
       linear-gradient(135deg,rgba(154,19,24,.12),transparent),
       repeating-linear-gradient(45deg,var(--surface-2),var(--surface-2) 10px,color-mix(in srgb,var(--surface-2) 55%,var(--ground)) 10px,color-mix(in srgb,var(--surface-2) 55%,var(--ground)) 20px)}
   .rank-item .info{flex:1}
   .rank-item .info h3{font-size:1.05rem;font-weight:600;letter-spacing:.03em}
-  .rank-item .info p{font-family:var(--gothic);font-size:.78rem;color:var(--ink-soft)}
-  .rank-item .info .yen{font-family:var(--gothic);font-variant-numeric:tabular-nums;font-weight:700;margin-top:.2rem;display:inline-block}
+  .rank-item .info p{font-family:var(--gothic);font-size:.9rem;color:var(--ink-soft)}
+  .rank-item .info .yen{font-family:var(--gothic);font-size:1.12rem;font-variant-numeric:tabular-nums;font-weight:700;margin-top:.35rem;display:inline-block}
   .rank-item .arrow{font-family:var(--latin);color:var(--ink-faint);transition:transform .2s,color .2s}
   .rank-item:hover .arrow{transform:translateX(4px);color:var(--beni)}
 
@@ -377,10 +378,7 @@
      スマホでは出さない（通信量・電池のため）。スマホは従来どおり写真3枚が切り替わる。 */
   .hero .movie{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
     z-index:1;display:none;pointer-events:none;background:var(--sumi)}
-  /* ★このプレビュー限定★ 2026-08-17 朝の指定で、スマホでも動画を再生する。
-     本番（クリモ貼付用）はPC・タブレットのみ動画で、スマホは写真の紙芝居のまま。
-     戻すときは、下の1行を消して次を使う：
-       @media (min-width:769px), (hover:hover) and (pointer:fine){ .hero .movie{display:block} } */
+  /* ★このプレビュー限定★ スマホでも動画を再生する（本番はPCのみ）。 */
   .hero .movie{display:block}
   /* 動きを控えたい設定の方には動画を出さない（写真の切り替えに戻す） */
   @media (prefers-reduced-motion:reduce){
@@ -418,7 +416,8 @@
   .prod-grid .card h3{font-size:.98rem;line-height:1.6;display:-webkit-box;
     -webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .prod-grid .card .desc{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .rank-item .info h3{font-size:.94rem;line-height:1.6;display:-webkit-box;
+  /* 2026-08-17：文字を大きくした（.94→1.08rem）。行数の制限はそのまま。 */
+  .rank-item .info h3{font-size:1.08rem;line-height:1.65;display:-webkit-box;
     -webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .rank-item .info p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
