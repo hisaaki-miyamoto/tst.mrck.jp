@@ -101,3 +101,18 @@
 /* 入力内容が全角スペースで字下げされているため、行頭のぶら下がりを抑える */
 .cms-rich{overflow-wrap:anywhere}
 .cms-rich p{margin-bottom:0}
+
+/* ============================================================
+   2026-08-20：TOPページから移してきた「品質・安全について」用。
+   もとは TOPページCSS に入っていたもの（MAGI合議の結論で移設）。
+   ============================================================ */
+  .info-table{width:100%;border-collapse:collapse;font-family:var(--gothic);font-size:.9rem;margin:0 auto}
+  .info-table th,.info-table td{border-bottom:1px solid var(--line);padding:.95rem 1rem;text-align:left;vertical-align:top}
+  .info-table th{width:32%;color:var(--ink-soft);font-weight:600;background:var(--surface-2);white-space:nowrap}
+  @media(max-width:600px){
+    .info-table,.info-table tbody,.info-table tr,.info-table th,.info-table td{display:block;width:auto}
+    .info-table th{border-bottom:0;padding-bottom:.4rem}
+    .info-table td{padding-top:.2rem}
+  }
+  .assure{margin:1.7rem 0 0;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--beni);border-radius:10px;padding:1.2rem 1.4rem;font-family:var(--gothic);font-size:.88rem;color:var(--ink-soft);line-height:1.9}
+  .assure strong{color:var(--ink)}

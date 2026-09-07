@@ -109,3 +109,52 @@
 /* 商品名を商品ページへのリンクにしたので、文字色は見出しのまま保つ */
 .prod-grid .card .body h3 a{color:inherit}
 .rank-item .info .stars{color:#D9A441;letter-spacing:.05em}
+
+/* ============================================================
+   2026-08-20：MAGI合議（3ai）の結論を反映
+   ・ヒーロー直下のご購入導線（.hero-cta）
+   ・長いセクションの折り畳み（.fold-sec）
+   掲載内容は減らしていない。順番と見せ方だけを変えている。
+   ============================================================ */
+
+/* ---- ヒーロー直下のご購入導線 ---- */
+  .hero-cta{background:var(--surface-2);border-bottom:1px solid var(--line);padding:1.05rem 0}
+  .hero-cta .wrap{display:flex;align-items:center;justify-content:center;gap:.85rem;flex-wrap:wrap}
+  .hero-cta .btn-cta{display:inline-block;background:var(--beni);color:#fff;border:1px solid var(--beni);
+    font-family:var(--gothic);font-size:.95rem;letter-spacing:.12em;padding:.85rem 2.4rem;border-radius:999px;transition:all .25s}
+  .hero-cta .btn-cta:hover{background:transparent;color:var(--beni)}
+  .hero-cta .btn-cta.ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
+  .hero-cta .btn-cta.ghost:hover{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+  .hero-cta .note{font-family:var(--gothic);font-size:.8rem;color:var(--ink-faint);letter-spacing:.04em}
+  @media(max-width:600px){
+    .hero-cta{padding:.9rem 0}
+    .hero-cta .wrap{gap:.6rem}
+    .hero-cta .btn-cta{padding:.8rem 1.5rem;font-size:.9rem;flex:1 1 auto;text-align:center}
+    .hero-cta .note{flex-basis:100%;text-align:center}
+  }
+
+/* 受賞実績を「選ばれる理由」へ統合したので、区切りの余白を足す（2026-08-20） */
+  #strength .sub-head{margin-top:clamp(2.4rem,5vw,3.6rem)}
+
+/* ---- 折り畳みセクション ---- */
+  /* .block / .block.cont 側の余白より優先させるため、クラス2つで指定する。 */
+  .block.fold-sec{padding-top:clamp(.9rem,2vw,1.4rem);padding-bottom:clamp(.9rem,2vw,1.4rem)}
+  .block.fold-sec>.wrap{border-top:0;padding-top:0}
+  .fold{max-width:1000px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+  .fold>summary{cursor:pointer;list-style:none;padding:1.3rem 1.6rem;display:flex;align-items:center;gap:.9rem;flex-wrap:wrap}
+  .fold>summary::-webkit-details-marker{display:none}
+  .fold>summary::after{content:"＋";margin-left:auto;color:var(--beni);font-size:1.3rem;line-height:1}
+  .fold[open]>summary::after{content:"−"}
+  .fold[open]>summary{border-bottom:1px solid var(--line)}
+  .fold .fold-t{font-family:var(--mincho);font-size:clamp(1.05rem,2.2vw,1.25rem);letter-spacing:.05em;color:var(--ink);font-weight:600}
+  .fold .fold-s{font-family:var(--gothic);font-size:.8rem;color:var(--ink-faint);letter-spacing:.04em}
+  .fold .fold-body{padding:1.6rem 1.6rem 1.9rem}
+  @media(max-width:600px){
+    .fold>summary{padding:1.1rem 1.15rem}
+    .fold .fold-body{padding:1.2rem 1.15rem 1.5rem}
+    .fold .fold-s{flex-basis:100%}
+  }
+  /* 閉じている間はスクロール判定が働かないので、開いた瞬間に
+     中身が消えたままにならないよう、常に表示扱いにする。 */
+  .fold .fold-body .reveal{opacity:1;transform:none}
+  .fold .fold-body>*:first-child{margin-top:0}
