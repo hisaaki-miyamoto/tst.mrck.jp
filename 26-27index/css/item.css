@@ -124,7 +124,7 @@
 .item-notice ul{list-style:none;margin:0;padding:0}
 .item-notice li{position:relative;padding-left:1.1em;font-family:var(--gothic);
   font-size:.83rem;color:var(--ink-soft);line-height:1.9}
-.item-notice li::before{content:"&#131;B";position:absolute;left:0;color:var(--ink-faint)}
+.item-notice li::before{content:"※";position:absolute;left:0;color:var(--ink-faint)}
 
 /* 関連商品の写真 */
 .rel .ph{overflow:hidden}
