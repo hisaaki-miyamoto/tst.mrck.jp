@@ -46,7 +46,16 @@
     en.forEach(function (x) {
       if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); }
     });
-  }, { threshold: .14 });
+  }, {
+    /* 2026-09-21：threshold を .14 から 0 に変更。
+       「要素の14%が見えたら表示」という指定だったため、商品数の多いページで
+       グリッドが縦に長くなると、画面いっぱいにしても14%に届かず永久に表示されなかった。
+       （かに身＝高さ4976px／iPhoneの表示領域700px前後 → 14.1%でほぼ境界、小さい端末では不発）
+       0 にすれば要素が少しでも入った時点で発火するので、高さに関係なく必ず表示される。
+       rootMargin で下から8%入ったところを発火点にして、見え方は元のままにしている。 */
+    threshold: 0,
+    rootMargin: '0px 0px -8% 0px'
+  });
   els.forEach(function (e) { io.observe(e); });
 })();
 

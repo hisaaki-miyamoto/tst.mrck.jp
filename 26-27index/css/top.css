@@ -140,7 +140,9 @@
     .hero-cta .wrap{gap:.6rem}
     .cta-row{gap:.6rem}
     .hero-cta .btn-cta,.cta-row .btn-cta{padding:.8rem 1.5rem;font-size:.9rem;flex:1 1 auto;text-align:center}
-    .hero-cta .note{flex-basis:100%;text-align:center}
+    /* 2026-09-21：スマホで1行に収まるよう、画面幅に追従させる。
+       PCでは従来どおり「丸近のおすすめ」と同サイズ。 */
+    .hero-cta .note{flex-basis:100%;text-align:center;font-size:min(4.7vw,27.2px);white-space:nowrap}
   }
 
 /* 受賞実績を「選ばれる理由」へ統合したので、区切りの余白を足す（2026-08-20） */
