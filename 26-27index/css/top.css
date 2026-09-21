@@ -132,11 +132,13 @@
   /* 2026-09-21：購入導線を「丸近のおすすめ」の上へ移動したときの並び。
      見た目はヒーロー直下にあったときと同じ。reveal は付けていない。 */
   .cta-row{display:flex;align-items:center;justify-content:center;gap:.85rem;flex-wrap:wrap;
-    margin-bottom:clamp(1.6rem,4vw,2.6rem)}
+    /* 2026-09-21：上の余白（section.block の padding-top）と同じ式にして、
+       ボタンの上下の空きを揃えた。画面幅が変わっても一致する。 */
+    margin-bottom:clamp(4rem,9vw,7rem)}
   @media(max-width:600px){
     .hero-cta{padding:.9rem 0}
     .hero-cta .wrap{gap:.6rem}
-    .cta-row{gap:.6rem;margin-bottom:1.5rem}
+    .cta-row{gap:.6rem}
     .hero-cta .btn-cta,.cta-row .btn-cta{padding:.8rem 1.5rem;font-size:.9rem;flex:1 1 auto;text-align:center}
     .hero-cta .note{flex-basis:100%;text-align:center}
   }
