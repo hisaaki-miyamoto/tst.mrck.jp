@@ -163,7 +163,7 @@
 .rvi-ph{position:relative;display:block;aspect-ratio:1/1;overflow:hidden;background:var(--surface)}
 .rvi-ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
 .rvi-card:hover .rvi-ph img{transform:scale(1.04)}
-.rvi-card.soldout .rvi-ph img{filter:grayscale(.4) opacity(.7)}
+/* 2026-09-21：こちらもモノクロ化をやめた。SOLD OUT のタグで示す */
 .rvi-tag{position:absolute;top:6px;left:6px;font-family:var(--gothic);font-size:.64rem;
   font-weight:600;letter-spacing:.04em;color:#fff;padding:.2em .5em;border-radius:3px}
 .rvi-tag.sale{background:var(--beni)}

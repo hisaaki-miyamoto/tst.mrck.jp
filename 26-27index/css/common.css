@@ -563,6 +563,6 @@ header .wrap > div:last-child{margin-left:auto}
 .cat-grid .card .ph img, .prod-grid .card .ph img{
   width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
 .cat-grid .card:hover .ph img, .prod-grid .card:hover .ph img{transform:scale(1.05)}
-.cat-grid .card.soldout .ph img{filter:grayscale(1) brightness(.92)}
+/* 2026-09-21：売切れ商品のモノクロ化をやめた。上部の透過帯で示す（category.css 参照） */
 .rank-item .thumb{overflow:hidden}
 .rank-item .thumb img{width:100%;height:100%;object-fit:cover;display:block}

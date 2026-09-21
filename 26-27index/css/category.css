@@ -61,7 +61,7 @@
   .cat-grid .card .ph img{width:100%;height:100%;object-fit:cover;display:block;
     transition:transform .5s ease}
   .cat-grid .card:hover .ph img{transform:scale(1.05)}
-  .cat-grid .card.soldout .ph img{filter:grayscale(1) brightness(.92)}
+  /* 2026-09-21：モノクロ化をやめた（上の soldlabel の説明を参照） */
 
   /* 商品名は本番（MakeShop）の実データが長いため、3行で切り詰めてカードの高さを揃える */
   .cat-grid .card .body h3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;
@@ -69,10 +69,16 @@
   .cat-grid .card .rev{display:flex;align-items:center;gap:.4rem;margin:.5rem 0 .1rem;font-family:var(--gothic)}
   .cat-grid .card .rev .stars{color:#C9962E;font-size:.78rem;letter-spacing:.06em}
   .cat-grid .card .rev .n{color:var(--ink-faint);font-size:.7rem}
-  .cat-grid .card.soldout .ph{filter:grayscale(1) brightness(.92)}
-  .cat-grid .card .soldlabel{position:absolute;top:50%;left:0;right:0;transform:translateY(-50%);
-    text-align:center;font-family:var(--gothic);font-size:.8rem;letter-spacing:.16em;
-    color:#fff;background:rgba(36,24,18,.66);padding:.4rem 0}
+
+  /* 2026-09-21：宮元さんのご指示で作り直した。
+     以前は写真をモノクロにして中央に帯を出していたが、売れている商品が
+     「終わった商品」に見えてしまうため、写真はカラーのまま残し、
+     上部に透過の帯だけを載せる形にした。 */
+  .cat-grid .card .soldlabel{position:absolute;top:0;left:0;right:0;z-index:2;
+    text-align:center;font-family:var(--gothic);font-size:.78rem;letter-spacing:.18em;
+    color:#fff;padding:.5rem 0;
+    background:linear-gradient(to bottom,rgba(36,24,18,.74),rgba(36,24,18,.5));
+    -webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
   .cat-grid .card.soldout .buy{background:var(--line-strong);border-color:var(--line-strong);
     color:rgba(255,255,255,.85);pointer-events:none}
 
