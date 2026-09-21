@@ -125,7 +125,9 @@
   .hero-cta .btn-cta:hover{background:transparent;color:var(--beni)}
   .hero-cta .btn-cta.ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
   .hero-cta .btn-cta.ghost:hover{background:var(--ink);color:var(--ground);border-color:var(--ink)}
-  .hero-cta .note{font-family:var(--gothic);font-size:.8rem;color:var(--ink-faint);letter-spacing:.04em}
+  .hero-cta .note{flex-basis:100%;text-align:center;font-family:var(--mincho);
+    font-size:clamp(1.7rem,4.2vw,2.55rem);font-weight:600;line-height:1.4;
+    color:var(--ink);letter-spacing:.06em}
   @media(max-width:600px){
     .hero-cta{padding:.9rem 0}
     .hero-cta .wrap{gap:.6rem}
