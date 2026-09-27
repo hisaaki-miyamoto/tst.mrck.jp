@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<!-- 社内確認用のプレビュー。商品名・価格・画像はダミー、または空欄です。
+     検索には載せません。本番はMakeShopのデザインセットです。 -->
+<meta charset="UTF-8">
+<title></title>
+
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"ホーム","item":"https://www.kani-mrck.com/"},
+    {"@type":"ListItem","position":2,"name":"SDGsの取り組み","item":"https://www.kani-mrck.com/view/page/sdgs"}
+  ]
+}
+</script>
+<style>
+/* ============================================================================
+   株式会社丸近 公式サイト　SDGsの取り組み（フリーページ）専用スタイル
+   クリエイターモード ＞ フリーページ ＞ CSS に、この内容をすべて貼り付けてください。
+
+   2026-09-25：旧デザイン（BRothers）から新デザインへ移植。
+   ※ 宣言文・取り組み内容は、旧ページからそのまま引き継いでいます。
+   ============================================================================ */
+/* ---- 以下は他のフリーページと共通の土台 ---- */
+/* ---- ページ見出し帯 ------------------------------------------------------
+
+   商品カテゴリの .cat-hero より低くして、本文を早く見せる */
+
+.page-hero{position:relative;min-height:clamp(170px,26vh,230px);background:var(--sumi);
+
+  color:var(--sumi-ink);overflow:hidden;display:flex;align-items:flex-end}
+
+.page-hero .bg{position:absolute;inset:0;background-image:var(--hero,var(--slide-a));
+
+  background-size:cover;background-position:center;transform:scale(1.04)}
+
+.page-hero .scrim{position:absolute;inset:0;background:
+
+    linear-gradient(0deg,rgba(12,8,5,.86),rgba(12,8,5,.35) 60%,rgba(12,8,5,.55)),
+
+    linear-gradient(90deg,rgba(12,8,5,.5),rgba(12,8,5,0) 45%)}
+
+.page-hero::after{content:"";position:absolute;inset:0;opacity:.34;
+
+  background-image:var(--seigaiha);background-size:88px 44px;
+
+  mix-blend-mode:overlay;pointer-events:none}
+
+.page-hero .in{position:relative;z-index:2;width:100%;padding-bottom:clamp(1.2rem,3vw,1.9rem)}
+
+.page-hero .en{font-family:var(--latin);font-style:italic;letter-spacing:.24em;
+
+  color:#EBB9A0;font-size:.76rem;margin-bottom:.4rem}
+
+.page-hero h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:600;letter-spacing:.1em;
+
+  line-height:1.3;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+
+.page-hero .lead{font-family:var(--gothic);font-size:.82rem;letter-spacing:.06em;
+
+  color:rgba(244,239,230,.8);margin-top:.55rem}
+
+
+
+/* ---- パンくず ---- */
+
+.crumb{font-family:var(--gothic);font-size:.76rem;letter-spacing:.05em;
+
+  color:var(--ink-faint);padding:1rem 0 .2rem}
+
+.crumb a{color:var(--ink-soft);transition:color .2s}
+
+.crumb a:hover{color:var(--beni)}
+
+.crumb .sep{margin:0 .5em;color:var(--line-strong)}
+
+.crumb .cur{color:var(--beni)}
+
+
+
+/* ---- 本文カラム。規約系は読みやすさ優先で幅を絞る ---- */
+
+.narrow{max-width:900px;margin:0 auto}
+
+.doc{font-family:var(--gothic);color:var(--ink-soft);line-height:2}
+
+.doc h2{font-family:var(--mincho);font-size:clamp(1.15rem,2.4vw,1.4rem);color:var(--ink);
+
+  letter-spacing:.06em;margin:2.6rem 0 .9rem;padding-bottom:.5rem;border-bottom:1px solid var(--line)}
+
+.doc h2:first-child{margin-top:0}
+
+.doc h3{font-size:1rem;color:var(--ink);margin:1.5rem 0 .5rem;letter-spacing:.04em}
+
+.doc p{margin-bottom:1rem;font-size:.92rem}
+
+.doc ul,.doc ol{margin:0 0 1rem 1.4rem;font-size:.92rem}
+
+.doc li{margin-bottom:.4rem}
+
+.doc a{color:var(--beni);text-decoration:underline;text-underline-offset:.2em}
+
+.doc .note{font-size:.84rem;color:var(--ink-faint);margin-top:2rem;padding:1rem 1.1rem;
+
+  border-left:2px solid var(--beni);background:rgba(255,255,255,.5);line-height:1.95}
+
+
+
+/* ---- ページ下部の関連リンク ---- */
+
+.doc-links{display:flex;flex-wrap:wrap;gap:.6rem .5rem;justify-content:center;
+
+  margin:clamp(2.4rem,5vw,3.6rem) 0 0;padding-top:clamp(1.6rem,3vw,2.2rem);
+
+  border-top:1px solid var(--line);font-family:var(--gothic);font-size:.82rem}
+
+.doc-links a,.doc-links .cur{padding:.5rem 1.1rem;border:1px solid var(--line);
+
+  border-radius:999px;line-height:1.6;transition:border-color .2s,color .2s,background .2s}
+
+.doc-links a{color:var(--ink-soft);background:rgba(255,255,255,.5)}
+
+.doc-links a:hover{border-color:var(--beni);color:var(--beni);background:#fff}
+
+.doc-links .cur{color:var(--sumi-ink);background:var(--sumi);border-color:var(--sumi)}
+
+
+
+/* ---- リード文 ---- */
+
+.crab-lead{font-family:var(--gothic);font-size:clamp(.95rem,2.2vw,1.05rem);line-height:2.1;
+
+  color:var(--ink);max-width:44em;margin:0 auto clamp(2.2rem,5vw,3.4rem);text-align:center;
+
+  letter-spacing:.04em}
+
+
+
+/* ---- 見出し（各ブロック共通） ---- */
+
+.crab-head{text-align:center;margin:0 0 clamp(1.4rem,3vw,2rem)}
+
+.crab-block,.crab-story{margin:clamp(2.4rem,6vw,4rem) 0}
+
+.eyebrow{display:block;font-family:var(--latin);font-style:italic;letter-spacing:.2em;
+
+  color:var(--beni);font-size:.72rem;margin-bottom:.5rem}
+
+.crab-head h2,.crab-txt h2,.crab-cta h2{font-family:var(--mincho);font-weight:600;
+
+  letter-spacing:.08em;color:var(--ink);font-size:clamp(1.35rem,3.4vw,1.9rem);line-height:1.4}
+
+
+
+/* ---- 香住ガニとは（写真＋文章の2カラム） ---- */
+
+.crab-story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);
+
+  gap:clamp(1.4rem,4vw,3rem);align-items:center}
+
+.crab-visual{position:relative;aspect-ratio:4/3;border-radius:12px;overflow:hidden;
+
+  background:var(--sumi);display:flex;align-items:center;justify-content:center;
+
+  box-shadow:var(--shadow,0 10px 30px rgba(0,0,0,.12))}
+
+.crab-visual::after{content:"";position:absolute;inset:0;opacity:.14;
+
+  background-image:var(--seigaiha);background-size:88px 44px;mix-blend-mode:overlay;
+
+  pointer-events:none}
+
+.crab-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+
+  display:block;z-index:0}
+
+.crab-visual span{position:relative;z-index:1;font-family:var(--gothic);font-size:.82rem;
+
+  letter-spacing:.1em;color:rgba(244,239,230,.72)}
+
+.crab-visual .stamp{position:absolute;top:14px;left:14px;z-index:2;width:64px;height:64px;
+
+  border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;
+
+  font-family:var(--mincho);font-size:.72rem;line-height:1.35;color:#fff;
+
+  background:var(--beni);border:1px solid rgba(255,255,255,.5)}
+
+.crab-txt .eyebrow{text-align:left}
+
+.crab-txt h2{margin-bottom:.9rem}
+
+.crab-txt p{font-family:var(--gothic);font-size:.94rem;line-height:2.05;color:var(--ink-soft);
+
+  margin-bottom:1rem}
+
+
+
+/* ---- 松葉がにとの違い（2カード） ---- */
+
+.crab-compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+
+  gap:clamp(1rem,2.6vw,1.6rem)}
+
+.crab-card{border:1px solid var(--line);border-top:3px solid var(--beni);border-radius:10px;
+
+  background:rgba(255,255,255,.55);padding:clamp(1.3rem,3vw,1.8rem)}
+
+.crab-card h3{font-family:var(--mincho);font-size:1.2rem;color:var(--ink);letter-spacing:.06em;
+
+  margin-bottom:.8rem;display:flex;align-items:baseline;gap:.6rem}
+
+.crab-card h3 span{font-family:var(--gothic);font-size:.72rem;letter-spacing:.08em;
+
+  color:var(--ink-faint);border:1px solid var(--line);border-radius:999px;padding:.15rem .6rem}
+
+.crab-card p{font-family:var(--gothic);font-size:.9rem;line-height:2;color:var(--ink-soft)}
+
+.crab-note{text-align:center;font-family:var(--gothic);font-size:.82rem;color:var(--ink-faint);
+
+  margin-top:1.2rem;letter-spacing:.04em}
+
+
+
+/* ---- 旬と漁期 ---- */
+
+.crab-season-lead{font-family:var(--gothic);font-size:.94rem;line-height:2.05;color:var(--ink-soft);
+
+  max-width:42em;margin:0 auto 1.2rem;text-align:center}
+
+.crab-band{max-width:44em;margin:0 auto;padding:1rem 1.3rem;border:1px solid var(--line);
+
+  border-left:3px solid var(--beni);background:var(--surface);border-radius:10px;
+
+  font-family:var(--gothic);font-size:.9rem;line-height:1.9;color:var(--ink);text-align:center}
+
+
+
+/* ---- 産地の店だから（3項目） ---- */
+
+.crab-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+
+  gap:clamp(1rem,2.4vw,1.5rem)}
+
+.crab-item{padding:clamp(1.2rem,2.6vw,1.6rem);border:1px solid var(--line);border-radius:10px;
+
+  background:rgba(255,255,255,.5)}
+
+.crab-item h3{font-family:var(--mincho);font-size:1.05rem;color:var(--ink);letter-spacing:.05em;
+
+  margin-bottom:.7rem;padding-bottom:.6rem;border-bottom:1px solid var(--line)}
+
+.crab-item p{font-family:var(--gothic);font-size:.88rem;line-height:1.95;color:var(--ink-soft)}
+
+
+
+/* ---- CTA ---- */
+
+.crab-cta{text-align:center;margin:clamp(2.6rem,6vw,4rem) 0 0;
+
+  padding:clamp(2rem,5vw,3rem) 1.2rem;border-radius:14px;background:var(--sumi);
+
+  color:var(--sumi-ink);position:relative;overflow:hidden}
+
+.crab-cta::after{content:"";position:absolute;inset:0;opacity:.26;
+
+  background-image:var(--seigaiha);background-size:88px 44px;mix-blend-mode:overlay;
+
+  pointer-events:none}
+
+.crab-cta>*{position:relative;z-index:1}
+
+.crab-cta .eyebrow{color:#EBB9A0}
+
+.crab-cta h2{color:#fff;margin-bottom:.7rem}
+
+.crab-cta p{font-family:var(--gothic);font-size:.9rem;color:rgba(244,239,230,.82);
+
+  margin-bottom:1.6rem;letter-spacing:.05em}
+
+.crab-cta-btns{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+
+.crab-cta-btns a{font-family:var(--gothic);font-size:.9rem;letter-spacing:.06em;
+
+  padding:.85rem 1.9rem;border-radius:999px;transition:transform .2s,background .2s,color .2s}
+
+.crab-cta-btns .btn-primary{background:var(--beni);color:#fff;border:1px solid var(--beni)}
+
+.crab-cta-btns .btn-primary:hover{transform:translateY(-2px);background:var(--beni-deep,var(--beni))}
+
+.crab-cta-btns .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
+
+.crab-cta-btns .btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+
+
+/* ---- スマホ ---- */
+
+@media (max-width:760px){
+
+  .crab-story{grid-template-columns:1fr}
+
+  .crab-compare{grid-template-columns:1fr}
+
+  .crab-grid{grid-template-columns:1fr}
+
+}
+
+/* ---- ここから SDGs 専用 -------------------------------------------------- */
+
+.sg-lead{font-family:var(--gothic);font-size:clamp(.95rem,2.2vw,1.05rem);line-height:2.15;
+  color:var(--ink);max-width:40em;margin:0 auto clamp(2.2rem,5vw,3.2rem)}
+
+/* 掲げるゴール */
+.sg-goal{display:flex;align-items:center;gap:clamp(1rem,2.6vw,1.8rem);
+  border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.55);
+  padding:clamp(1.2rem,3vw,1.8rem);margin-bottom:clamp(2rem,4.5vw,3rem)}
+.sg-goal .no{flex:none;width:clamp(64px,12vw,84px);height:clamp(64px,12vw,84px);
+  border-radius:12px;background:#0A97D9;color:#fff;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;line-height:1.1;text-align:center}
+.sg-goal .no b{font-family:var(--latin);font-size:clamp(1.5rem,3.4vw,2rem);font-weight:700}
+.sg-goal .no span{font-size:.58rem;letter-spacing:.04em;margin-top:.15em}
+.sg-goal .tx .en{font-family:var(--latin);font-style:italic;letter-spacing:.2em;
+  color:var(--beni);font-size:.72rem;display:block;margin-bottom:.3rem}
+.sg-goal .tx h3{font-family:var(--mincho);font-size:clamp(1.15rem,2.8vw,1.5rem);
+  color:var(--ink);letter-spacing:.06em;line-height:1.5}
+
+/* 取り組み一覧 */
+.sg-acts{list-style:none;margin:1.2rem 0 0;padding:0;
+  display:grid;gap:.7rem}
+.sg-acts li{display:flex;gap:.85rem;font-family:var(--gothic);font-size:.92rem;
+  line-height:1.95;color:var(--ink-soft);
+  padding:.9rem 1.05rem;border:1px solid var(--line);border-radius:8px;
+  background:rgba(255,255,255,.5)}
+.sg-acts li::before{content:"";flex:none;width:7px;height:7px;margin-top:.75em;
+  border-radius:50%;background:var(--beni);opacity:.7}
+
+.sg-target{margin-top:1.2rem;padding:1.1rem 1.2rem;border-left:2px solid var(--beni);
+  background:rgba(255,255,255,.55);font-family:var(--gothic);font-size:.92rem;
+  line-height:2;color:var(--ink)}
+.sg-target b{color:var(--beni);font-weight:700}
+
+.sg-close{margin-top:clamp(2.2rem,5vw,3.2rem);padding-top:clamp(1.8rem,3.5vw,2.4rem);
+  border-top:1px solid var(--line);text-align:center}
+.sg-close p{font-family:var(--mincho);font-size:clamp(1.05rem,2.5vw,1.3rem);
+  line-height:2;color:var(--ink);letter-spacing:.05em;max-width:30em;margin:0 auto 1rem}
+.sg-close .sig{font-family:var(--mincho);font-size:1rem;color:var(--ink-soft);
+  letter-spacing:.14em;margin-top:1.2rem;display:block}
+
+@media (max-width:560px){
+  .sg-goal{flex-direction:column;text-align:center;gap:.9rem}
+}
+</style>
+<link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+
+<!-- ============================================================
+     株式会社丸近　ヘッダー（グローバルナビ）
+     クリエイターモード ＞ モジュール ＞ header に貼り付け
+
+     2026-09-25：スマホでカートボタンが「円」になる不具合を修正。
+       文字が折り返して縦長になり、border-radius:999px が効いて丸くなっていた。
+       ラベルと個数を span で包み、狭い画面ではラベルだけ隠せるようにした。
+       ※ CSS 側（共通CSS_追記分_20260925.css）とセットで入れること。
+     ============================================================ -->
+<header>
+
+  <div class="wrap">
+
+    <a class="brand" href="">
+
+      <!-- 2026-08-14：丸の印章はそのまま残し、その右に新しいロゴ
+
+           （株式会社丸近＋Create Emotion, Link Hearts.）を並べる。
+
+           社名は右の画像に入っているので、文字組み（.txtgrp）は使わない。 -->
+
+      <img class="brand-mark" src="https://gigaplus.makeshop.jp/maruchika/logo.png" alt="" width="68" height="68">
+
+      <img class="brand-logo" src="https://gigaplus.makeshop.jp/maruchika/logo-wide.png" alt="" width="160" height="56">
+
+    </a>
+
+    <nav class="main">
+
+      <span class="has-drop">
+
+        <a href="category.html">商品を探す</a>
+
+        <div class="drop">
+
+          <a href="category.html">特別限定商品</a>
+
+          <a href="category.html">全ての商品</a>
+
+          <a href="category.html">かに身</a>
+
+          <a href="category.html">甲羅盛り</a>
+
+          <a href="category.html">茹でがに</a>
+
+          <a href="category.html">活けがに</a>
+
+          <a href="category.html">かにすき</a>
+
+          <a href="category.html">その他</a>
+
+          <span class="sep"></span>
+
+          <a class="all" href="category.html">すべての商品を見る &#8594;</a>
+
+        </div>
+
+      </span>
+
+      <a href="crab.html">香住ガニとは</a>
+
+      <a href="strength.html">丸近の強み</a>
+
+      <a href="review-list.html">お客様の声</a>
+
+      <a href="">会社概要</a>
+
+    </nav>
+
+    <div style="display:flex;align-items:center;gap:.8rem">
+
+      <a class="cart" href="">
+
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.2a1.5 1.5 0 0 0 1.5-1.2L21 7H6"/></svg>
+
+        <span class="cart-label">カート</span><span class="cart-count">（）</span>
+
+      </a>
+
+      <button class="menu-btn" aria-label="メニュー">
+
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<section class="page-hero" style="--hero:var(--slide-a)">
+  <div class="bg"></div>
+  <div class="scrim"></div>
+  <div class="in">
+    <div class="wrap">
+      <p class="en">Sustainability</p>
+      <h1>SDGs宣言</h1>
+      <p class="lead">海からいただく恵みの上に</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <nav class="crumb" aria-label="&#29694;&#22312;&#20301;&#32622;">
+    <a href="">ホーム</a><span class="sep">&#8250;</span>
+    <span class="cur">SDGsの取り組み</span>
+  </nav>
+</div>
+
+<section class="block" style="padding-top:clamp(1rem,2.4vw,1.6rem)">
+  <div class="wrap">
+    <div class="narrow">
+
+      <div class="crab-head">
+        <span class="eyebrow">Our Declaration</span>
+        <h2>丸近のSDGsへの取り組み</h2>
+      </div>
+
+      <p class="sg-lead">私たち株式会社丸近は、兵庫県香住で、香住ガニをはじめとする日本海の水産物の加工・卸を営んでまいりました。<br><br>
+      事業のすべては、海からいただく恵みの上に成り立っています。資源が失われれば、私たちの仕事も、香住という地域の未来もありません。<br>
+      だからこそ私たちは、「持続可能な開発目標（SDGs）」のうち次のゴールを掲げ、取り組みを進めます。</p>
+
+      <div class="sg-goal">
+        <div class="no"><b>14</b><span>LIFE BELOW<br>WATER</span></div>
+        <div class="tx">
+          <span class="en">Goal 14</span>
+          <h3>海の豊かさを守ろう</h3>
+        </div>
+      </div>
+
+      <div class="crab-head">
+        <span class="eyebrow">Action</span>
+        <h2>取り組み内容</h2>
+      </div>
+
+      <p class="sg-lead" style="margin-bottom:0">現在、加工の過程で出るカニ殻や魚のアラの一部を、だし原料として専門業者へお渡しし、再資源化しています。</p>
+
+      <div class="sg-target">この取り組みをさらに広げ、<b>2030年度までに再資源化の割合を現状の2倍以上</b>に引き上げることを目指します。</div>
+
+      <p class="sg-lead" style="margin:clamp(1.8rem,4vw,2.4rem) auto .4rem">具体的には、以下に取り組みます。</p>
+
+      <ul class="sg-acts">
+        <li>カニ殻・魚のアラなど、加工残さの再資源化率を高め、産業廃棄物としての処分量を減らします</li>
+        <li>だし原料以外にも、肥料・飼料など新たな活用先を開拓します</li>
+        <li>未利用部位を活かした新商品の開発に取り組みます</li>
+        <li>資源管理に配慮した漁業由来の原料を優先的に仕入れます</li>
+        <li>従業員への研修を通じて、資源を大切にする意識を社内に根づかせます</li>
+      </ul>
+
+      <div class="sg-close">
+        <p>貴重な海の恵みを一片も無駄にせず、次の世代へつなぐ。<br>
+        それが、香住で水産業を営む私たちの責任だと考えています。</p>
+        <span class="sig">株式会社 丸近</span>
+      </div>
+
+      <nav class="doc-links" aria-label="&#38306;&#36899;&#12506;&#12540;&#12472;">
+        <a href="">会社概要</a>
+        <a href="strength.html">丸近の強み</a>
+        <a href="crab.html">香住ガニとは</a>
+        <a href="brands.html">丸近ブランド</a>
+      </nav>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     株式会社丸近　フッター
+     クリエイターモード ＞ モジュール ＞ footer に貼り付け
+
+     2026-09-25：リンク確認の結果を反映
+       ・楽天市場／ふるさと納税 → 直リンクに変更（フリーページが無いため404だった）
+       ・営業カレンダー → 削除（ページを作らない方針）
+       ・SNS（Instagram／Facebook／LINE／note）を追加 ※新デザインで消えていた
+       ・丸近ブランド／SDGsの取り組み を追加 ※ページは生きているがリンクが無かった
+       ・グループの飲食店4店へのリンクを最下部に追加
+     ※ .foot-sns と .foot-group の CSS は「全ページ共通 ＞ CSS」に足すこと
+     ============================================================ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="co">
+        <!-- 2026-08-14：社名を正式名称に。「香住港より、朝茹で直送」は削除。 -->
+        <div class="kanji">株式会社 丸近</div>
+        <div class="en">Maruchika Co., Ltd.</div>
+        <address>
+          <br>
+          TEL （受付時間 9:00&#8211;17:00）
+        </address>
+        <!-- 2026-09-25：SNS導線を追加。現行サイト（BRothers）にはあったが新デザインで抜けていた -->
+        <div class="foot-sns">
+          <a href="https://www.instagram.com/kasumi_kani/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.facebook.com/mrck.kani" target="_blank" rel="noopener" aria-label="Facebook">
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+          </a>
+          <a href="https://lin.ee/R7oIW3f" target="_blank" rel="noopener" aria-label="LINE">
+            <i class="fab fa-line" aria-hidden="true"></i>
+          </a>
+          <a href="https://note.com/mrck_blog/" target="_blank" rel="noopener" aria-label="note" class="note">note</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <a href="category.html">商品一覧</a>
+        <a href="category.html">特別限定商品</a>
+        <a href="">カート</a>
+        <a href="">会員登録・ログイン</a>
+        <!-- 2026-08-14：ヘッダー最上段の帯を外したため、ここへ移した -->
+        <!-- 2026-09-25：フリーページが無く404だったので直リンクに変更 -->
+        <a href="https://www.rakuten.co.jp/maruchika/" target="_blank" rel="noopener">楽天市場</a>
+        <a href="https://www.furusato-tax.jp/search?q=%E4%B8%B8%E8%BF%91&amp;header=1&amp;target=1&amp;sst=B" target="_blank" rel="noopener">ふるさと納税</a>
+      </div>
+      <div class="foot-col">
+        <h4>About</h4>
+        <a href="crab.html">香住ガニとは</a>
+        <a href="strength.html">丸近の強み</a>
+        <a href="">会社概要</a>
+        <!-- 2026-09-25：ページは生きているがリンクが無かったので復活 -->
+        <a href="brands.html">丸近ブランド</a>
+        <a href="">お知らせ</a>
+        <a href="review-list.html">お客様の声</a>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <a href="">送料・お届けについて</a>
+        <!-- 2026-09-25：営業カレンダーは削除（ページを作らない方針） -->
+        <a href="faq.html">よくあるご質問</a>
+        <a href="">お問い合わせ</a>
+        <a href="">特定商取引法</a>
+        <a href="">プライバシーポリシー</a>
+        <!-- 2026-09-25：ページは生きているがリンクが無かったので復活 -->
+        <a href="sdgs.html">SDGsの取り組み</a>
+      </div>
+    </div>
+
+    <!-- 2026-09-25：グループの飲食店。新デザインで導線が消えていた -->
+    <nav class="foot-group" aria-label="&#12464;&#12523;&#12540;&#12503;&#12398;&#39135;&#20107;&#22788;">
+      <span class="ttl">Group</span>
+      <a href="https://kawai-kami.kani-mrck.jp/" target="_blank" rel="noopener">華和ゐ 香住本店</a>
+      <a href="https://kawai.kani-mrck.jp/" target="_blank" rel="noopener">城崎 華和ゐ</a>
+      <a href="https://kinosaki-ashigaru.com/" target="_blank" rel="noopener">かにの宿 華和ゐ 別館</a>
+      <a href="https://kaniichiban-osaka.com/" target="_blank" rel="noopener">蟹一番 大阪難波店</a>
+    </nav>
+
+    <!-- 2026-08-14：宮元さんのご指定で、管理画面の設定（）ではなく
+         この文字を直接出す。
+         西暦は「全ページ共通JS」の12番が、その年の数字に書き換える。
+         JSが動かない場合でも、ここに書いた年がそのまま出るので空欄にはならない。 -->
+    <div class="copy">&#169; <span id="copyYear">2026</span> MARUCHIKA Co.,Ltd.</div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="ページ上部へ戻る">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  <span class="label">Top</span>
+</button>
+
+
+</body>
+</html>

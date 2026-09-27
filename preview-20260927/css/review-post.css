@@ -1,0 +1,284 @@
+.reviewRateStar {
+  display: inline-block;
+  font-size: 0;
+  color: #FFA42C;
+}
+
+.reviewRateStar::before {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f005";
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.starOff::before {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f005";
+  font-weight: 400;
+}
+
+.starHalf::before {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f5c0";
+}
+
+.review-area1 {
+  margin: 80px auto 0px;
+  padding-bottom: 80px;
+  max-width: 800px;
+  font-size: 16px;
+  line-height: 2;
+}
+
+.review-area1 h1 {
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.5;
+  margin-bottom: 50px;
+}
+
+.review-item-wrap {
+  border: 1px solid #333;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.review-item-image {
+  width: 25%;
+  border: 1px solid #d3d3d3;
+  box-sizing: border-box;
+}
+
+.review-item-image a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.review-item-image a img {
+    width: 100%;
+}
+
+.review-item-info {
+  width: 75%;
+  padding: 0 0 0 20px;
+  box-sizing: border-box;
+}
+
+.review-item-info p {
+  width: 100%;
+  font-size: 15px;
+  line-height: 1.4;
+  margin: 0px;
+  padding: 0px;
+}
+
+.review-item-info p.review-item-name {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 20px 0 35px 0;
+}
+
+.review-item-info .total-review {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 12px;
+  align-items: baseline;
+  line-height: 1;
+}
+
+.review-item-info .review-star, .review-item-info p.review-average, .review-item-info p.review-count {
+  display: inline-block;
+  width: fit-content;
+}
+
+.review-item-info p.review-average {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .reviewRateStar::before {
+    font-size: 15px;
+  }
+  .review-area1 {
+    margin: 40px auto 0px;
+    padding-bottom: 40px;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .review-area1 h1 {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  .review-item-wrap {
+    padding: 30px 15px;
+  }
+  .review-item-image {
+    float: none;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .review-item-info {
+    margin-left: 0px;
+    text-align: center;
+  }
+  .review-item-info p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .review-item-info p.review-item-name {
+    font-size: 16px;
+    margin: 5px 0px;
+  }
+  .review-item-info p.review-average {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+    .review-area1 h1 {
+        font-size: 16px;
+    }
+    .review-item-image {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .review-item-info {
+        width: 100%;
+        padding: 0;
+    }
+    .review-item-info p {
+        font-size: 14px;
+    }
+    .review-item-info p.review-item-name {
+        font-size: 15px;
+        padding: 15px 0;
+        margin: 0;
+    }
+    .review-item-info p.review-average {
+        font-size: 16px;
+    }
+    .review-item-info .total-review {
+        justify-content: center;
+    }
+}
+
+.review-form-wrap {
+  margin-top: 60px;
+  margin-bottom: 80px;
+}
+
+.review-form {
+  margin-top: 40px;
+}
+
+.review-form dt {
+  float: left;
+  width: 25%;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.review-form dd {
+  float: right;
+  width: 74%;
+}
+
+.review-form dd input[type="text"], .review-form dd textarea {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.4;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 3px;
+}
+
+.review-form dd textarea {
+  height: 200px;
+}
+
+.review-post a {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  margin: 60px auto 0px;
+  background: rgb(211, 73, 73);
+  color: #fff;
+  font-size: 17px;
+  text-align: center;
+  padding: 15px 0px;
+  transition: all .3s ease-out;
+}
+
+.review-post a:hover {
+  opacity: 0.6;
+  transition: all .3s ease-out;
+}
+
+@media screen and (max-width: 768px) {
+  .review-form-wrap {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .review-form {
+    margin-top: 20px;
+  }
+  .review-form dt {
+    float: none;
+    width: auto;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+  }
+  .review-form dd {
+    float: none;
+    width: auto;
+  }
+  .review-form dd .reviewRateStar::before {
+    font-size: 24px;
+  }
+  .review-form dd input[type="text"], .review-form dd textarea {
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 10px;
+  }
+  .review-form dd textarea {
+    height: 150px;
+  }
+  .review-post a {
+    margin: 30px auto 0px;
+    font-size: 15px;
+    padding: 12px 0px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .review-form {
+    margin-top: 15px;
+  }
+  .review-form dd input[type="text"], .review-form dd textarea {
+    font-size: 14px;
+    padding: 8px;
+  }
+  .review-form dd textarea {
+    height: 100px;
+  }
+  .review-post a {
+    font-size: 14px;
+  }
+}

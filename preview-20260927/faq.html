@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<!-- 社内確認用のプレビュー。商品名・価格・画像はダミー、または空欄です。
+     検索には載せません。本番はMakeShopのデザインセットです。 -->
+<meta charset="UTF-8">
+    <meta name="description" content="香住ガニの通販、ご注文方法、お支払い、配送、熨斗、返品、香住ガニの特徴について、株式会社丸近がよくあるご質問にお答えします。">
+<title></title>
+
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"ホーム","item":"https://www.kani-mrck.com/"},
+    {"@type":"ListItem","position":2,"name":"よくあるご質問","item":"https://www.kani-mrck.com/view/page/faq"}
+  ]
+}
+</script>
+<style>
+/* ============================================================================
+   株式会社丸近 公式サイト　よくあるご質問（フリーページ）専用スタイル
+   クリエイターモード ＞ フリーページ ＞ CSS に、この内容をすべて貼り付けてください。
+
+   2026-09-25：旧デザイン（BRothers）から新デザインへ移植。
+   ※ 設問と回答の文面は、旧ページからそのまま引き継いでいます。
+   ※ スマホで読みやすいよう、開閉式（アコーディオン）にしました。
+      JavaScript は使っていません（details/summary タグの標準機能）。
+   ============================================================================ */
+/* ---- 以下は他のフリーページと共通の土台 ---- */
+/* ---- ページ見出し帯 ------------------------------------------------------
+
+   商品カテゴリの .cat-hero より低くして、本文を早く見せる */
+
+.page-hero{position:relative;min-height:clamp(170px,26vh,230px);background:var(--sumi);
+
+  color:var(--sumi-ink);overflow:hidden;display:flex;align-items:flex-end}
+
+.page-hero .bg{position:absolute;inset:0;background-image:var(--hero,var(--slide-a));
+
+  background-size:cover;background-position:center;transform:scale(1.04)}
+
+.page-hero .scrim{position:absolute;inset:0;background:
+
+    linear-gradient(0deg,rgba(12,8,5,.86),rgba(12,8,5,.35) 60%,rgba(12,8,5,.55)),
+
+    linear-gradient(90deg,rgba(12,8,5,.5),rgba(12,8,5,0) 45%)}
+
+.page-hero::after{content:"";position:absolute;inset:0;opacity:.34;
+
+  background-image:var(--seigaiha);background-size:88px 44px;
+
+  mix-blend-mode:overlay;pointer-events:none}
+
+.page-hero .in{position:relative;z-index:2;width:100%;padding-bottom:clamp(1.2rem,3vw,1.9rem)}
+
+.page-hero .en{font-family:var(--latin);font-style:italic;letter-spacing:.24em;
+
+  color:#EBB9A0;font-size:.76rem;margin-bottom:.4rem}
+
+.page-hero h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:600;letter-spacing:.1em;
+
+  line-height:1.3;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+
+.page-hero .lead{font-family:var(--gothic);font-size:.82rem;letter-spacing:.06em;
+
+  color:rgba(244,239,230,.8);margin-top:.55rem}
+
+
+
+/* ---- パンくず ---- */
+
+.crumb{font-family:var(--gothic);font-size:.76rem;letter-spacing:.05em;
+
+  color:var(--ink-faint);padding:1rem 0 .2rem}
+
+.crumb a{color:var(--ink-soft);transition:color .2s}
+
+.crumb a:hover{color:var(--beni)}
+
+.crumb .sep{margin:0 .5em;color:var(--line-strong)}
+
+.crumb .cur{color:var(--beni)}
+
+
+
+/* ---- 本文カラム。規約系は読みやすさ優先で幅を絞る ---- */
+
+.narrow{max-width:900px;margin:0 auto}
+
+.doc{font-family:var(--gothic);color:var(--ink-soft);line-height:2}
+
+.doc h2{font-family:var(--mincho);font-size:clamp(1.15rem,2.4vw,1.4rem);color:var(--ink);
+
+  letter-spacing:.06em;margin:2.6rem 0 .9rem;padding-bottom:.5rem;border-bottom:1px solid var(--line)}
+
+.doc h2:first-child{margin-top:0}
+
+.doc h3{font-size:1rem;color:var(--ink);margin:1.5rem 0 .5rem;letter-spacing:.04em}
+
+.doc p{margin-bottom:1rem;font-size:.92rem}
+
+.doc ul,.doc ol{margin:0 0 1rem 1.4rem;font-size:.92rem}
+
+.doc li{margin-bottom:.4rem}
+
+.doc a{color:var(--beni);text-decoration:underline;text-underline-offset:.2em}
+
+.doc .note{font-size:.84rem;color:var(--ink-faint);margin-top:2rem;padding:1rem 1.1rem;
+
+  border-left:2px solid var(--beni);background:rgba(255,255,255,.5);line-height:1.95}
+
+
+
+/* ---- ページ下部の関連リンク ---- */
+
+.doc-links{display:flex;flex-wrap:wrap;gap:.6rem .5rem;justify-content:center;
+
+  margin:clamp(2.4rem,5vw,3.6rem) 0 0;padding-top:clamp(1.6rem,3vw,2.2rem);
+
+  border-top:1px solid var(--line);font-family:var(--gothic);font-size:.82rem}
+
+.doc-links a,.doc-links .cur{padding:.5rem 1.1rem;border:1px solid var(--line);
+
+  border-radius:999px;line-height:1.6;transition:border-color .2s,color .2s,background .2s}
+
+.doc-links a{color:var(--ink-soft);background:rgba(255,255,255,.5)}
+
+.doc-links a:hover{border-color:var(--beni);color:var(--beni);background:#fff}
+
+.doc-links .cur{color:var(--sumi-ink);background:var(--sumi);border-color:var(--sumi)}
+
+
+
+/* ---- リード文 ---- */
+
+.crab-lead{font-family:var(--gothic);font-size:clamp(.95rem,2.2vw,1.05rem);line-height:2.1;
+
+  color:var(--ink);max-width:44em;margin:0 auto clamp(2.2rem,5vw,3.4rem);text-align:center;
+
+  letter-spacing:.04em}
+
+
+
+/* ---- 見出し（各ブロック共通） ---- */
+
+.crab-head{text-align:center;margin:0 0 clamp(1.4rem,3vw,2rem)}
+
+.crab-block,.crab-story{margin:clamp(2.4rem,6vw,4rem) 0}
+
+.eyebrow{display:block;font-family:var(--latin);font-style:italic;letter-spacing:.2em;
+
+  color:var(--beni);font-size:.72rem;margin-bottom:.5rem}
+
+.crab-head h2,.crab-txt h2,.crab-cta h2{font-family:var(--mincho);font-weight:600;
+
+  letter-spacing:.08em;color:var(--ink);font-size:clamp(1.35rem,3.4vw,1.9rem);line-height:1.4}
+
+
+
+/* ---- 香住ガニとは（写真＋文章の2カラム） ---- */
+
+.crab-story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);
+
+  gap:clamp(1.4rem,4vw,3rem);align-items:center}
+
+.crab-visual{position:relative;aspect-ratio:4/3;border-radius:12px;overflow:hidden;
+
+  background:var(--sumi);display:flex;align-items:center;justify-content:center;
+
+  box-shadow:var(--shadow,0 10px 30px rgba(0,0,0,.12))}
+
+.crab-visual::after{content:"";position:absolute;inset:0;opacity:.14;
+
+  background-image:var(--seigaiha);background-size:88px 44px;mix-blend-mode:overlay;
+
+  pointer-events:none}
+
+.crab-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+
+  display:block;z-index:0}
+
+.crab-visual span{position:relative;z-index:1;font-family:var(--gothic);font-size:.82rem;
+
+  letter-spacing:.1em;color:rgba(244,239,230,.72)}
+
+.crab-visual .stamp{position:absolute;top:14px;left:14px;z-index:2;width:64px;height:64px;
+
+  border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;
+
+  font-family:var(--mincho);font-size:.72rem;line-height:1.35;color:#fff;
+
+  background:var(--beni);border:1px solid rgba(255,255,255,.5)}
+
+.crab-txt .eyebrow{text-align:left}
+
+.crab-txt h2{margin-bottom:.9rem}
+
+.crab-txt p{font-family:var(--gothic);font-size:.94rem;line-height:2.05;color:var(--ink-soft);
+
+  margin-bottom:1rem}
+
+
+
+/* ---- 松葉がにとの違い（2カード） ---- */
+
+.crab-compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+
+  gap:clamp(1rem,2.6vw,1.6rem)}
+
+.crab-card{border:1px solid var(--line);border-top:3px solid var(--beni);border-radius:10px;
+
+  background:rgba(255,255,255,.55);padding:clamp(1.3rem,3vw,1.8rem)}
+
+.crab-card h3{font-family:var(--mincho);font-size:1.2rem;color:var(--ink);letter-spacing:.06em;
+
+  margin-bottom:.8rem;display:flex;align-items:baseline;gap:.6rem}
+
+.crab-card h3 span{font-family:var(--gothic);font-size:.72rem;letter-spacing:.08em;
+
+  color:var(--ink-faint);border:1px solid var(--line);border-radius:999px;padding:.15rem .6rem}
+
+.crab-card p{font-family:var(--gothic);font-size:.9rem;line-height:2;color:var(--ink-soft)}
+
+.crab-note{text-align:center;font-family:var(--gothic);font-size:.82rem;color:var(--ink-faint);
+
+  margin-top:1.2rem;letter-spacing:.04em}
+
+
+
+/* ---- 旬と漁期 ---- */
+
+.crab-season-lead{font-family:var(--gothic);font-size:.94rem;line-height:2.05;color:var(--ink-soft);
+
+  max-width:42em;margin:0 auto 1.2rem;text-align:center}
+
+.crab-band{max-width:44em;margin:0 auto;padding:1rem 1.3rem;border:1px solid var(--line);
+
+  border-left:3px solid var(--beni);background:var(--surface);border-radius:10px;
+
+  font-family:var(--gothic);font-size:.9rem;line-height:1.9;color:var(--ink);text-align:center}
+
+
+
+/* ---- 産地の店だから（3項目） ---- */
+
+.crab-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+
+  gap:clamp(1rem,2.4vw,1.5rem)}
+
+.crab-item{padding:clamp(1.2rem,2.6vw,1.6rem);border:1px solid var(--line);border-radius:10px;
+
+  background:rgba(255,255,255,.5)}
+
+.crab-item h3{font-family:var(--mincho);font-size:1.05rem;color:var(--ink);letter-spacing:.05em;
+
+  margin-bottom:.7rem;padding-bottom:.6rem;border-bottom:1px solid var(--line)}
+
+.crab-item p{font-family:var(--gothic);font-size:.88rem;line-height:1.95;color:var(--ink-soft)}
+
+
+
+/* ---- CTA ---- */
+
+.crab-cta{text-align:center;margin:clamp(2.6rem,6vw,4rem) 0 0;
+
+  padding:clamp(2rem,5vw,3rem) 1.2rem;border-radius:14px;background:var(--sumi);
+
+  color:var(--sumi-ink);position:relative;overflow:hidden}
+
+.crab-cta::after{content:"";position:absolute;inset:0;opacity:.26;
+
+  background-image:var(--seigaiha);background-size:88px 44px;mix-blend-mode:overlay;
+
+  pointer-events:none}
+
+.crab-cta>*{position:relative;z-index:1}
+
+.crab-cta .eyebrow{color:#EBB9A0}
+
+.crab-cta h2{color:#fff;margin-bottom:.7rem}
+
+.crab-cta p{font-family:var(--gothic);font-size:.9rem;color:rgba(244,239,230,.82);
+
+  margin-bottom:1.6rem;letter-spacing:.05em}
+
+.crab-cta-btns{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+
+.crab-cta-btns a{font-family:var(--gothic);font-size:.9rem;letter-spacing:.06em;
+
+  padding:.85rem 1.9rem;border-radius:999px;transition:transform .2s,background .2s,color .2s}
+
+.crab-cta-btns .btn-primary{background:var(--beni);color:#fff;border:1px solid var(--beni)}
+
+.crab-cta-btns .btn-primary:hover{transform:translateY(-2px);background:var(--beni-deep,var(--beni))}
+
+.crab-cta-btns .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
+
+.crab-cta-btns .btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+
+
+/* ---- スマホ ---- */
+
+@media (max-width:760px){
+
+  .crab-story{grid-template-columns:1fr}
+
+  .crab-compare{grid-template-columns:1fr}
+
+  .crab-grid{grid-template-columns:1fr}
+
+}
+
+/* ---- ここから よくあるご質問 専用 --------------------------------------- */
+
+/* 章立て */
+.faq-sec{margin:clamp(2.2rem,5vw,3.4rem) 0}
+.faq-sec:first-of-type{margin-top:0}
+
+/* 目次 */
+.faq-index{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 clamp(1.6rem,3.5vw,2.4rem);
+  font-family:var(--gothic);font-size:.82rem}
+.faq-index a{padding:.45rem 1rem;border:1px solid var(--line);border-radius:999px;
+  color:var(--ink-soft);background:rgba(255,255,255,.5);line-height:1.6;
+  transition:border-color .2s,color .2s,background .2s}
+.faq-index a:hover{border-color:var(--beni);color:var(--beni);background:#fff}
+
+/* 1問 */
+.faq-q{border-bottom:1px solid var(--line)}
+.faq-q:first-of-type{border-top:1px solid var(--line)}
+.faq-q > summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;gap:.9rem;
+  padding:1.1rem .2rem;font-family:var(--gothic);font-size:.95rem;line-height:1.75;
+  color:var(--ink);font-weight:600;letter-spacing:.02em;transition:color .2s}
+.faq-q > summary::-webkit-details-marker{display:none}
+.faq-q > summary:hover{color:var(--beni)}
+.faq-q > summary::before{content:"Q";font-family:var(--latin);font-style:italic;
+  color:var(--beni);font-size:1.05rem;line-height:1.5;flex:none;width:1.2em}
+.faq-q > summary::after{content:"";flex:none;width:9px;height:9px;margin-left:auto;
+  margin-top:.55em;border-right:1px solid var(--ink-faint);border-bottom:1px solid var(--ink-faint);
+  transform:rotate(45deg);transition:transform .2s}
+.faq-q[open] > summary::after{transform:rotate(-135deg)}
+.faq-a{display:flex;gap:.9rem;padding:0 .2rem 1.3rem}
+.faq-a::before{content:"A";font-family:var(--latin);font-style:italic;color:var(--ink-faint);
+  font-size:1.05rem;line-height:1.9;flex:none;width:1.2em}
+.faq-a .body{font-family:var(--gothic);font-size:.9rem;line-height:2;color:var(--ink-soft)}
+.faq-a .body p{margin-bottom:.8rem}
+.faq-a .body p:last-child{margin-bottom:0}
+.faq-a .body a{color:var(--beni);text-decoration:underline;text-underline-offset:.2em}
+.faq-a .body .tel{font-family:var(--mincho);font-size:1.05rem;color:var(--ink);letter-spacing:.04em}
+.faq-a .body .note{display:block;margin-top:.7rem;padding:.8rem .95rem;font-size:.84rem;
+  border-left:2px solid var(--beni);background:rgba(255,255,255,.5);line-height:1.9}
+.faq-a .body dl.fee{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;
+  margin:.6rem 0 0;font-size:.88rem}
+.faq-a .body dl.fee dt{color:var(--ink-faint);white-space:nowrap}
+.faq-a .body dl.fee dd{color:var(--ink)}
+
+@media (max-width:640px){
+  .faq-q > summary{font-size:.9rem;gap:.6rem}
+  .faq-a{gap:.6rem}
+}
+</style>
+<link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+
+
+<!-- ============================================================
+     株式会社丸近　ヘッダー（グローバルナビ）
+     クリエイターモード ＞ モジュール ＞ header に貼り付け
+
+     2026-09-25：スマホでカートボタンが「円」になる不具合を修正。
+       文字が折り返して縦長になり、border-radius:999px が効いて丸くなっていた。
+       ラベルと個数を span で包み、狭い画面ではラベルだけ隠せるようにした。
+       ※ CSS 側（共通CSS_追記分_20260925.css）とセットで入れること。
+     ============================================================ -->
+<header>
+
+  <div class="wrap">
+
+    <a class="brand" href="">
+
+      <!-- 2026-08-14：丸の印章はそのまま残し、その右に新しいロゴ
+
+           （株式会社丸近＋Create Emotion, Link Hearts.）を並べる。
+
+           社名は右の画像に入っているので、文字組み（.txtgrp）は使わない。 -->
+
+      <img class="brand-mark" src="https://gigaplus.makeshop.jp/maruchika/logo.png" alt="" width="68" height="68">
+
+      <img class="brand-logo" src="https://gigaplus.makeshop.jp/maruchika/logo-wide.png" alt="" width="160" height="56">
+
+    </a>
+
+    <nav class="main">
+
+      <span class="has-drop">
+
+        <a href="category.html">商品を探す</a>
+
+        <div class="drop">
+
+          <a href="category.html">特別限定商品</a>
+
+          <a href="category.html">全ての商品</a>
+
+          <a href="category.html">かに身</a>
+
+          <a href="category.html">甲羅盛り</a>
+
+          <a href="category.html">茹でがに</a>
+
+          <a href="category.html">活けがに</a>
+
+          <a href="category.html">かにすき</a>
+
+          <a href="category.html">その他</a>
+
+          <span class="sep"></span>
+
+          <a class="all" href="category.html">すべての商品を見る &#8594;</a>
+
+        </div>
+
+      </span>
+
+      <a href="crab.html">香住ガニとは</a>
+
+      <a href="strength.html">丸近の強み</a>
+
+      <a href="review-list.html">お客様の声</a>
+
+      <a href="">会社概要</a>
+
+    </nav>
+
+    <div style="display:flex;align-items:center;gap:.8rem">
+
+      <a class="cart" href="">
+
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.4 12.2a1.5 1.5 0 0 0 1.5 1.2h8.2a1.5 1.5 0 0 0 1.5-1.2L21 7H6"/></svg>
+
+        <span class="cart-label">カート</span><span class="cart-count">（）</span>
+
+      </a>
+
+      <button class="menu-btn" aria-label="メニュー">
+
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<section class="page-hero" style="--hero:var(--slide-b)">
+  <div class="bg"></div>
+  <div class="scrim"></div>
+  <div class="in">
+    <div class="wrap">
+      <p class="en">FAQ</p>
+      <h1>よくあるご質問</h1>
+      <p class="lead">お買い物のこと、香住ガニのこと</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <nav class="crumb" aria-label="&#29694;&#22312;&#20301;&#32622;">
+    <a href="">ホーム</a><span class="sep">&#8250;</span>
+    <span class="cur">よくあるご質問</span>
+  </nav>
+</div>
+
+<section class="block" style="padding-top:clamp(1rem,2.4vw,1.6rem)">
+  <div class="wrap">
+    <div class="narrow">
+
+      <nav class="faq-index" aria-label="&#30446;&#27425;">
+        <a href="#faq-shop">お買い物について</a>
+        <a href="#faq-crab">香住ガニ・丸近について</a>
+      </nav>
+
+      <!-- ============ お買い物について ============ -->
+      <div class="faq-sec" id="faq-shop">
+        <div class="crab-head">
+          <span class="eyebrow">Shopping</span>
+          <h2>お買い物について</h2>
+        </div>
+
+        <details class="faq-q">
+          <summary>冷蔵商品・冷凍商品について</summary>
+          <div class="faq-a"><div class="body">
+            <p>冷蔵商品・冷凍商品につきましては、品質保持のため同梱不可とさせていただいております。<br>
+            お会計時、冷蔵便・冷凍便に分けて配送手配をさせていただきます。その際は別途、送料をご負担いただきます。</p>
+          </div></div>
+        </details>
+
+        <details class="faq-q">
+          <summary>商品のご発送について</summary>
+          <div class="faq-a"><div class="body">
+            <p>ヤマト運輸様もしくは、ご希望により佐川急便様でのお届けとなります。<br>
+            到着希望日・ご希望時間がある方は、ご注文時に日時希望欄にご記入ください。</p>
+            <p>その他、ご要望・ご質問等がございましたらメールでお問い合わせいただくか、
+            <span class="tel">0796-36-1339</span> までご連絡ください。</p>
+            <span class="note">※ ご注文が集中した際（年末年始等）、天災・事故などによる交通渋滞・異常気象が原因で配達が遅れる場合がございます。</span>
+          </div></div>
+        </details>
+
+        <details class="faq-q">
+          <summary>ホームページ以外でも注文できますか？</summary>
+          <div class="faq-a"><div class="body">
+            <p>お電話又はファックスでのご注文が可能です。</p>
+            <dl class="fee">
+              <dt>TEL</dt><dd><span class="tel">0796-36-1339</span></dd>
+              <dt>FAX</dt><dd><span class="tel">0796-36-3754</span></dd>
+              <dt>ご対応時間</dt><dd>8:30&#12316;16:00</dd>
+              <dt>定休日</dt><dd>火曜日・土曜日</dd>
+            </dl>
+          </div></div>
+        </details>
+
+        <details class="faq-q">
+          <summary>注文の変更・キャンセルはできますか？</summary>
+          <div class="faq-a"><div class="body">
+            <p>商品発送前でしたら、変更・キャンセルをお受けさせていただきます。<br>
+            配達のご指定日の3日前までに、お電話にてご連絡をお願い申し上げます。</p>
+          </div></div>
+        </details>
+
+        <details class="faq-q">
+          <summary>お支払い方法について</summary>
+          <div class="faq-a"><div class="body">
+            <p>クレジットカード・銀行振り込み・代金引換からご選択ください。<br>
+            銀行口座へのお振込みの場合、ご入金確認後の発送とさせていただいております。予めご了承くださいますようお願い申し上げます。</p>
+            <p>（参考）代金引換での商品をご購入された場合にお支払い頂く手数料です。</p>
+            <dl class="fee">
+              <dt>合計 10,000円未満</dt><dd>330円（税込）</dd>
+              <dt>合計 30,000円未満</dt><dd>440円（税込）</dd>
+              <dt>合計 100,000円未満</dt><dd>660円（税込）</dd>
+            </dl>
+          </div></div>
+        </details>
+
+        <details class="faq-q">
+          <summary>熨斗は付けてもらえますか？</summary>
+          <div class="faq-a"><div class="body">
+            <p>お歳暮やお中元など、贈答用に熨斗対応を賜っております。<br>
+            （基本的には中に同梱させていただきますが、商品によっては外箱への貼り付けとなります）</p>
+            <p>お手数をお掛けしますが、ご注文時に備考欄へご希望の熨斗名をご記載ください。</p>
+          </div></div>
+        </details>
+
+        <details class="faq-q">
+          <summary>商品の返品について</summary>
+          <div class="faq-a"><div class="body">
+            <p>商品の性質上、返品・交換は出来ません。ご了承ください。</p>
+        <p>ただし、不良品等、こちらの不手際の場合は、商品到着後3日以内に当店へお電話でご連絡ください。返送方法はご連絡時にご案内し、返金または交換にて対応いたします。</p>
+            <span class="note">※ 時化等の天候不良時には、競り市場にご希望の商品が水揚げされておらず、ご指定日にお届け出来かねる場合もございますので、予めご了承願います。</span>
+          </div></div>
+        </details>
+
+        <details class="faq-q">
+          <summary>メールでのお問い合わせについて</summary>
+          <div class="faq-a"><div class="body">
+            <p>メールによるお問い合わせは <a href="mailto:sales.dept@mrck.jp">sales.dept@mrck.jp</a> 宛てにお願いいたします。</p>
+          </div></div>
+        </details>
+
+        <details class="faq-q">
+          <summary>会員登録したがログインできない…</summary>
+          <div class="faq-a"><div class="body">
+            <p>会員ご登録後、万が一ログインできなくなった場合は、パスワードのリセットが必要となります。</p>
+            <p>大変お手数をおかけいたしますが、弊社まで「お電話でのご連絡」か、<a href="">お問い合わせ</a>よりお申し付けくださいませ。よろしくお願い致します。</p>
+          </div></div>
+        </details>
+      </div>
+
+      <!-- ============ 香住ガニ・丸近について ============ -->
+      <div class="faq-sec" id="faq-crab">
+        <div class="crab-head">
+          <span class="eyebrow">About</span>
+          <h2>香住ガニ・丸近について</h2>
+        </div>
+
+        <details class="faq-q">
+          <summary>香住ガニとは何ですか？</summary>
+          <div class="faq-a"><div class="body">
+            <p>香住ガニとは、兵庫県・香住港（香美町）で水揚げされる紅ズワイガニ（ベニズワイガニ）のブランド名です。兵庫県内で紅ズワイガニを水揚げするのは香住漁港のみで、地域を挙げてブランド化されました。</p>
+            <p>水深800&#12316;2,000mの深海に生息し、強い甘みとみずみずしい食感が特徴です。漁期は毎年9月1日&#12316;翌6月30日です。</p>
+            <p><a href="crab.html">香住ガニの物語を読む →</a></p>
+          </div></div>
+        </details>
+
+        <details class="faq-q">
+          <summary>香住ガニと松葉ガニ（ズワイガニ）の違いは何ですか？</summary>
+          <div class="faq-a"><div class="body">
+            <p>香住ガニは紅ズワイガニ、松葉ガニはズワイガニで種類が異なります。香住ガニは殻が鮮やかな赤みのオレンジ色で、より深い海に生息し、甘みが強くみずみずしいのが特徴です。</p>
+            <p>松葉ガニと比べて価格がリーズナブルで、身そのものの甘さを楽しめます。</p>
+          </div></div>
+        </details>
+
+        <details class="faq-q">
+          <summary>香住ガニの旬・漁期はいつですか？</summary>
+          <div class="faq-a"><div class="body">
+            <p>香住ガニの漁期は毎年9月1日から翌年6月30日までです。松葉ガニ（11月解禁）より早く秋から楽しめるのが特徴で、シーズンを通して新鮮な紅ズワイガニを味わえます。</p>
+          </div></div>
+        </details>
+
+        <details class="faq-q">
+          <summary>丸近（株式会社丸近）とはどんな会社ですか？</summary>
+          <div class="faq-a"><div class="body">
+            <p>株式会社丸近は、兵庫県香住港でブランド蟹「香住ガニ」をはじめとする海産物の買付け・加工・販売を一貫して行う水産加工会社です。創業は昭和32年（1957年）。</p>
+            <p>競りでの仕入れから自社での手剥き加工、全国への卸売り・通信販売、直営の飲食・宿泊事業までを手がけています。所在地は兵庫県美方郡香美町香住区香住、代表取締役社長は上垣重幸です。</p>
+            <p><a href="strength.html">丸近の強みを見る →</a></p>
+          </div></div>
+        </details>
+
+        <details class="faq-q">
+          <summary>丸近の香住ガニ通販では何が買えますか？</summary>
+          <div class="faq-a"><div class="body">
+            <p>公式通販サイト（kani-mrck.com）では、香住ガニの殻なし手剥き身（棒崩れ身・中身・ほぐし身）、浜茹でがに、活けがに、甲羅盛り、かにすきセットなどを販売しています。</p>
+            <p>松葉ガニや甘えびも取り扱い、贈答用・ご自宅用に朝茹での新鮮なカニを産地直送でお届けします。</p>
+            <p><a href="category.html">商品一覧を見る →</a></p>
+          </div></div>
+        </details>
+
+        <details class="faq-q">
+          <summary>華和ゐ（KAWAI）とは何ですか？</summary>
+          <div class="faq-a"><div class="body">
+            <p>華和ゐ（読み：カワイ）は、株式会社丸近が手がける直営のかに割烹です。香住本店では、自社で目利き・仕入れした香住ガニや松葉ガニを使ったかに料理を提供しています。</p>
+            <p>あわせて宿泊施設「かにの宿 華和ゐ 別館」も運営しています。</p>
+          </div></div>
+        </details>
+
+        <details class="faq-q">
+          <summary>香住蟹一番とは何ですか？</summary>
+          <div class="faq-a"><div class="body">
+            <p>香住蟹一番は、株式会社丸近が展開する蟹料理に特化した直営の専門店・ブランドです。産地・香住で一貫加工する丸近ならではの鮮度と品質で、香住ガニ・松葉ガニを提供します。</p>
+          </div></div>
+        </details>
+
+        <details class="faq-q">
+          <summary>香住ガニの通販でおすすめ・信頼できるお店はどこですか？</summary>
+          <div class="faq-a"><div class="body">
+            <p>産地で買付けから加工・販売までを一貫して行う専門店を選ぶと、鮮度と品質の面で安心です。</p>
+            <p>株式会社丸近は、香住港で60年以上にわたり香住ガニを扱う産地直送の専門会社で、公式通販サイト（kani-mrck.com）から購入できます。</p>
+          </div></div>
+        </details>
+      </div>
+
+      <nav class="doc-links" aria-label="&#38306;&#36899;&#12506;&#12540;&#12472;">
+        <a href="">送料・お届けについて</a>
+        <a href="">特定商取引法</a>
+        <a href="">お問い合わせ</a>
+        <a href="crab.html">香住ガニとは</a>
+        <a href="">会社概要</a>
+      </nav>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     株式会社丸近　フッター
+     クリエイターモード ＞ モジュール ＞ footer に貼り付け
+
+     2026-09-25：リンク確認の結果を反映
+       ・楽天市場／ふるさと納税 → 直リンクに変更（フリーページが無いため404だった）
+       ・営業カレンダー → 削除（ページを作らない方針）
+       ・SNS（Instagram／Facebook／LINE／note）を追加 ※新デザインで消えていた
+       ・丸近ブランド／SDGsの取り組み を追加 ※ページは生きているがリンクが無かった
+       ・グループの飲食店4店へのリンクを最下部に追加
+     ※ .foot-sns と .foot-group の CSS は「全ページ共通 ＞ CSS」に足すこと
+     ============================================================ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="co">
+        <!-- 2026-08-14：社名を正式名称に。「香住港より、朝茹で直送」は削除。 -->
+        <div class="kanji">株式会社 丸近</div>
+        <div class="en">Maruchika Co., Ltd.</div>
+        <address>
+          <br>
+          TEL （受付時間 9:00&#8211;17:00）
+        </address>
+        <!-- 2026-09-25：SNS導線を追加。現行サイト（BRothers）にはあったが新デザインで抜けていた -->
+        <div class="foot-sns">
+          <a href="https://www.instagram.com/kasumi_kani/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.facebook.com/mrck.kani" target="_blank" rel="noopener" aria-label="Facebook">
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+          </a>
+          <a href="https://lin.ee/R7oIW3f" target="_blank" rel="noopener" aria-label="LINE">
+            <i class="fab fa-line" aria-hidden="true"></i>
+          </a>
+          <a href="https://note.com/mrck_blog/" target="_blank" rel="noopener" aria-label="note" class="note">note</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <a href="category.html">商品一覧</a>
+        <a href="category.html">特別限定商品</a>
+        <a href="">カート</a>
+        <a href="">会員登録・ログイン</a>
+        <!-- 2026-08-14：ヘッダー最上段の帯を外したため、ここへ移した -->
+        <!-- 2026-09-25：フリーページが無く404だったので直リンクに変更 -->
+        <a href="https://www.rakuten.co.jp/maruchika/" target="_blank" rel="noopener">楽天市場</a>
+        <a href="https://www.furusato-tax.jp/search?q=%E4%B8%B8%E8%BF%91&amp;header=1&amp;target=1&amp;sst=B" target="_blank" rel="noopener">ふるさと納税</a>
+      </div>
+      <div class="foot-col">
+        <h4>About</h4>
+        <a href="crab.html">香住ガニとは</a>
+        <a href="strength.html">丸近の強み</a>
+        <a href="">会社概要</a>
+        <!-- 2026-09-25：ページは生きているがリンクが無かったので復活 -->
+        <a href="brands.html">丸近ブランド</a>
+        <a href="">お知らせ</a>
+        <a href="review-list.html">お客様の声</a>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <a href="">送料・お届けについて</a>
+        <!-- 2026-09-25：営業カレンダーは削除（ページを作らない方針） -->
+        <a href="faq.html">よくあるご質問</a>
+        <a href="">お問い合わせ</a>
+        <a href="">特定商取引法</a>
+        <a href="">プライバシーポリシー</a>
+        <!-- 2026-09-25：ページは生きているがリンクが無かったので復活 -->
+        <a href="sdgs.html">SDGsの取り組み</a>
+      </div>
+    </div>
+
+    <!-- 2026-09-25：グループの飲食店。新デザインで導線が消えていた -->
+    <nav class="foot-group" aria-label="&#12464;&#12523;&#12540;&#12503;&#12398;&#39135;&#20107;&#22788;">
+      <span class="ttl">Group</span>
+      <a href="https://kawai-kami.kani-mrck.jp/" target="_blank" rel="noopener">華和ゐ 香住本店</a>
+      <a href="https://kawai.kani-mrck.jp/" target="_blank" rel="noopener">城崎 華和ゐ</a>
+      <a href="https://kinosaki-ashigaru.com/" target="_blank" rel="noopener">かにの宿 華和ゐ 別館</a>
+      <a href="https://kaniichiban-osaka.com/" target="_blank" rel="noopener">蟹一番 大阪難波店</a>
+    </nav>
+
+    <!-- 2026-08-14：宮元さんのご指定で、管理画面の設定（）ではなく
+         この文字を直接出す。
+         西暦は「全ページ共通JS」の12番が、その年の数字に書き換える。
+         JSが動かない場合でも、ここに書いた年がそのまま出るので空欄にはならない。 -->
+    <div class="copy">&#169; <span id="copyYear">2026</span> MARUCHIKA Co.,Ltd.</div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="ページ上部へ戻る">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  <span class="label">Top</span>
+</button>
+
+
+</body>
+</html>

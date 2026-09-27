@@ -1,0 +1,66 @@
+.bulk-group {
+  border-bottom: 1px solid #333;
+  padding-left: 20px;
+  margin-top: 40px;
+}
+
+.bulk-group li {
+  float: left;
+  display: block;
+  border-left: 1px solid #333;
+  border-top: 1px solid #333;
+  margin-bottom: -1px;
+}
+
+.bulk-group li:last-child {
+  border-right: 1px solid #333;
+}
+
+.bulk-group .current, .bulk-group a {
+  display: block;
+  padding: 20px 40px;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.bulk-group a {
+  border-bottom: 1px solid #333;
+  color: #aaa;
+  transition: all .3s ease-out;
+}
+
+.bulk-group a:hover {
+  border-bottom: 1px solid #333;
+  color: #000;
+  transition: all .3s ease-out;
+}
+
+.bulk-group .current {
+  border-bottom: 1px solid #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .bulk-group {
+    padding-left: 10px;
+    margin-top: 30px;
+  }
+  .bulk-group .current, .bulk-group a {
+    padding: 20px 30px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bulk-group {
+    padding-right: 10px;
+  }
+  .bulk-group li {
+    width: 50%;
+    box-sizing: border-box;
+  }
+  .bulk-group .current, .bulk-group a {
+    padding: 20px 0px;
+    text-align: center;
+  }
+}
